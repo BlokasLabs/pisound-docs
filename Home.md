@@ -1,5 +1,5 @@
-![pisound-side](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/pisound-side.png)
 # Getting Started
+![pisound-side](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/pisound-side.png)
 
 pisound is a low latency high-quality soundcard and MIDI interface for Raspberry Pi pocket computer.
 
@@ -14,13 +14,7 @@ chmod +x install-pisound.sh
 ```
 And reboot. Done! Thank You!
 
-If you hit any issues with it, please see the [Step-by-Step pisound Installation Instructions](#manual-install).
-
-## Print your own case
-
-To take the setup process one step further, you can 3D-print your own case. All necessary files can be found here.
-
-![pisound-case](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/pisound-case.png)
+If you hit any issues with it, please see the [Step-by-Step pisound Installation Instructions](#manual-install) and send us feedback!
 
 # Hardware
 The shield itself is designed for use with Raspberry Pi (RPi) computer exclusively and connects to it via the 40-pin header. The shield is slightly bigger in length (56x100 mm) than RPi itself. It has two female DIN-5 connectors for MIDI in/out and two 1/4" (6.35mm) stereo jack connectors for stereo audio in/out. There are two pots for gain and volume control, a programmable button and MIDI activity and input clip LEDs.

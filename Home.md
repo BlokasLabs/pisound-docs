@@ -3,15 +3,6 @@
 
 pisound is an ultra-low latency high-quality soundcard and MIDI interface specially designed for Raspberry Pi pocket computers. Equipped with 192kHz 24-bit Stereo Input and Output driven by the legendary Burr-Brown chips, DIN-5 MIDI Input and Output ports, user-customizable button and bundled software tools, it has everything you need to bring your audio projects to life in no time.
 
-**Supported Raspberry Pi models**|
-:-----|
-Raspberry Pi 1 Model A+|
-Raspberry Pi 1 Model B+|
-Raspberry Pi 2|
-Raspberry Pi 2 version 1.2|
-Raspberry Pi 3|
-Raspberry Pi Zero version 1.2/1.3|
-
 ## Hardware setup
 
 Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. 
@@ -82,6 +73,19 @@ There are two versions of pisound regarding power supply:
 * **9V version (beta):** 7.2V - 12.6V, 18W minimum. 5.5x2.1 mm coaxial power jack connector. The inner connector is connected to the positive terminal, and the sleeve is connected to the ground. The power adapter connected to pisound supplies the RPi board too, so RPi does not need to have its USB supply port connected. The pisound itself has a power consumption of about 1.8W. A 9VDC power supply capable of delivering at least 2 Amps of current is recommended for this version.
 
 * **5.1V version (latest):** pisound has no power connection and requires no additional power supply. It powers up from RPi power supply via pins on RPi header. pisound consumes no more than 300mA at 5.1VDC. When using this version of pisound, we recommend to use the official [5.1VDC RPi power supply](https://www.raspberrypi.org/products/universal-power-supply/).
+
+## Supported Raspberry Pi models
+
+**Model**
+:-----|
+Raspberry Pi 1 Model A+|
+Raspberry Pi 1 Model B+|
+Raspberry Pi 2|
+Raspberry Pi 2 version 1.2|
+Raspberry Pi 3|
+Raspberry Pi Zero version 1.2|
+Raspberry Pi Zero version 1.3|
+
 
 ## Pinout of Pi Header
 ![pinout map rev3](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-pins.png)

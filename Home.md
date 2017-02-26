@@ -263,7 +263,7 @@ The shield itself conforms to Raspberry Pi’s Hardware Attached on Top (HAT) sp
 
 **Parameter**|**Conditions**|**Value**
 :-----|:-----|:-----
-Connectors type|-|1/4" (6.35mm) stereo jacks
+Input/Output connectors|-|1/4" (6.35mm) stereo jacks
 Sampling frequency (Fs)|-|48kHz, 96kHz, 192kHz
 Input/Output resolution|-|24bit
 Input/Output SNR@1kHz|G = 0 dB|110dB
@@ -281,7 +281,7 @@ Phantom power|-|None
 
 **Parameter**|**Value**
 :-----|:-----
-Connectors type|DIN-5 sockets
+Input/Output connectors|DIN-5 female sockets
 MIDI loopback latency|2.105ms
 Activity LEDs|Input & Output
 

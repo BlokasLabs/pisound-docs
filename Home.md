@@ -37,8 +37,46 @@ To take the setup process one step further, you can 3D-print your own case. All 
 
 ![pisound-case](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-case.png)
 
-# Hardware
+# Specifications
+
 The shield itself conforms to Raspberry Pi’s Hardware Attached on Top (HAT) specifications and connects to Pi via the 40-pin header. The shield is slightly bigger in length (56x100 mm) than RPi itself. It has two female DIN-5 connectors for MIDI in/out and two 1/4" (6.35mm) stereo jack connectors for stereo audio in/out. There are two pots for gain and volume control, a programmable button and MIDI activity and input clip LEDs.
+
+## Specs
+**Parameter**|**Conditions**|**Value**
+:-----|:-----|:-----
+Sampling frequency (Fs)|-|48kHz, 96kHz, 192kHz
+Input/Output resolution|-|24bit
+Input/Output SNR@1kHz|G = 0 dB|110dB
+Input impedance|-|100kOhm II 2pF
+Input gain (G)|-|0dB to +40dB
+Input clip voltage|G = 0 dB|5V (peak to peak)
+Full scale output|Load impedance > 1 kOhm|0V to 2.1V (RMS)
+Loopback bandwidth (-3 dB)|G = 0 dB, Fs = 48 kHz|7.5Hz - 23kHz
+Loopback THD@1kHz|G = 0 dB, Fs = 48 kHz|< 0.045%
+Loopback latency|Fs = 192 kHz, Rpi3, buffer size = 128 frames|2.092ms
+MIDI loopback latency|-|2.105ms
+Current Draw|Raspberry Pi-dedicated power supply|< 300mA @ 5.1VDC
+Dimensions|-|56mm x 100mm
+Weight|-|67g
+Phantom power|-|None
+
+## Power Supply 
+There are two versions of pisound regarding power supply:
+
+* **9V version (beta):** 7.2V - 12.6V, 18W minimum. 5.5x2.1 mm coaxial power jack connector. The inner connector is connected to the positive terminal, and the sleeve is connected to the ground. The power adapter connected to pisound supplies the RPi board too, so RPi does not need to have its USB supply port connected. The pisound itself has a power consumption of about 1.8W. A 9VDC power supply capable of delivering at least 2 Amps of current is recommended for this version.
+
+* **5.1V version:** pisound has no power connection and requires no additional power supply. It powers up from RPi power supply via pins on RPi header. pisound consumes no more than 300mA at 5.1VDC. When using this version of pisound, we recommend to use the official [5.1VDC RPi power supply](https://www.raspberrypi.org/products/universal-power-supply/).
+
+## Unused Pins of RPi Header
+![pinout map rev3](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-pins.png)
+
+* Black - Power supply pins.
+* Red - Pins used by pisound.
+* Green - Pins available for your use.
+* Blue - Pins reserved for Raspberry Pi hats use.
+
+# Audio
+
 
 ## Audio Input
 There is one unbalanced stereo input accessible via 1/4" (6.35mm) jack slot on pisound. One stereo channel can also be used as two unbalanced mono channels. Audio inputs are AC coupled via metalized polypropylene capacitors to a gain stage built using [OPA4134](http://www.ti.com/lit/ds/symlink/opa2134.pdf) op-amps. Input resistance is 100kOhm for each channel. The gain can be adjusted simultaneously for both the left and the right channels from 0dB to +40dB with an on-board potentiometer. The maximum audio signal level before clipping is 5Vpp (at 0dB gain). The range of the gain adjustment can be divided into two sections. The first section occurs at rotation between 0% and 80% and it is used to precisely adjust for the high-level signals (line out, headphone amp out, etc...). The tight section at the maximum rotation of the gain pot acts as a +20dB switch for the low-level signals (guitar, microphone, etc.). When the signal clipping occurs in any channel, the red LED lights up and fades out after last clipped sample. Audio to digital conversion is carried out by [PCM1804](http://www.ti.com/lit/ds/symlink/pcm1804.pdf) converter. An on-board clock oscillator delivers a clock signal to the ADC, which divides it according to the selected sample rate. ADC acts as the master of I2S line. pisound supports three sample rates: 48kHz, 96kHz and 192kHz. A filter at the input stage of PCM1804 ensures good anti-[aliasing](https://en.wikipedia.org/wiki/Aliasing).
@@ -63,47 +101,13 @@ A spectrum of looped white noise signal showing the bandwidth of the pisound
 ![spectrum of looped 1 kHz sine signal](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/48kHz_THD.jpg)
 A spectrum of looped 1 kHz sine signal showing the THD of the pisound
 
-## MIDI Interface
+# MIDI
 
 A standard MIDI interface is available via two female DIN-5 connectors. MIDI on pisound is implemented using high speed SPI and a dedicated MCU for translating SPI data to serial MIDI byte streams and it's readily recognized in audio software as an ALSA Raw MIDI device. Such implementation compared to UART based solutions for MIDI communication on RPi has the advantages of keeping the kernel configuration simple (the required 31250Hz UART baud rate is not considered standard for terminals, so it is complex to actually configure the serial device to run at the baud rate required by MIDI) and additionally it is exposed to the OS as an ALSA Raw MIDI device, rather than a serial terminal device which is ignored by most if not all software that interacts with MIDI.
 
 ![signal delay between MIDI](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/midi_latency.png)
 
 An oscillogram showing signal delay between MIDI input (yellow) and MIDI output (cyan) of 2.105 ms when echoing
-
-## Unused Pins of RPi Header
-![pinout map rev3](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-pins.png)
-
-* Black - Power supply pins.
-* Red - Pins used by pisound.
-* Green - Pins available for your use.
-* Blue - Pins reserved for Raspberry Pi hats use.
-
-## Power Supply 
-There are two versions of pisound regarding power supply:
-
-* **9V version:** 7.2V - 12.6V, 18W minimum. 5.5x2.1 mm coaxial power jack connector. The inner connector is connected to the positive terminal, and the sleeve is connected to the ground. The power adapter connected to pisound supplies the RPi board too, so RPi does not need to have its USB supply port connected. The pisound itself has a power consumption of about 1.8W. A 9VDC power supply capable of delivering at least 2 Amps of current is recommended for this version.
-
-* **5.1V version:** pisound has no power connection and requires no additional power supply. It powers up from RPi power supply via pins on RPi header. pisound consumes no more than 300mA at 5.1VDC. When using this version of pisound, we recommend to use the official [5.1VDC RPi power supply](https://www.raspberrypi.org/products/universal-power-supply/).
-
-## Specs
-**Parameter**|**Conditions**|**Value**
-:-----|:-----|:-----
-Sampling frequency (Fs)|-|48kHz, 96kHz, 192kHz
-Input/Output resolution|-|24bit
-Input/Output SNR@1kHz|G = 0 dB|110dB
-Input impedance|-|100kOhm II 2pF
-Input gain (G)|-|0dB to +40dB
-Input clip voltage|G = 0 dB|5V (peak to peak)
-Full scale output|Load impedance > 1 kOhm|0V to 2.1V (RMS)
-Loopback bandwidth (-3 dB)|G = 0 dB, Fs = 48 kHz|7.5Hz - 23kHz
-Loopback THD@1kHz|G = 0 dB, Fs = 48 kHz|< 0.045%
-Loopback latency|Fs = 192 kHz, Rpi3, buffer size = 128 frames|2.092ms
-MIDI loopback latency|-|2.105ms
-Current Draw|Raspberry Pi-dedicated power supply|< 300mA @ 5.1VDC
-Dimensions|-|56mm x 100mm
-Weight|-|67g
-Phantom power|-|None
 
 # Drivers
 The support software for pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon. The driver was tested only on Raspbian distribution, but it may work on other distributions capable of running on RPi. If you get it to run on a distro which is not listed below, please add it to the list, and if any special actions were required, create a page about it and link to it.
@@ -113,18 +117,6 @@ The kernel module implements the soundcard as ALSA Input / Output / Raw MIDI dev
 The pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes the minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button]([#the-button) functionality below.
 
 You can find the source code [here](https://github.com/BlokasLabs/pisound/).
-
-## Note on Kernel Upgrades
-As Linux kernel modules must be built with the kernel headers matching the same version of the kernel, that means that modules must be rebuilt for each new kernel version on the system.
-
-In layman's terms, that basically means each time your kernel version changes, you should reinstall the kernel module by following the install instructions, or, if you still have the source code checked out, do:
-```bash
-rpi-source
-cd pisound
-make clean
-make
-sudo make install
-```
 
 ## Known Compatible Distributions
 

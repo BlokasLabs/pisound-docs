@@ -26,7 +26,7 @@ If you hit any issues during driver setup, please see [Verifying It Works](#veri
 
 ![pisound-connections](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/connections.png)
 
-pisound allows you to connect a huge variety of different types of audio-related gear. Thanks to Stereo Input with wide-range gain control design, you can connect audio sources ranging from your bass guitar to a CD player or your modular synth. Using Stereo Output you can hook pisound to any mixer, speakers or just plug in your headphones. Volume and Gain levels can be controlled using on-board knobs. For MIDI connectivity you also have a lot of options - MIDI In/Out through on-board DIN-5 sockets, USB-MIDI via RPi's USB ports or even WiFi-MIDI!
+pisound allows you to connect a huge variety of different types of audio-related gear. Thanks to Stereo Input with wide-range gain control design, you can connect audio sources ranging from your bass guitar to a CD player or your modular synth. Using Stereo Output you can hook pisound to any mixer, speakers or just plug in your headphones. Volume and Gain levels can be controlled using on-board knobs. For MIDI connectivity you also have a lot of options - MIDI In/Out through on-board DIN-5 sockets, USB-MIDI via RPi's USB ports or even [WiFi-MIDI](#toggle-wifi-hotspot-mode)!
 
 ## Print Your Own Case
 
@@ -236,7 +236,7 @@ By default, clicking the button once runs a script that scans the attached media
 
 The script will blink the MIDI Activity LEDs once just after it reacted to the click, and again 2 times after it succeeded launching the patch, or one long duration blink if an error occurred or no patch was found.
 
-## Turn Off and Eject USB
+## Turn Off & Eject USB
 
 Double clicking will stop all Pure Data instances and unmount all attached external media, so it can be safely removed.
 

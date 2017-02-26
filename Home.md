@@ -217,7 +217,7 @@ The Button is a customizable button on the pisound board. There's 4 possible int
 
 Every **down** and **up** movement will also execute `/usr/local/etc/pisound/down.sh` and `/usr/local/etc/pisound/up.sh` respectively.
 
-You may modify these scripts to do whatever you wish.
+You may modify these scripts to do whatever you wish. Keep in mind that whenever you install / update the pisound-btn, if there were existing scripts in above locations, they are first backed up to `/usr/local/etc/pisound/backups/<current date>`, so if you had overridden the default scripts, you will have to restore your scripts manually.
 
 **Note:** The pisound-btn daemon process must be running in order for the button to work. The 'make install' automatically adds it to the Desktop autostart.
 

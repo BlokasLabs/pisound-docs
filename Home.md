@@ -227,8 +227,8 @@ You may modify these scripts to do whatever you wish. Keep in mind that whenever
 
 **Note:** The pisound-btn daemon process must be running in order for the button to work. The 'make install' automatically adds it to the Desktop autostart.
 
-## Safely Turn Off The Device
-By default, holding the button down for more than 1 second and releasing will cause the system to shutdown cleanly. The MIDI activity LEDs will blink once to confirm that the hold action was triggered. It is safe to unplug the power supply once RPi's LEDs stop flashing on and off.
+## Safely Shutdown The OS
+By default, holding the button down for more than 1 second and releasing will cause the system to shutdown cleanly by executing ```sudo shutdown now```. The MIDI activity LEDs will blink ten times quickly to confirm that the hold action was triggered. It is safe to unplug the power supply once RPi's activity LEDs stop flashing on and off. To restart, unplug and plug the power in again.
 
 ## Start a Pure Data Patch
 

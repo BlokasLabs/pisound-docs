@@ -41,9 +41,7 @@ To take the setup process one step further, you can 3D-print your own case. All 
 
 The shield itself conforms to Raspberry Pi’s Hardware Attached on Top (HAT) specifications and connects to Pi via the 40-pin header. The shield is slightly bigger in length (56x100 mm) than RPi itself. It has two female DIN-5 connectors for MIDI in/out and two 1/4" (6.35mm) stereo jack connectors for stereo audio in/out. There are two pots for gain and volume control, a programmable button and MIDI activity and input clip LEDs.
 
-## Specs
-
-### Audio
+## Audio
 
 **Parameter**|**Conditions**|**Value**
 :-----|:-----|:-----
@@ -55,17 +53,19 @@ Input impedance|-|100kOhm II 2pF
 Input gain (G)|-|0dB to +40dB
 Input clip voltage|G = 0 dB|5V (peak to peak)
 Full scale output|Load impedance > 1 kOhm|0V to 2.1V (RMS)
+Output Volume|-|????
 Loopback bandwidth (-3 dB)|G = 0 dB, Fs = 48 kHz|7.5Hz - 23kHz
 Loopback THD@1kHz|G = 0 dB, Fs = 48 kHz|< 0.045%
 Loopback latency|Fs = 192 kHz, Rpi3, buffer size = 128 frames|2.092ms
 Phantom power|-|None
 
-### Midi
+## MIDI
 
 **Parameter**|**Value**
 :-----|:-----
 Connectors type|DIN-5 sockets
 MIDI loopback latency|2.105ms
+Activity LEDs|Input & Output
 
 ### Other
 

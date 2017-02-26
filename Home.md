@@ -202,7 +202,7 @@ Do this every time you want to start Sonic Pi:
 
 Using pisound you can run your Pure Data patches straight from a USB thumb drive with a press of a button with no need to connect an external monitor, keyboard or mouse.
 
-Plug in a USB drive containing your Pure Data main patch file called **main.pd**, plug in any additional MIDI controller/keyboard, press The Button and Voilà!
+Plug in a USB drive containing your Pure Data patch, main patch file called **main.pd**, plug in any additional MIDI controller/keyboard, press The Button and Voilà!
 
 You can read more about The Button functionality [here](#the-button).
 

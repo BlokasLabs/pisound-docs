@@ -42,9 +42,11 @@ To take the setup process one step further, you can 3D-print your own case. All 
 The shield itself conforms to Raspberry Pi’s Hardware Attached on Top (HAT) specifications and connects to Pi via the 40-pin header. The shield is slightly bigger in length (56x100 mm) than RPi itself. It has two female DIN-5 connectors for MIDI in/out and two 1/4" (6.35mm) stereo jack connectors for stereo audio in/out. There are two pots for gain and volume control, a programmable button and MIDI activity and input clip LEDs.
 
 ## Specs
+
+### Audio
+
 **Parameter**|**Conditions**|**Value**
 :-----|:-----|:-----
-**Audio**|||
 Connectors type|-|1/4" (6.35mm) stereo jacks
 Sampling frequency (Fs)|-|48kHz, 96kHz, 192kHz
 Input/Output resolution|-|24bit
@@ -57,13 +59,22 @@ Loopback bandwidth (-3 dB)|G = 0 dB, Fs = 48 kHz|7.5Hz - 23kHz
 Loopback THD@1kHz|G = 0 dB, Fs = 48 kHz|< 0.045%
 Loopback latency|Fs = 192 kHz, Rpi3, buffer size = 128 frames|2.092ms
 Phantom power|-|None
-**MIDI**|||
-Connectors type|-|DIN-5 sockets
-MIDI loopback latency|-|2.105ms
-**Other**|||
-Current Draw|Powered by Raspberry Pi|< 300mA @ 5.1VDC
-Dimensions|-|56mm x 100mm
-Weight|-|67g
+
+### Midi
+
+**Parameter**|**Value**
+:-----|:-----
+Connectors type|DIN-5 sockets
+MIDI loopback latency|2.105ms
+
+### Other
+
+**Parameter**|**Value**
+:-----|:-----
+Current Draw|< 300mA @ 5.1VDC (Powered by Raspberry Pi)
+Dimensions|56mm x 100mm
+Weight|67g
+
 
 ## Power Supply 
 There are two versions of pisound regarding power supply:

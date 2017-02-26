@@ -22,7 +22,7 @@ After driver installation process is complete, reboot your Raspberry Pi. That's 
 
 If you hit any issues during driver setup, please see [Verifying It Works](#verifying-it-works) and provide us [feedback](#feedback).
 
-## Connect things
+## Connect Things
 
 ![pisound-connections](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/connections.png)
 

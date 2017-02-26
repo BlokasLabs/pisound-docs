@@ -71,7 +71,7 @@ Activity LEDs|Input & Output
 
 **Parameter**|**Value**
 :-----|:-----
-Current Draw|< 300mA @ 5.1VDC (Powered by Raspberry Pi)
+Current Draw|< 300mA @ 5.1VDC
 Dimensions|56mm x 100mm
 Weight|67g
 
@@ -83,7 +83,7 @@ There are two versions of pisound regarding power supply:
 
 * **5.1V version (latest):** pisound has no power connection and requires no additional power supply. It powers up from RPi power supply via pins on RPi header. pisound consumes no more than 300mA at 5.1VDC. When using this version of pisound, we recommend to use the official [5.1VDC RPi power supply](https://www.raspberrypi.org/products/universal-power-supply/).
 
-## Unused Pins of RPi Header
+## Pinout of Pi Header
 ![pinout map rev3](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-pins.png)
 
 * Black - Power supply pins.

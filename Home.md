@@ -3,11 +3,11 @@
 
 pisound is an ultra-low latency high-quality soundcard and MIDI interface specially designed for Raspberry Pi pocket computers. Equipped with 192kHz 24-bit Stereo Input and Output driven by the legendary Burr-Brown chips, DIN-5 MIDI Input and Output ports, user-customizable button and bundled software tools, it has everything you need to bring your audio projects to life in no time.
 
-## Hardware setup
+## Hardware Setup
 
 Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. 
 
-## Driver setup
+## Driver Setup
 
 If you don't have any Linux OS running on your Raspberry Pi, we suggest starting with [Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/README.md).
 
@@ -22,7 +22,7 @@ After driver installation process is complete, reboot your Raspberry Pi. That's 
 
 If you hit any issues during driver setup, please see the [Step-by-Step pisound Installation Instructions](#manual-install).
 
-## Print your own case
+## Print Your Own Case
 
 To take the setup process one step further, you can 3D-print your own case. All necessary files can be found here.
 
@@ -74,7 +74,7 @@ There are two versions of pisound regarding power supply:
 
 * **5.1V version (latest):** pisound has no power connection and requires no additional power supply. It powers up from RPi power supply via pins on RPi header. pisound consumes no more than 300mA at 5.1VDC. When using this version of pisound, we recommend to use the official [5.1VDC RPi power supply](https://www.raspberrypi.org/products/universal-power-supply/).
 
-## Supported Raspberry Pi models
+## Supported Raspberry Pi Models
 
 **Compatible models**|
 :-----|
@@ -96,7 +96,6 @@ Raspberry Pi Zero version 1.3|
 * Blue - Pins reserved for Raspberry Pi hats use.
 
 # Audio
-
 
 ## Audio Input
 There is one unbalanced stereo input accessible via 1/4" (6.35mm) jack slot on pisound. One stereo channel can also be used as two unbalanced mono channels. Audio inputs are AC coupled via metalized polypropylene capacitors to a gain stage built using [OPA4134](http://www.ti.com/lit/ds/symlink/opa2134.pdf) op-amps. Input resistance is 100kOhm for each channel. The gain can be adjusted simultaneously for both the left and the right channels from 0dB to +40dB with an on-board potentiometer. The maximum audio signal level before clipping is 5Vpp (at 0dB gain). The range of the gain adjustment can be divided into two sections. The first section occurs at rotation between 0% and 80% and it is used to precisely adjust for the high-level signals (line out, headphone amp out, etc...). The tight section at the maximum rotation of the gain pot acts as a +20dB switch for the low-level signals (guitar, microphone, etc.). When the signal clipping occurs in any channel, the red LED lights up and fades out after last clipped sample. Audio to digital conversion is carried out by [PCM1804](http://www.ti.com/lit/ds/symlink/pcm1804.pdf) converter. An on-board clock oscillator delivers a clock signal to the ADC, which divides it according to the selected sample rate. ADC acts as the master of I2S line. pisound supports three sample rates: 48kHz, 96kHz and 192kHz. A filter at the input stage of PCM1804 ensures good anti-[aliasing](https://en.wikipedia.org/wiki/Aliasing).
@@ -131,7 +130,7 @@ An oscillogram showing signal delay between MIDI input (yellow) and MIDI output 
 
 # Software
 
-## Known Compatible Software
+## Compatible Software
 
 pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated in mainline Raspbian Linux kernel (ver. 4.4.27+).
 
@@ -141,7 +140,7 @@ Please add or let us know if you have pisound working on a distribution that is 
 * [arch linux](https://www.archlinux.org/)
 * [Ubuntu Mate](https://ubuntu-mate.org/raspberry-pi/)
 
-Out of the box compatible software, in alphabetic order:
+Software we tested which required no special changes, in alphabetic order:
 
 * Audacity
 * Carla / LV2
@@ -156,19 +155,17 @@ Software which required tweaks or workarounds, in alphabetic order:
 * [Volumio](http://community.blokas.io/t/setting-up-volumio/81)
 
 ## Drivers
-The support software for pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon. The driver was tested only on Raspbian distribution, but it may work on other distributions capable of running on RPi. If you get it to run on a distro which is not listed below, please add it to the list, and if any special actions were required, create a page about it and link to it.
 
-The kernel module implements the soundcard as ALSA Input / Output / Raw MIDI device.
+The support software for pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon. The kernel module implements the soundcard as an ALSA Input / Output / Raw MIDI device.
 
-The pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes the minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button]([#the-button) functionality below.
+The pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button]([#the-button) functionality below.
 
-You can find the source code [here](https://github.com/BlokasLabs/pisound/).
+You can find the source code for The Button [here](https://github.com/BlokasLabs/pisound/) and kernel module [here](https://github.com/raspberrypi/linux/blob/rpi-4.9.y/sound/soc/bcm/pisound.c).
 
-## Linux Driver
+### Installing
 
 To install the user-space button daemon and enable pisound, run the below commands in a terminal.
 
-Alternatively, if you hit any issues with it, please see the [Step-by-Step pisound Installation Instructions](#manual-install) and send us feedback!
 ```bash
 wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
 chmod +x install-pisound.sh
@@ -178,46 +175,6 @@ chmod +x install-pisound.sh
 The above installs a button daemon named 'pisound-btn' and its scripts for button actions. If there were existing scripts, they are first backed up to `/usr/local/etc/pisound/backups/<current date>`, so if you had overridden the default functions, you will have to restore your scripts manually.
 
 The install-pisound.sh script does the following steps:
-
-1. Runs rpi-update to update your kernel version. Versions 4.4.27+ contain the pisound kernel module by default.
-1. Downloads the [pisound source code from github](https://github.com/BlokasLabs/pisound/), and puts it in **pisound** folder, relative to the current working directory (usually the home folder).
-1. Builds and installs the pisound software.
-1. Enables the pisound device-tree overlay, so the sound card is recognized by RPi.
-
-If you want to disable the card, you can do that by using a terminal:
-```bash
-cd pisound
-sudo ./disable-pisound.sh
-```
-
-## Manual Install
-
-1. Start a terminal.
-
-2. Update your kernel (not necessary if your kernel is already 4.4.42 or newer)
-```
- sudo rpi-update
-```
-3. Download pisound's source code:
-```
- git clone https://github.com/BlokasLabs/pisound.git
-```
-4. Build and install pisound-btn:
-```
- cd pisound/pisound-btn
- make
- sudo make install
-```
-5. Enable pisound's device tree overlays:
-```
- chmod +x ../enable-pisound.sh
- sudo ../enable-pisound.sh
-```
-6. Reboot the system:
-```
- sudo reboot
-```
-
 
 ### Verifying It Works
 
@@ -256,12 +213,11 @@ You should see output similar to:
    Subdevices: 1/1
    Subdevice #0: subdevice #0
 ```
-You should expect to see items with 'pisound' listed.
 
 ### Feedback
-In case you're having difficulties with getting pisound's driver to run, contact us and the community http://community.blokas.io/, provide the exact error and the last command you've executed.
+In case you're having difficulties with getting pisound's driver to run, contact us and the community here: http://community.blokas.io/, provide the exact error and the last command you've executed.
 
-## The Button
+# The Button
 
 The Button is a customizable button on the pisound board. There's 4 possible interactions with it:
 

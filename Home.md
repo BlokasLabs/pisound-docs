@@ -83,7 +83,7 @@ The pisound button daemon is a user space program which implements monitoring of
 
 You can find the source code for The Button [here](https://github.com/BlokasLabs/pisound/) and kernel module [here](https://github.com/raspberrypi/linux/blob/rpi-4.9.y/sound/soc/bcm/pisound.c).
 
-### Installing
+### Installing The Software
 
 To install the user-space button daemon and enable pisound, run the below commands in a terminal.
 

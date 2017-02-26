@@ -5,7 +5,7 @@ pisound is an ultra-low latency high-quality soundcard and MIDI interface specia
 
 ## Hardware setup
 
-Mount pisound on top of your Raspberry Pi while the RPi is unpowered, so it appears as in the images at the top. 
+Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. 
 
 ### Supported Raspberry Pi models
 

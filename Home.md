@@ -44,6 +44,8 @@ The shield itself conforms to Raspberry Pi’s Hardware Attached on Top (HAT) sp
 ## Specs
 **Parameter**|**Conditions**|**Value**
 :-----|:-----|:-----
+**Audio**|||
+Connectors type|-|1/4" (6.35mm) stereo jacks
 Sampling frequency (Fs)|-|48kHz, 96kHz, 192kHz
 Input/Output resolution|-|24bit
 Input/Output SNR@1kHz|G = 0 dB|110dB
@@ -54,11 +56,14 @@ Full scale output|Load impedance > 1 kOhm|0V to 2.1V (RMS)
 Loopback bandwidth (-3 dB)|G = 0 dB, Fs = 48 kHz|7.5Hz - 23kHz
 Loopback THD@1kHz|G = 0 dB, Fs = 48 kHz|< 0.045%
 Loopback latency|Fs = 192 kHz, Rpi3, buffer size = 128 frames|2.092ms
+Phantom power|-|None
+**MIDI**|||
+Connectors type|-|DIN-5 sockets
 MIDI loopback latency|-|2.105ms
-Current Draw|Raspberry Pi-dedicated power supply|< 300mA @ 5.1VDC
+**Other**|||
+Current Draw|Powered by Raspberry Pi|< 300mA @ 5.1VDC
 Dimensions|-|56mm x 100mm
 Weight|-|67g
-Phantom power|-|None
 
 ## Power Supply 
 There are two versions of pisound regarding power supply:

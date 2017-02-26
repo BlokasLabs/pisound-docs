@@ -92,8 +92,6 @@ chmod +x install-pisound.sh
 
 The above installs a button daemon named 'pisound-btn' and its scripts for button actions. If there were existing scripts, they are first backed up to `/usr/local/etc/pisound/backups/<current date>`, so if you had overridden the default functions, you will have to restore your scripts manually.
 
-The install-pisound.sh script does the following steps:
-
 ### Verifying It Works
 
 Once the system boots up, run a terminal and run:

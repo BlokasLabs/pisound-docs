@@ -18,7 +18,7 @@ wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
 chmod +x install-pisound.sh
 ./install-pisound.sh
 ```
-After driver installation process is complete, reboot your Raspberry Pi. That's it. Now you can choose pisound as your main sound card through native Volume widget and use it with any Linux Audio/MIDI software. Done! Thank You!
+After driver installation process is complete, reboot your Raspberry Pi (if the script asked for it at the end) and that's it. Now you can choose pisound as your main sound card through native Volume widget and use it with any Linux Audio/MIDI software. Done! Thank You!
 
 If you hit any issues during driver setup, please see [Verifying It Works](#verifying-it-works) and provide us [feedback](#feedback).
 

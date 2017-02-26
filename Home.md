@@ -114,7 +114,33 @@ A standard MIDI interface is available via two female DIN-5 connectors. MIDI on 
 
 An oscillogram showing signal delay between MIDI input (yellow) and MIDI output (cyan) of 2.105 ms when echoing
 
-# Drivers
+# Software
+
+## Known Compatible Software
+
+pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated in mainline Raspbian Linux kernel (ver. 4.4.27+).
+
+Please add or let us know if you have pisound working on a distribution that is not in the list yet!
+
+* [Raspbian](https://www.raspbian.org/)
+* [arch linux](https://www.archlinux.org/)
+* [Ubuntu Mate](https://ubuntu-mate.org/raspberry-pi/)
+
+Out of the box compatible software, in alphabetic order:
+
+* Audacity
+* Carla / LV2
+* darkice and icecast
+* Jack
+* Supercollider
+* Pure Data
+
+Software which required tweaks or workarounds, in alphabetic order:
+
+* Sonic Pi
+* [Volumio](http://community.blokas.io/t/setting-up-volumio/81)
+
+## Drivers
 The support software for pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon. The driver was tested only on Raspbian distribution, but it may work on other distributions capable of running on RPi. If you get it to run on a distro which is not listed below, please add it to the list, and if any special actions were required, create a page about it and link to it.
 
 The kernel module implements the soundcard as ALSA Input / Output / Raw MIDI device.
@@ -122,12 +148,6 @@ The kernel module implements the soundcard as ALSA Input / Output / Raw MIDI dev
 The pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes the minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button]([#the-button) functionality below.
 
 You can find the source code [here](https://github.com/BlokasLabs/pisound/).
-
-## Known Compatible Distributions
-
-Please add or let us know if you have pisound working on a distribution that is not in the list yet!
-
-* [Raspbian](https://www.raspbian.org/ )
 
 ## Linux Driver
 
@@ -274,18 +294,6 @@ sudo raspi-config
 Go to **Interfacing Options** and make sure **ssh** and **VNC** are enabled. If you don't see these options, go to **Advanced Options** and do **Update**.
 
 Triple-clicking again will revert to regular WiFi behavior.
-
-# Compatible Software
-
-pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated in mainline Raspbian Linux kernel (ver. 4.4.27+). 
-
-Tested programs in alphabetic order:
-
-* Audacity
-* Carla
-* Jack
-* Supercollider
-* Pure Data
 
 ## Sonic Pi workaround guide
 Sonic Pi has a special case for Raspberry Pi during startup. By default it kills the existing jackd server, and starts one configured to use the built in Raspberry Pi audio with hardcoded parameters. That makes Sonic Pi unusable with other audio cards, unless the below workaround is applied, so Sonic Pi would behave in the same way as if it's run on any other linux device.

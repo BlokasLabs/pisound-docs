@@ -89,6 +89,47 @@ Software which required tweaks or workarounds, in alphabetic order:
 * Sonic Pi
 * [Volumio](http://community.blokas.io/t/setting-up-volumio/81)
 
+### Sonic Pi workaround guide
+Sonic Pi has a special case for Raspberry Pi during startup. By default it kills the existing jackd server, and starts one configured to use the built in Raspberry Pi audio with hardcoded parameters. That makes Sonic Pi unusable with other audio cards, unless the below workaround is applied, so Sonic Pi would behave in the same way as if it's run on any other linux device.
+
+Do this once (might need to be done again in case any software updates touch it):
+
+- Edit `/opt/sonic-pi/app/server/sonicpi/scsynthexternal.rb` as root user using your favorite editor (such as vim, nano, geany, or ...).
+- Locate the following code snippet:
+```
+     case os
+     when :raspberry
+       boot_server_raspberry_pi
+     when :linux
+       boot_server_linux
+     when :osx
+       boot_server_osx
+     when :windows
+       boot_server_windows
+     end
+     true
+```
+- Change it to:
+```
+     case os
+     when :raspberry
+       #boot_server_raspberry_pi
+       boot_server_linux
+     when :linux
+       boot_server_linux
+     when :osx
+       boot_server_osx
+     when :windows
+       boot_server_windows
+     end
+     true
+```
+
+Do this every time you want to start Sonic Pi:
+
+- Start Jack server configured to use pisound.
+- Start Sonic Pi, it will connect to the Jack server you had just launched.
+
 ## Drivers
 
 The support software for pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon. The kernel module implements the soundcard as an ALSA Input / Output / Raw MIDI device.
@@ -267,44 +308,3 @@ Raspberry Pi Zero version 1.3|
 * Red - Pins used by pisound.
 * Green - Pins available for your use.
 * Blue - Pins reserved for Raspberry Pi hats use.
-
-## Sonic Pi workaround guide
-Sonic Pi has a special case for Raspberry Pi during startup. By default it kills the existing jackd server, and starts one configured to use the built in Raspberry Pi audio with hardcoded parameters. That makes Sonic Pi unusable with other audio cards, unless the below workaround is applied, so Sonic Pi would behave in the same way as if it's run on any other linux device.
-
-Do this once (might need to be done again in case any software updates touch it):
-
-- Edit `/opt/sonic-pi/app/server/sonicpi/scsynthexternal.rb` as root user using your favorite editor (such as vim, nano, geany, or ...).
-- Locate the following code snippet:
-```
-     case os
-     when :raspberry
-       boot_server_raspberry_pi
-     when :linux
-       boot_server_linux
-     when :osx
-       boot_server_osx
-     when :windows
-       boot_server_windows
-     end
-     true
-```
-- Change it to:
-```
-     case os
-     when :raspberry
-       #boot_server_raspberry_pi
-       boot_server_linux
-     when :linux
-       boot_server_linux
-     when :osx
-       boot_server_osx
-     when :windows
-       boot_server_windows
-     end
-     true
-```
-
-Do this every time you want to start Sonic Pi:
-
-- Start Jack server configured to use pisound.
-- Start Sonic Pi, it will connect to the Jack server you had just launched.

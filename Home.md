@@ -227,20 +227,20 @@ You may modify these scripts to do whatever you wish. Keep in mind that whenever
 
 **Note:** The pisound-btn daemon process must be running in order for the button to work. The 'make install' automatically adds it to the Desktop autostart.
 
-## Default Hold Action
+## Safely Turn Off The Device
 By default, holding the button down for more than 1 second and releasing will cause the system to shutdown cleanly. The MIDI activity LEDs will blink once to confirm that the hold action was triggered. It is safe to unplug the power supply once RPi's LEDs stop flashing on and off.
 
-## Default Single Click Action
+## Start a Pure Data Patch
 
 By default, clicking the button once runs a script that scans the attached media storage devices for '**main.pd**', or, if not found in external media, scans `/usr/local/etc/pisound-patches/`, kills all existing instances of Pure Data, then starts a new instance opening the file, enables audio and connects all the detected MIDI inputs and outputs to the Pure Data's virtual MIDI ports. ALSA engine of Pure Data is used.
 
 The script will blink the MIDI Activity LEDs once just after it reacted to the click, and again 2 times after it succeeded launching the patch, or one long duration blink if an error occurred or no patch was found.
 
-## Default Double Click Action
+## Turn Off and Eject USB
 
 Double clicking will stop all Pure Data instances and unmount all attached external media, so it can be safely removed.
 
-## Default Triple Click Action (RPi3 or using SoftAP capable WiFi USB adapter)
+## Toggle WiFi Hotspot Mode
 
 Triple-clicking will reconfigure the WiFi of RPi3 board or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
 

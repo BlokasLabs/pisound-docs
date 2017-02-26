@@ -3,18 +3,18 @@
 
 pisound is an ultra-low latency high-quality soundcard and MIDI interface specially designed for Raspberry Pi pocket computers. Equipped with 192kHz 24-bit Stereo Input and Output driven by the legendary Burr-Brown chips, DIN-5 MIDI Input and Output ports, user-customizable button and bundled software tools, it has everything you need to bring your audio projects to life in no time.
 
+**Supported Raspberry Pi models**|
+:-----|
+Raspberry Pi 1 Model A+|
+Raspberry Pi 1 Model B+|
+Raspberry Pi 2|
+Raspberry Pi 2 version 1.2|
+Raspberry Pi 3|
+Raspberry Pi Zero version 1.2/1.3|
+
 ## Hardware setup
 
 Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. 
-
-### Supported Raspberry Pi models
-
-1. Raspberry Pi 1 Model A+
-1. Raspberry Pi 1 Model B+
-1. Raspberry Pi 2
-1. Raspberry Pi 2 version 1.2
-1. Raspberry Pi 3
-1. Raspberry Pi Zero version 1.2/1.3
 
 ## Driver setup
 

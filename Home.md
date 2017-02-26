@@ -266,7 +266,7 @@ Input/Output connectors|-|1/4" (6.35mm) stereo jacks
 Sampling frequency (Fs)|-|48kHz, 96kHz, 192kHz
 Input/Output resolution|-|24bit
 Input/Output SNR@1kHz|G = 0 dB|110dB
-Input impedance|-|100kOhm II 2pF
+Input impedance|-|100kOhm &#124;&#124; 2pF
 Input gain (G)|-|0dB to +40dB
 Input clip LED|-|Yes
 Input clip voltage|G = 0 dB|5V (peak to peak)

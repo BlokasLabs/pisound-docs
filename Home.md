@@ -39,6 +39,8 @@ To take the setup process one step further, you can 3D-print your own case. All 
 
 # Audio
 
+The legendary Burr-Brown Op-Amps, ADC and DAC chips are implemented in this little board to exhibit clean signal amplification and conversion between digital and analog realms. Though these chips themselves have a good power supply rejection ratio (PSRR), to ensure low-noise operation in the vicinity of an electrically noisy Raspberry Pi computer, any power line to the analog stuff is coupled via LDO’s which filters any digital interference out. This design enables pisound to be graded as a high-fidelity audio device. For example a Hi-Fi device is expected to have the total harmonic distortion value (THD) less than 1% and the pisound has less than 0.05%. That means that you can daisy-chain 20 pisound boards and the chain would still be considered as a high-fidelity device!
+
 ## Audio Input
 There is one unbalanced stereo input accessible via 1/4" (6.35mm) jack slot on pisound. One stereo channel can also be used as two unbalanced mono channels. Audio inputs are AC coupled via metalized polypropylene capacitors to a gain stage built using [OPA4134](http://www.ti.com/lit/ds/symlink/opa2134.pdf) op-amps. Input resistance is 100kOhm for each channel. The gain can be adjusted simultaneously for both the left and the right channels from 0dB to +40dB with an on-board potentiometer. The maximum audio signal level before clipping is 5Vpp (at 0dB gain). The range of the gain adjustment can be divided into two sections. The first section occurs at rotation between 0% and 80% and it is used to precisely adjust for the high-level signals (line out, headphone amp out, etc...). The tight section at the maximum rotation of the gain pot acts as a +20dB switch for the low-level signals (guitar, microphone, etc.). When the signal clipping occurs in any channel, the red LED lights up and fades out after last clipped sample. Audio to digital conversion is carried out by [PCM1804](http://www.ti.com/lit/ds/symlink/pcm1804.pdf) converter. An on-board clock oscillator delivers a clock signal to the ADC, which divides it according to the selected sample rate. ADC acts as the master of I2S line. pisound supports three sample rates: 48kHz, 96kHz and 192kHz. A filter at the input stage of PCM1804 ensures good anti-[aliasing](https://en.wikipedia.org/wiki/Aliasing).
 
@@ -75,15 +77,14 @@ And of course you can use USB-MIDI devices as usual by connecting them to Raspbe
 An oscillogram showing signal delay between MIDI input (yellow) and MIDI output (cyan) of 2.105 ms when echoing
 
 # Software
-## Drivers
 
-The support software for pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon. The kernel module implements the soundcard as an ALSA Input / Output / Raw MIDI device.
+pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated in mainline Raspbian Linux kernel (ver. 4.4.27+). The support driver for pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon.
 
 The pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button]([#the-button) functionality below.
 
 You can find the source code for The Button [here](https://github.com/BlokasLabs/pisound/) and kernel module [here](https://github.com/raspberrypi/linux/blob/rpi-4.9.y/sound/soc/bcm/pisound.c).
 
-### Installing The Software
+## Installing The Driver
 
 To install the user-space button daemon and enable pisound, run the below commands in a terminal.
 
@@ -137,8 +138,6 @@ You should see output similar to:
 In case you're having difficulties with getting pisound's driver to run, contact us and the community here: http://community.blokas.io/, provide the exact error and the last command you've executed.
 
 ## Compatible Software
-
-pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated in mainline Raspbian Linux kernel (ver. 4.4.27+).
 
 Please add or let us know if you have pisound working on a distribution that is not in the list yet!
 

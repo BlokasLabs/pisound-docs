@@ -194,15 +194,15 @@ Do this every time you want to start Sonic Pi:
 - Start Jack server configured to use pisound.
 - Start Sonic Pi, it will connect to the Jack server you had just launched.
 
-# pisound and PureData
+# pisound and Pure Data
 
-Using pisound you can run your PureData patches straight from a USB thumb drive with a press of a button with no need to connect an external monitor, keyboard or mice.
+Using pisound you can run your Pure Data patches straight from a USB thumb drive with a press of a button with no need to connect an external monitor, keyboard or mice.
 
-Plug in a USB drive containing your PureData main patch file called **main.pd**, plug in any additional MIDI controller/keyboard, press The Button and Voilà!
+Plug in a USB drive containing your Pure Data main patch file called **main.pd**, plug in any additional MIDI controller/keyboard, press The Button and Voilà!
 
 You can read more about The Button functionality [here]([#the-button).
 
-If you haven't already, you can install PureData by running the following command in a Terminal window:
+If you haven't already, you can install Pure Data by running the following command in a Terminal window:
 
 ```sudo apt-get install puredata```
 
@@ -230,18 +230,13 @@ By default, clicking the button once runs a script that scans the attached media
 
 The script will blink the MIDI Activity LEDs once just after it reacted to the click, and again 2 times after it succeeded launching the patch, or one long duration blink if an error occurred or no patch was found.
 
-If you don't have Pure Data installed, chances are you can install it by running:
-```bash
-sudo apt-get install puredata
-```
-
 ## Default Double Click Action
 
 Double clicking will stop all Pure Data instances and unmount all attached external media, so it can be safely removed.
 
 ## Default Triple Click Action (RPi3 or using SoftAP capable WiFi USB adapter)
 
-Triple-clicking will reconfigure the WiFi of RPi3 board or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as puredata.
+Triple-clicking will reconfigure the WiFi of RPi3 board or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
 
 By default, the AP will appear as '**pisound**', and the default password is '**blokaslabs**' (without quotes). You can change the name and password by modifying `/usr/local/etc/pisound/hostapd.conf` Keep in mind that this file gets backed up and overwritten after reinstalling or updating the pisound-btn software.
 

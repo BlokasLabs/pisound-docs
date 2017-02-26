@@ -210,7 +210,9 @@ You can read more about The Button functionality [here](#the-button).
 
 If you haven't already, you can install Pure Data by running the following command in a Terminal window:
 
-```sudo apt-get install puredata```
+```
+sudo apt-get install puredata
+```
 
 # The Button
 

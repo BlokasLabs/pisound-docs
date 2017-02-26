@@ -76,7 +76,7 @@ There are two versions of pisound regarding power supply:
 
 ## Supported Raspberry Pi models
 
-**Model**|
+**Compatible models**|
 :-----|
 Raspberry Pi 1 Model A+|
 Raspberry Pi 1 Model B+|

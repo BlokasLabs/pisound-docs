@@ -249,6 +249,8 @@ By default, the AP will appear as '**pisound**', and the default password is '**
 
 The default IP address of RPi in WiFi Hotspot mode is 172.24.1.1 which you can use for ssh, VNC or wireless OSC / MIDI data! That means that you can easily interact with your system using just your laptop or phone, no more wires apart from power supply is needed! And it gets better, if the LAN cable is connected to RPi, it will share the Internet with the connected devices over WiFi!
 
+To send MIDI OSC messages from your other devices to pisound, connect to the pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings.
+
 To access RPi using ssh and/or VNC, make sure they're enabled in `raspi-config`. To enable, run in terminal:
 ```bash
 sudo raspi-config

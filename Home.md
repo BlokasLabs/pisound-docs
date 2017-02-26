@@ -1,25 +1,13 @@
 # Getting Started
 ![pisound-side](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-side.png)
 
-pisound is a low latency high-quality soundcard and MIDI interface for Raspberry Pi pocket computer.
+pisound is an ultra-low latency high-quality soundcard and MIDI interface specially designed for Raspberry Pi pocket computers. Equipped with 192kHz 24-bit Stereo Input and Output driven by the legendary Burr-Brown chips, DIN-5 MIDI Input and Output ports, user-customizable button and bundled software tools, it has everything you need to bring your audio projects to life in no time.
 
-If you don't have any Linux OS running on your Raspberry Pi, we suggest starting with [Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/README.md).
+## Hardware setup
 
-Mount pisound on top of Raspberry Pi while the RPi is unpowered, so it appears as in the images at the top. [Power it up](#power-supply), install the driver by running the below commands in a terminal window:
+Mount pisound on top of your Raspberry Pi while the RPi is unpowered, so it appears as in the images at the top. 
 
-```bash
-wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
-chmod +x install-pisound.sh
-./install-pisound.sh
-```
-And reboot. Done! Thank You!
-
-If you hit any issues with it, please see the [Step-by-Step pisound Installation Instructions](#manual-install) and send us feedback!
-
-# Hardware
-The shield itself is designed for use with Raspberry Pi (RPi) computer exclusively and connects to it via the 40-pin header. The shield is slightly bigger in length (56x100 mm) than RPi itself. It has two female DIN-5 connectors for MIDI in/out and two 1/4" (6.35mm) stereo jack connectors for stereo audio in/out. There are two pots for gain and volume control, a programmable button and MIDI activity and input clip LEDs.
-
-## Supported Raspberry Pi models
+### Supported Raspberry Pi models
 
 1. Raspberry Pi 1 Model A+
 1. Raspberry Pi 1 Model B+
@@ -27,6 +15,30 @@ The shield itself is designed for use with Raspberry Pi (RPi) computer exclusive
 1. Raspberry Pi 2 version 1.2
 1. Raspberry Pi 3
 1. Raspberry Pi Zero version 1.2/1.3
+
+## Driver setup
+
+If you don't have any Linux OS running on your Raspberry Pi, we suggest starting with [Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/README.md).
+
+[Power your Raspberry Pi up](#power-supply) and install the driver by running the below commands in a terminal window:
+
+```bash
+wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
+chmod +x install-pisound.sh
+./install-pisound.sh
+```
+After driver installation process is complete, reboot your Raspberry Pi. Done! Thank You!
+
+If you hit any issues with it, please see the [Step-by-Step pisound Installation Instructions](#manual-install).
+
+## Print your own case
+
+To take the setup process one step further, you can 3D-print your own case. All necessary files can be found here.
+
+![pisound-case](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-case.png)
+
+# Hardware
+The shield itself is designed for use with Raspberry Pi (RPi) computer exclusively and connects to it via the 40-pin header. The shield is slightly bigger in length (56x100 mm) than RPi itself. It has two female DIN-5 connectors for MIDI in/out and two 1/4" (6.35mm) stereo jack connectors for stereo audio in/out. There are two pots for gain and volume control, a programmable button and MIDI activity and input clip LEDs.
 
 ## Audio Input
 There is one unbalanced stereo input accessible via 1/4" (6.35mm) jack slot on pisound. One stereo channel can also be used as two unbalanced mono channels. Audio inputs are AC coupled via metalized polypropylene capacitors to a gain stage built using [OPA4134](http://www.ti.com/lit/ds/symlink/opa2134.pdf) op-amps. Input resistance is 100kOhm for each channel. The gain can be adjusted simultaneously for both the left and the right channels from 0dB to +40dB with an on-board potentiometer. The maximum audio signal level before clipping is 5Vpp (at 0dB gain). The range of the gain adjustment can be divided into two sections. The first section occurs at rotation between 0% and 80% and it is used to precisely adjust for the high-level signals (line out, headphone amp out, etc...). The tight section at the maximum rotation of the gain pot acts as a +20dB switch for the low-level signals (guitar, microphone, etc.). When the signal clipping occurs in any channel, the red LED lights up and fades out after last clipped sample. Audio to digital conversion is carried out by [PCM1804](http://www.ti.com/lit/ds/symlink/pcm1804.pdf) converter. An on-board clock oscillator delivers a clock signal to the ADC, which divides it according to the selected sample rate. ADC acts as the master of I2S line. pisound supports three sample rates: 48kHz, 96kHz and 192kHz. A filter at the input stage of PCM1804 ensures good anti-[aliasing](https://en.wikipedia.org/wiki/Aliasing).

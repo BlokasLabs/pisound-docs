@@ -91,9 +91,9 @@ Audio output is DC coupled and can be accessed via the female 1/4" (6.35mm) ster
 
 In digital audio equipment it takes time for the signal at input to be processed and delivered at output. This time is called audio latency. There's three parts to it. The first is the time required for the ADC to do the conversion and to send digital data to the processing unit. The second step is to process data and prepare it for the transfer to the DAC. And the final part is getting the data to the DAC and converting it to the analog signal. The most time consuming is the second part. Parts one and three often require no more than 1 ms depending on architecture of ADC and DAC, sample rate and in-built digital filters.
 
-![audio latency of 4.941 ms](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/48kHz_audio_latency.png)
+![audio latency of 2.092 ms](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/192kHz_audio_latency.png)
 
-An oscillogram showing audio latency of 4.941 ms. pisound and Raspberry Pi 2 working at sample rate of 48 kHz
+An oscillogram showing audio latency of 2.092 ms. pisound and Raspberry Pi 2 working at sample rate of 192 kHz
 
 ![spectrum of looped white noise](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/48kHz_BW.jpg)
 A spectrum of looped white noise signal showing the bandwidth of the pisound

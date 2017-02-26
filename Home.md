@@ -67,7 +67,7 @@ Connectors type|DIN-5 sockets
 MIDI loopback latency|2.105ms
 Activity LEDs|Input & Output
 
-### Other
+## Other
 
 **Parameter**|**Value**
 :-----|:-----

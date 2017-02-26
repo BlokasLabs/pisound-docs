@@ -33,7 +33,7 @@ Raspberry Pi in combination with pisound allows you to connect a huge variety of
 
 ## Print Your Own Case
 
-To take the setup process one step further, you can 3D-print your own case. All necessary files can be found [here](https://github.com/BlokasLabs/pisound-case).
+To take the setup process one step further, you can even 3D-print your own case. All necessary files can be found [here](https://github.com/BlokasLabs/pisound-case).
 
 ![pisound-case](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-case.png)
 

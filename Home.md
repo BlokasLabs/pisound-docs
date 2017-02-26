@@ -1,5 +1,5 @@
 # Getting Started
-![pisound-side](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/pisound-side.png)
+![pisound-side](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-side.png)
 
 pisound is a low latency high-quality soundcard and MIDI interface for Raspberry Pi pocket computer.
 
@@ -31,7 +31,7 @@ The shield itself is designed for use with Raspberry Pi (RPi) computer exclusive
 ## Audio Input
 There is one unbalanced stereo input accessible via 1/4" (6.35mm) jack slot on pisound. One stereo channel can also be used as two unbalanced mono channels. Audio inputs are AC coupled via metalized polypropylene capacitors to a gain stage built using [OPA4134](http://www.ti.com/lit/ds/symlink/opa2134.pdf) op-amps. Input resistance is 100kOhm for each channel. The gain can be adjusted simultaneously for both the left and the right channels from 0dB to +40dB with an on-board potentiometer. The maximum audio signal level before clipping is 5Vpp (at 0dB gain). The range of the gain adjustment can be divided into two sections. The first section occurs at rotation between 0% and 80% and it is used to precisely adjust for the high-level signals (line out, headphone amp out, etc...). The tight section at the maximum rotation of the gain pot acts as a +20dB switch for the low-level signals (guitar, microphone, etc.). When the signal clipping occurs in any channel, the red LED lights up and fades out after last clipped sample. Audio to digital conversion is carried out by [PCM1804](http://www.ti.com/lit/ds/symlink/pcm1804.pdf) converter. An on-board clock oscillator delivers a clock signal to the ADC, which divides it according to the selected sample rate. ADC acts as the master of I2S line. pisound supports three sample rates: 48kHz, 96kHz and 192kHz. A filter at the input stage of PCM1804 ensures good anti-[aliasing](https://en.wikipedia.org/wiki/Aliasing).
 
-![pisound-side](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/gain_vs_pot.jpg)
+![pisound-side](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/gain_vs_pot.jpg)
 Gain and input sensitivity versus position of **GAIN** pot
 
 ## Audio Output
@@ -41,26 +41,26 @@ Audio output is DC coupled and can be accessed via the female 1/4" (6.35mm) ster
 
 In digital audio equipment it takes time for the signal at input to be processed and delivered at output. This time is called audio latency. There's three parts to it. The first is the time required for the ADC to do the conversion and to send digital data to the processing unit. The second step is to process data and prepare it for the transfer to the DAC. And the final part is getting the data to the DAC and converting it to the analog signal. The most time consuming is the second part. Parts one and three often require no more than 1 ms depending on architecture of ADC and DAC, sample rate and in-built digital filters.
 
-![audio latency of 4.941 ms](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/48kHz_audio_latency.png)
+![audio latency of 4.941 ms](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/48kHz_audio_latency.png)
 
 An oscillogram showing audio latency of 4.941 ms. pisound and Raspberry Pi 2 working at sample rate of 48 kHz
 
-![spectrum of looped white noise](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/48kHz_BW.jpg)
+![spectrum of looped white noise](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/48kHz_BW.jpg)
 A spectrum of looped white noise signal showing the bandwidth of the pisound
 
-![spectrum of looped 1 kHz sine signal](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/48kHz_THD.jpg)
+![spectrum of looped 1 kHz sine signal](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/48kHz_THD.jpg)
 A spectrum of looped 1 kHz sine signal showing the THD of the pisound
 
 ## MIDI Interface
 
 A standard MIDI interface is available via two female DIN-5 connectors. MIDI on pisound is implemented using high speed SPI and a dedicated MCU for translating SPI data to serial MIDI byte streams and it's readily recognized in audio software as an ALSA Raw MIDI device. Such implementation compared to UART based solutions for MIDI communication on RPi has the advantages of keeping the kernel configuration simple (the required 31250Hz UART baud rate is not considered standard for terminals, so it is complex to actually configure the serial device to run at the baud rate required by MIDI) and additionally it is exposed to the OS as an ALSA Raw MIDI device, rather than a serial terminal device which is ignored by most if not all software that interacts with MIDI.
 
-![signal delay between MIDI](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/midi_latency.png)
+![signal delay between MIDI](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/midi_latency.png)
 
 An oscillogram showing signal delay between MIDI input (yellow) and MIDI output (cyan) of 2.105 ms when echoing
 
 ## Unused Pins of RPi Header
-![pinout map rev3](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/pisound-pins.png)
+![pinout map rev3](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-pins.png)
 
 * Black - Power supply pins.
 * Red - Pins used by pisound.

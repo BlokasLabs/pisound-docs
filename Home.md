@@ -20,7 +20,7 @@ chmod +x install-pisound.sh
 ```
 After driver installation process is complete, reboot your Raspberry Pi. That's it. Now you can choose pisound as your main sound card through native Volume widget and use it with any Linux Audio/MIDI software. Done! Thank You!
 
-If you hit any issues during driver setup, please see the [Step-by-Step pisound Installation Instructions](#manual-install).
+If you hit any issues during driver setup, please provide us [feedback](#feedback).
 
 ## Print Your Own Case
 

@@ -20,7 +20,7 @@ chmod +x install-pisound.sh
 ```
 After driver installation process is complete, reboot your Raspberry Pi. That's it. Now you can choose pisound as your main sound card through native Volume widget and use it with any Linux Audio/MIDI software. Done! Thank You!
 
-If you hit any issues during driver setup, please provide us [feedback](#feedback).
+If you hit any issues during driver setup, please see [Verifying It Works](#verifying-it-works) and provide us [feedback](#feedback).
 
 ## Print Your Own Case
 
@@ -153,7 +153,7 @@ Software which required tweaks or workarounds, in alphabetic order:
 * Sonic Pi
 * [Volumio](http://community.blokas.io/t/setting-up-volumio/81)
 
-### Sonic Pi workaround guide
+### Sonic Pi Workaround Guide
 Sonic Pi has a special case for Raspberry Pi during startup. By default it kills the existing jackd server, and starts one configured to use the built in Raspberry Pi audio with hardcoded parameters. That makes Sonic Pi unusable with other audio cards, unless the below workaround is applied, so Sonic Pi would behave in the same way as if it's run on any other linux device.
 
 Do this once (might need to be done again in case any software updates touch it):
@@ -221,10 +221,10 @@ You may modify these scripts to do whatever you wish. Keep in mind that whenever
 
 **Note:** The pisound-btn daemon process must be running in order for the button to work. The 'make install' automatically adds it to the Desktop autostart.
 
-### Default Hold Action
+## Default Hold Action
 By default, holding the button down for more than 1 second and releasing will cause the system to shutdown cleanly. The MIDI activity LEDs will blink once to confirm that the hold action was triggered. It is safe to unplug the power supply once RPi's LEDs stop flashing on and off.
 
-### Default Single Click Action
+## Default Single Click Action
 
 By default, clicking the button once runs a script that scans the attached media storage devices for '**main.pd**', or, if not found in external media, scans `/usr/local/etc/pisound-patches/`, kills all existing instances of Pure Data, then starts a new instance opening the file, enables audio and connects all the detected MIDI inputs and outputs to the Pure Data's virtual MIDI ports. ALSA engine of Pure Data is used.
 
@@ -235,11 +235,11 @@ If you don't have Pure Data installed, chances are you can install it by running
 sudo apt-get install puredata
 ```
 
-### Default Double Click Action
+## Default Double Click Action
 
 Double clicking will stop all Pure Data instances and unmount all attached external media, so it can be safely removed.
 
-### Default Triple Click Action (RPi3 or using SoftAP capable WiFi USB adapter)
+## Default Triple Click Action (RPi3 or using SoftAP capable WiFi USB adapter)
 
 Triple-clicking will reconfigure the WiFi of RPi3 board or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as puredata.
 

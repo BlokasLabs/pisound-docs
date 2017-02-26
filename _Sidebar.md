@@ -1,2 +1,2 @@
 * [[Home]]
-* [Projects](example-projects)
+* [Projects](Example-projects)

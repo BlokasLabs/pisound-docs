@@ -55,7 +55,9 @@ A spectrum of looped 1 kHz sine signal showing the THD of the pisound
 
 # MIDI
 
-A standard MIDI interface is available via two female DIN-5 connectors. MIDI on pisound is implemented using high speed SPI and a dedicated MCU for translating SPI data to serial MIDI byte streams and it's readily recognized in audio software as an ALSA Raw MIDI device. Such implementation compared to UART based solutions for MIDI communication on RPi has the advantages of keeping the kernel configuration simple (the required 31250Hz UART baud rate is not considered standard for terminals, so it is complex to actually configure the serial device to run at the baud rate required by MIDI) and additionally it is exposed to the OS as an ALSA Raw MIDI device, rather than a serial terminal device which is ignored by most if not all software that interacts with MIDI.
+A standard MIDI interface is available via two female DIN-5 connectors. Unlike usual MIDI solutions for Raspberry Pi, MIDI on pisound is implemented using high speed SPI and a dedicated microcontroller for translating SPI data to serial MIDI byte streams and it's readily recognized in audio software as an ALSA MIDI device. The loopback latency of MIDI was measured to be 2.105ms. In addition, there are MIDI activity LEDs for both Input and Output indicating the flow of MIDI events.
+
+In addition, pisound lets you take advantage of WiFi-MIDI. When WiFi Hotspot mode is enabled via triple clicking The Button, touchosc2midi daemon gets launched. It translates OSC messages to MIDI events so you can control audio software running on Raspberry Pi from your smartphone or tablet.
 
 ![signal delay between MIDI](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/midi_latency.png)
 

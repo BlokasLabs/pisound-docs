@@ -5,7 +5,7 @@ pisound is an ultra-low latency high-quality soundcard and MIDI interface specia
 
 ## Hardware Setup
 
-Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. 
+Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. See compatible Raspberry Pi models [here](#Supported-Raspberry-Pi-Models)
 
 ## Driver Setup
 
@@ -21,6 +21,10 @@ chmod +x install-pisound.sh
 After driver installation process is complete, reboot your Raspberry Pi. That's it. Now you can choose pisound as your main sound card through native Volume widget and use it with any Linux Audio/MIDI software. Done! Thank You!
 
 If you hit any issues during driver setup, please see [Verifying It Works](#verifying-it-works) and provide us [feedback](#feedback).
+
+## Connect things
+
+pisound allows you to connect a huge variety of different types of audio-related gear. Thanks to Stereo Input with wide-range gain control design, you can connect audio sources ranging from your bass guitar to a CD player or your modular synth. Using Stereo Output you can hook pisound to any mixer, speakers or just plug in your headphones. Volume and Gain levels can be controlled using on-board knobs. For MIDI connectivity you also have a lot of options - MIDI In/Out through on-board DIN-5 sockets, USB-MIDI via RPi's USB ports or even WiFi-MIDI!
 
 ## Print Your Own Case
 

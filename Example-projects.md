@@ -3,7 +3,7 @@
 ## pisound and LV2 plugins
 On http://rpi.autostatic.com/ repository you can find some cool software packages for audio. One of those is **Carla** - a host for LV2 plugins.
 
-![Carla](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/carla.png)
+![Carla](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/carla.png)
 
 So let's give it a go.
 
@@ -21,11 +21,11 @@ Then start **qjackctl**, you can do that by hitting Ctrl+F2 and typing in **qjac
 
 Configure it in Setup... like so:
 
-![Jack Settings](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/jack_settings.png)
+![Jack Settings](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/jack_settings.png)
 
 And start the jack server by pressing Start:
 
-![Jack Start](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/start_jack.png)
+![Jack Start](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/start_jack.png)
 
 Now run Carla (Alt+F2, carla, enter)
 
@@ -96,7 +96,7 @@ You can use pisound with Volumio! Though they're still running on an older kerne
 
 **Eventually none of this manual setup is going to be necessary, as soon as Volumio makes a release with an updated kernel.**
 
-![Volumio](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/volumio.png)
+![Volumio](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/volumio.png)
 
 Steps to get started:
 
@@ -132,6 +132,6 @@ Steps to get started:
 
 If you want to add more controls to your pisound audio projects, you can make your own MIDI controller using a couple of potentiometers, push buttons and any Arduino compatible board that uses ATmega32U4 microcontroller. Alternatively, it should be straightforward to adapt the example code to use DIN-5 MIDI ports, as the usbmidi API interface is compatible with Serial API.
 
-![DIY MIDI controller](https://raw.githubusercontent.com/wiki/Pranciskus/wiki-test/images/diy-midi-ctrl.png)
+![DIY MIDI controller](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/diy-midi-ctrl.png)
 
 Go [here](https://github.com/BlokasLabs/usbmidi/tree/master/arduino/libraries/usbmidi/examples/midictrl) for full instructions.

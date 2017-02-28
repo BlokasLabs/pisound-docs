@@ -11,7 +11,7 @@ Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it wi
 
 If you don't have any Linux OS running on your Raspberry Pi, we suggest starting with [Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/README.md).
 
-[Power your Raspberry Pi up](#power-supply) and install the driver by running the below commands in a terminal window:
+[[Power your Raspberry Pi up|Specs#power-supply]] and install the driver by running the below commands in a terminal window:
 
 ```bash
 wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh

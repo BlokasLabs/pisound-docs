@@ -9,22 +9,22 @@
       
       
       
-        <link rel="shortcut icon" href="/assets/images/favicon.png">
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
       
       <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.1.1">
     
     
       
-        <title>pisound Docs</title>
+        <title>MIDI - pisound Docs</title>
       
     
     
-      <script src="/assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application-4ebe3f1d68.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-4ebe3f1d68.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/application-f6789307ff.palette.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-f6789307ff.palette.css">
       
     
     
@@ -38,7 +38,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
     
   </head>
@@ -65,8 +65,8 @@
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <a href="" title="pisound Docs" class="md-logo md-header-nav__button">
-            <img src="/images/logo.svg" width="24" height="24">
+          <a href=".." title="pisound Docs" class="md-logo md-header-nav__button">
+            <img src="../images/logo.svg" width="24" height="24">
           </a>
         
       </div>
@@ -77,7 +77,9 @@
         <span class="md-flex__ellipsis md-header-nav__title">
           
             
-            pisound Docs
+              
+            
+            MIDI
           
         </span>
       </div>
@@ -144,7 +146,7 @@
   <label class="md-nav__title md-nav__title--site" for="drawer">
     
       <i class="md-logo md-nav__button">
-        <img src="/images/logo.svg">
+        <img src="../images/logo.svg">
       </i>
     
     pisound Docs
@@ -180,7 +182,7 @@
 
 
   <li class="md-nav__item">
-    <a href="" title="Getting Started" class="md-nav__link">
+    <a href=".." title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -192,7 +194,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/audio" title="Audio" class="md-nav__link">
+    <a href="../audio/" title="Audio" class="md-nav__link">
       Audio
     </a>
   </li>
@@ -202,11 +204,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="/midi" title="MIDI" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="MIDI" class="md-nav__link md-nav__link--active">
       MIDI
     </a>
+    
   </li>
 
     
@@ -216,7 +227,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/Example-projects" title="Example Projects" class="md-nav__link">
+    <a href="../Example-projects/" title="Example Projects" class="md-nav__link">
       Example Projects
     </a>
   </li>
@@ -229,13 +240,34 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
                
               
-  <h1>404 - Not found</h1>
-
+                
+                <h1 id="midi">MIDI</h1>
+<p>A standard MIDI interface is available via two female DIN-5 connectors. Unlike usual MIDI solutions for Raspberry Pi, MIDI on pisound is implemented using high speed SPI and a dedicated microcontroller for translating SPI data to serial MIDI byte streams and it's readily recognized by audio software as an ALSA MIDI device. The loopback latency of MIDI was measured to be 2.105ms. In addition, there are MIDI activity LEDs for both Input and Output indicating the flow of MIDI events.</p>
+<p>In addition, pisound lets you take advantage of WiFi-MIDI. When WiFi Hotspot mode is enabled via <a href="#toggle-wifi-hotspot-mode">triple clicking The Button</a>, touchosc2midi daemon gets launched. It translates OSC messages to MIDI events so you can control audio software running on Raspberry Pi from your smartphone or tablet.</p>
+<p>And of course you can use USB-MIDI devices as usual by connecting them to Raspberry Pi USB ports.</p>
+<p><img alt="signal delay between MIDI" src="https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/midi_latency.png" /></p>
+<p>An oscillogram showing signal delay between MIDI input (yellow) and MIDI output (cyan) of 2.105 ms when echoing</p>
+              
               
             </article>
           </div>
@@ -244,6 +276,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../audio/" title="Audio" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Audio
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Example-projects/" title="Example Projects" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Example Projects
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -280,10 +347,10 @@
       
     </div>
     
-      <script src="/assets/javascripts/application-30ac6a1727.js"></script>
-      <script>app.initialize({url:{base:""}})</script>
+      <script src="../assets/javascripts/application-30ac6a1727.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
       
-        <script src="/static/assets/script.js"></script>
+        <script src="../static/assets/script.js"></script>
       
     
     

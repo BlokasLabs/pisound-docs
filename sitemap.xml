@@ -11,6 +11,22 @@
 
     
     <url>
+     <loc>/audio/</loc>
+     <lastmod>2017-02-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/midi/</loc>
+     <lastmod>2017-02-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>/Example-projects/</loc>
      <lastmod>2017-02-28</lastmod>
      <changefreq>daily</changefreq>

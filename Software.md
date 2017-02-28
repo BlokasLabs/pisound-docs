@@ -18,7 +18,7 @@ chmod +x install-pisound.sh
 
 The above installs a button daemon named 'pisound-btn' and its scripts for button actions. If there were existing scripts, they are first backed up to `/usr/local/etc/pisound/backups/<current date>`, so if you had overridden the default functions, you will have to restore your scripts manually.
 
-### Verifying It Works
+## Verifying It Works
 
 Once the system boots up, run a terminal and run:
 ```
@@ -56,7 +56,6 @@ You should see output similar to:
    Subdevice #0: subdevice #0
 ```
 
-### Feedback
 In case you're having difficulties with getting pisound's driver to run, contact us and the community here: http://community.blokas.io/, provide the exact error and the last command you've executed.
 
 ## Compatible Software

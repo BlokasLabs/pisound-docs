@@ -276,26 +276,6 @@
     Compatible Software
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#starting-jack-server-for-pisound" title="Starting Jack Server for pisound" class="md-nav__link">
-    Starting Jack Server for pisound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sonic-pi-workaround-guide" title="Sonic Pi Workaround Guide" class="md-nav__link">
-    Sonic Pi Workaround Guide
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -353,6 +333,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../howtos/" title="HowTos" class="md-nav__link">
+      HowTos
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -404,26 +396,6 @@
   <a href="#compatible-software" title="Compatible Software" class="md-nav__link">
     Compatible Software
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#starting-jack-server-for-pisound" title="Starting Jack Server for pisound" class="md-nav__link">
-    Starting Jack Server for pisound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sonic-pi-workaround-guide" title="Sonic Pi Workaround Guide" class="md-nav__link">
-    Sonic Pi Workaround Guide
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -511,65 +483,6 @@ You should see output similar to:
 <ul>
 <li>Sonic Pi</li>
 <li><a href="http://community.blokas.io/t/setting-up-volumio/81">Volumio</a></li>
-</ul>
-<h3 id="starting-jack-server-for-pisound">Starting Jack Server for pisound</h3>
-<p>In case you don't have qjackctl installed, run:
-<div class="highlight"><pre><span></span>sudo apt-get install qjackctl
-</pre></div>
-
-To start the server, configured to use pisound, follow these steps:</p>
-<ol>
-<li>Run QJackCtl (either from the Applications-&gt;Sound &amp; Video menu or executing 'qjackctl' in a terminal.</li>
-<li>Click Setup...</li>
-<li>Make sure that the following settings are set correctly:</li>
-<li>Sample Rate is one of '48000', '96000' or '192000'. (The higher the sample rate, the more there is data to process for software. However, higher sample rate has slightly less latency, if software is fast enough to keep up!)</li>
-<li>Input Device and Output Device both are set to 'hw:pisound'.</li>
-<li>MIDI Driver is set to 'seq'</li>
-<li>Close the Setup window.</li>
-<li>Click Start.</li>
-<li>If everything is fine, you should see 'Started' text written at the top left corner of the status area.</li>
-</ol>
-<p><strong>Note:</strong> If something goes wrong, try different settings in Setup, and make sure that the sound card is not being exclusively used by some other software.</p>
-<p><img alt="jack-setup" src="https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/jack_setup.png" /></p>
-<h3 id="sonic-pi-workaround-guide">Sonic Pi Workaround Guide</h3>
-<p>Sonic Pi has a special case for Raspberry Pi during startup. By default it kills the existing jackd server, and starts one configured to use the built in Raspberry Pi audio with hardcoded parameters. That makes Sonic Pi unusable with other audio cards, unless the below workaround is applied, so Sonic Pi would behave in the same way as if it's run on any other linux device.</p>
-<p>Do this once (might need to be done again in case any software updates touch it):</p>
-<ul>
-<li>Edit <code>/opt/sonic-pi/app/server/sonicpi/scsynthexternal.rb</code> as root user using your favorite editor (such as vim, nano, geany, or ...).</li>
-<li>Locate the following code snippet:
-<div class="highlight"><pre><span></span>     case os
-     when :raspberry
-       boot_server_raspberry_pi
-     when :linux
-       boot_server_linux
-     when :osx
-       boot_server_osx
-     when :windows
-       boot_server_windows
-     end
-     true
-</pre></div>
-</li>
-<li>Change it to:
-<div class="highlight"><pre><span></span>     case os
-     when :raspberry
-       #boot_server_raspberry_pi
-       boot_server_linux
-     when :linux
-       boot_server_linux
-     when :osx
-       boot_server_osx
-     when :windows
-       boot_server_windows
-     end
-     true
-</pre></div>
-</li>
-</ul>
-<p>Do this every time you want to start Sonic Pi:</p>
-<ul>
-<li>Start Jack server configured to use pisound.</li>
-<li>Start Sonic Pi, it will connect to the Jack server you had just launched.</li>
 </ul>
               
               

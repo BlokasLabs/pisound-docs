@@ -4,7 +4,7 @@ Using pisound you can run your Pure Data patches straight from a USB thumb drive
 
 Plug in a USB drive containing your Pure Data patch, main patch file called **main.pd**, plug in any additional MIDI controller/keyboard, press The Button and Voilà!
 
-You can read more about The Button functionality [here](#the-button).
+You can read more about The Button functionality [here](the-button).
 
 If you haven't already, you can install Pure Data by running the following command in a Terminal window:
 

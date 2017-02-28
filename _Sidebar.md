@@ -4,4 +4,4 @@
 * [[Software]]
 * [The Button](the-button)
 * [Projects](Example-projects)
-* [HowTos](howtos)
+* [FAQs](howtos)

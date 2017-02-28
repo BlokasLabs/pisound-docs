@@ -15,7 +15,7 @@
     
     
       
-        <title>Software - pisound Docs</title>
+        <title>The Button - pisound Docs</title>
       
     
     
@@ -79,7 +79,7 @@
             
               
             
-            Software
+            The Button
           
         </span>
       </div>
@@ -216,6 +216,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../software/" title="Software" class="md-nav__link">
+      Software
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -227,11 +239,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Software
+        The Button
       </label>
     
-    <a href="./" title="Software" class="md-nav__link md-nav__link--active">
-      Software
+    <a href="./" title="The Button" class="md-nav__link md-nav__link--active">
+      The Button
     </a>
     
       
@@ -245,56 +257,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installing-the-driver" title="Installing The Driver" class="md-nav__link">
-    Installing The Driver
+  <a href="#safely-shutdown-the-os" title="Safely Shutdown The OS" class="md-nav__link">
+    Safely Shutdown The OS
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#verifying-it-works" title="Verifying It Works" class="md-nav__link">
-    Verifying It Works
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#feedback" title="Feedback" class="md-nav__link">
-    Feedback
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compatible-software" title="Compatible Software" class="md-nav__link">
-    Compatible Software
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#starting-jack-server-for-pisound" title="Starting Jack Server for pisound" class="md-nav__link">
-    Starting Jack Server for pisound
+  <a href="#start-a-pure-data-patch" title="Start a Pure Data Patch" class="md-nav__link">
+    Start a Pure Data Patch
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#sonic-pi-workaround-guide" title="Sonic Pi Workaround Guide" class="md-nav__link">
-    Sonic Pi Workaround Guide
+      
+        <li class="md-nav__item">
+  <a href="#turn-off-eject-usb" title="Turn Off &amp; Eject USB" class="md-nav__link">
+    Turn Off &amp; Eject USB
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#toggle-wifi-hotspot-mode" title="Toggle WiFi Hotspot Mode" class="md-nav__link">
+    Toggle WiFi Hotspot Mode
+  </a>
   
 </li>
       
@@ -302,18 +288,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../the-button/" title="The Button" class="md-nav__link">
-      The Button
-    </a>
   </li>
 
     
@@ -350,56 +324,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installing-the-driver" title="Installing The Driver" class="md-nav__link">
-    Installing The Driver
+  <a href="#safely-shutdown-the-os" title="Safely Shutdown The OS" class="md-nav__link">
+    Safely Shutdown The OS
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#verifying-it-works" title="Verifying It Works" class="md-nav__link">
-    Verifying It Works
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#feedback" title="Feedback" class="md-nav__link">
-    Feedback
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compatible-software" title="Compatible Software" class="md-nav__link">
-    Compatible Software
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#starting-jack-server-for-pisound" title="Starting Jack Server for pisound" class="md-nav__link">
-    Starting Jack Server for pisound
+  <a href="#start-a-pure-data-patch" title="Start a Pure Data Patch" class="md-nav__link">
+    Start a Pure Data Patch
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#sonic-pi-workaround-guide" title="Sonic Pi Workaround Guide" class="md-nav__link">
-    Sonic Pi Workaround Guide
+      
+        <li class="md-nav__item">
+  <a href="#turn-off-eject-usb" title="Turn Off &amp; Eject USB" class="md-nav__link">
+    Turn Off &amp; Eject USB
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#toggle-wifi-hotspot-mode" title="Toggle WiFi Hotspot Mode" class="md-nav__link">
+    Toggle WiFi Hotspot Mode
+  </a>
   
 </li>
       
@@ -416,137 +364,35 @@
                
               
                 
-                <h1 id="software">Software</h1>
-<p>pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated in mainline Raspbian Linux kernel (ver. 4.4.27+). The support driver for pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon.</p>
-<p>The pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on <a href="../[#the-button">The Button</a> functionality below.</p>
-<p>You can find the source code for The Button <a href="https://github.com/BlokasLabs/pisound/">here</a> and kernel module <a href="https://github.com/raspberrypi/linux/blob/rpi-4.9.y/sound/soc/bcm/pisound.c">here</a>.</p>
-<h2 id="installing-the-driver">Installing The Driver</h2>
-<p>To install the user-space button daemon and enable pisound, run the below commands in a terminal.</p>
-<div class="highlight"><pre><span></span>wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
-chmod +x install-pisound.sh
-./install-pisound.sh
-</pre></div>
-
-
-<p>The above installs a button daemon named 'pisound-btn' and its scripts for button actions. If there were existing scripts, they are first backed up to <code>/usr/local/etc/pisound/backups/&lt;current date&gt;</code>, so if you had overridden the default functions, you will have to restore your scripts manually.</p>
-<h3 id="verifying-it-works">Verifying It Works</h3>
-<p>Once the system boots up, run a terminal and run:
-<div class="highlight"><pre><span></span> amidi -l
- arecord -l
- aplay -l
-</pre></div>
-
-You should see output similar to:
-<div class="highlight"><pre><span></span> pi@raspberrypi:~ $ amidi -l
- Dir Device    Name
- IO  hw:1,0    pisound MIDI PS-10JAD4Q
- pi@raspberrypi:~ $ arecord -l
- **** List of CAPTURE Hardware Devices ****
- card 1: pisound [pisound], device 0: PS-10JAD4Q snd-soc-dummy-dai-0 []
-   Subdevices: 1/1
-   Subdevice #0: subdevice #0
- pi@raspberrypi:~ $ aplay -l
- **** List of PLAYBACK Hardware Devices ****
- card 0: ALSA [bcm2835 ALSA], device 0: bcm2835 ALSA [bcm2835 ALSA]
-   Subdevices: 8/8
-   Subdevice #0: subdevice #0
-   Subdevice #1: subdevice #1
-   Subdevice #2: subdevice #2
-   Subdevice #3: subdevice #3
-   Subdevice #4: subdevice #4
-   Subdevice #5: subdevice #5
-   Subdevice #6: subdevice #6
-   Subdevice #7: subdevice #7
- card 0: ALSA [bcm2835 ALSA], device 1: bcm2835 ALSA [bcm2835 IEC958/HDMI]
-   Subdevices: 1/1
-   Subdevice #0: subdevice #0
- card 1: pisound [pisound], device 0: PS-10JAD4Q snd-soc-dummy-dai-0 []
-   Subdevices: 1/1
-   Subdevice #0: subdevice #0
-</pre></div>
-</p>
-<h3 id="feedback">Feedback</h3>
-<p>In case you're having difficulties with getting pisound's driver to run, contact us and the community here: <a href="http://community.blokas.io/">http://community.blokas.io/</a>, provide the exact error and the last command you've executed.</p>
-<h2 id="compatible-software">Compatible Software</h2>
-<p>Please add or let us know if you have pisound working on a distribution that is not in the list yet!</p>
-<ul>
-<li><a href="https://www.raspbian.org/">Raspbian</a></li>
-<li><a href="https://www.archlinux.org/">arch linux</a></li>
-<li><a href="https://ubuntu-mate.org/raspberry-pi/">Ubuntu Mate</a></li>
-</ul>
-<p>Software we tested which required no special changes, in alphabetic order:</p>
-<ul>
-<li>Audacity</li>
-<li>Carla / LV2</li>
-<li>darkice and icecast</li>
-<li>Jack</li>
-<li>Supercollider</li>
-<li>Pure Data</li>
-</ul>
-<p>Software which required tweaks or workarounds, in alphabetic order:</p>
-<ul>
-<li>Sonic Pi</li>
-<li><a href="http://community.blokas.io/t/setting-up-volumio/81">Volumio</a></li>
-</ul>
-<h3 id="starting-jack-server-for-pisound">Starting Jack Server for pisound</h3>
-<p>In case you don't have qjackctl installed, run:
-<div class="highlight"><pre><span></span>sudo apt-get install qjackctl
-</pre></div>
-
-To start the server, configured to use pisound, follow these steps:</p>
+                <h1 id="the-button">The Button</h1>
+<p>The Button is a customizable button on the pisound board. There's 4 possible interactions with it:</p>
 <ol>
-<li>Run QJackCtl (either from the Applications-&gt;Sound &amp; Video menu or executing 'qjackctl' in a terminal.</li>
-<li>Click Setup...</li>
-<li>Make sure that the following settings are set correctly:</li>
-<li>Sample Rate is one of '48000', '96000' or '192000'. (The higher the sample rate, the more there is data to process for software. However, higher sample rate has slightly less latency, if software is fast enough to keep up!)</li>
-<li>Input Device and Output Device both are set to 'hw:pisound'.</li>
-<li>MIDI Driver is set to 'seq'</li>
-<li>Close the Setup window.</li>
-<li>Click Start.</li>
-<li>If everything is fine, you should see 'Started' text written at the top left corner of the status area.</li>
+<li>Press, hold and release after 1 or more seconds passed. Executes <code>/usr/local/etc/pisound/hold.sh</code></li>
+<li>Click once. Executes <code>/usr/local/etc/pisound/single_click.sh</code></li>
+<li>Double click. Executes <code>/usr/local/etc/pisound/double_click.sh</code></li>
+<li>Triple click. Executes <code>/usr/local/etc/pisound/triple_click.sh</code></li>
 </ol>
-<p><strong>Note:</strong> If something goes wrong, try different settings in Setup, and make sure that the sound card is not being exclusively used by some other software.</p>
-<p><img alt="jack-setup" src="https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/jack_setup.png" /></p>
-<h3 id="sonic-pi-workaround-guide">Sonic Pi Workaround Guide</h3>
-<p>Sonic Pi has a special case for Raspberry Pi during startup. By default it kills the existing jackd server, and starts one configured to use the built in Raspberry Pi audio with hardcoded parameters. That makes Sonic Pi unusable with other audio cards, unless the below workaround is applied, so Sonic Pi would behave in the same way as if it's run on any other linux device.</p>
-<p>Do this once (might need to be done again in case any software updates touch it):</p>
-<ul>
-<li>Edit <code>/opt/sonic-pi/app/server/sonicpi/scsynthexternal.rb</code> as root user using your favorite editor (such as vim, nano, geany, or ...).</li>
-<li>Locate the following code snippet:
-<div class="highlight"><pre><span></span>     case os
-     when :raspberry
-       boot_server_raspberry_pi
-     when :linux
-       boot_server_linux
-     when :osx
-       boot_server_osx
-     when :windows
-       boot_server_windows
-     end
-     true
+<p>Every <strong>down</strong> and <strong>up</strong> movement will also execute <code>/usr/local/etc/pisound/down.sh</code> and <code>/usr/local/etc/pisound/up.sh</code> respectively.</p>
+<p>You may modify these scripts to do whatever you wish. Keep in mind that whenever you install / update the pisound-btn, if there were existing scripts in above locations, they are first backed up to <code>/usr/local/etc/pisound/backups/&lt;current date&gt;</code>, so if you had overridden the default scripts, you will have to restore your scripts manually.</p>
+<p><strong>Note:</strong> The pisound-btn daemon process must be running in order for the button to work. The 'make install' automatically adds it to the Desktop autostart.</p>
+<h2 id="safely-shutdown-the-os">Safely Shutdown The OS</h2>
+<p>By default, holding the button down for more than 1 second and releasing will cause the system to shutdown cleanly by executing <code>sudo shutdown now</code>. The MIDI activity LEDs will blink ten times quickly to confirm that the hold action was triggered. It is safe to unplug the power supply once RPi's activity LEDs stop flashing on and off. To restart, unplug and plug the power in again.</p>
+<h2 id="start-a-pure-data-patch">Start a Pure Data Patch</h2>
+<p>By default, clicking the button once runs a script that scans the attached media storage devices for '<strong>main.pd</strong>', or, if not found in external media, scans <code>/usr/local/etc/pisound-patches/</code>, kills all existing instances of Pure Data, then starts a new instance opening the file, enables audio and connects all the detected MIDI inputs and outputs to the Pure Data's virtual MIDI ports. ALSA engine of Pure Data is used.</p>
+<p>The script will blink the MIDI Activity LEDs once just after it reacted to the click, and again 2 times after it succeeded launching the patch, or one long duration blink if an error occurred or no patch was found.</p>
+<h2 id="turn-off-eject-usb">Turn Off &amp; Eject USB</h2>
+<p>Double clicking will stop all Pure Data instances and unmount all attached external media, so it can be safely removed.</p>
+<h2 id="toggle-wifi-hotspot-mode">Toggle WiFi Hotspot Mode</h2>
+<p>Triple-clicking will reconfigure the WiFi of RPi3 board or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.</p>
+<p>By default, the AP will appear as '<strong>pisound</strong>', and the default password is '<strong>blokaslabs</strong>' (without quotes). You can change the name and password by modifying <code>/usr/local/etc/pisound/hostapd.conf</code> Keep in mind that this file gets backed up and overwritten after reinstalling or updating the pisound-btn software.</p>
+<p>The default IP address of RPi in WiFi Hotspot mode is 172.24.1.1 which you can use for ssh, VNC or wireless OSC / MIDI data! That means that you can easily interact with your system using just your laptop or phone, no more wires apart from power supply is needed! And it gets better, if the LAN cable is connected to RPi, it will share the Internet with the connected devices over WiFi!</p>
+<p>To send MIDI OSC messages from your other devices to pisound, connect to the pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings.</p>
+<p>To access RPi using ssh and/or VNC, make sure they're enabled in <code>raspi-config</code>. To enable, run in terminal:
+<div class="highlight"><pre><span></span>sudo raspi-config
 </pre></div>
-</li>
-<li>Change it to:
-<div class="highlight"><pre><span></span>     case os
-     when :raspberry
-       #boot_server_raspberry_pi
-       boot_server_linux
-     when :linux
-       boot_server_linux
-     when :osx
-       boot_server_osx
-     when :windows
-       boot_server_windows
-     end
-     true
-</pre></div>
-</li>
-</ul>
-<p>Do this every time you want to start Sonic Pi:</p>
-<ul>
-<li>Start Jack server configured to use pisound.</li>
-<li>Start Sonic Pi, it will connect to the Jack server you had just launched.</li>
-</ul>
+
+Go to <strong>Interfacing Options</strong> and make sure <strong>ssh</strong> and <strong>VNC</strong> are enabled. If you don't see these options, go to <strong>Advanced Options</strong> and do <strong>Update</strong>.</p>
+<p>Triple-clicking again will revert to regular WiFi behavior.</p>
               
               
             </article>
@@ -560,7 +406,7 @@ To start the server, configured to use pisound, follow these steps:</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../midi/" title="MIDI" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../software/" title="Software" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -569,19 +415,19 @@ To start the server, configured to use pisound, follow these steps:</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                MIDI
+                Software
               </span>
             </div>
           </a>
         
         
-          <a href="../the-button/" title="The Button" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Example-projects/" title="Example Projects" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                The Button
+                Example Projects
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

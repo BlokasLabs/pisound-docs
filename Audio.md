@@ -20,7 +20,7 @@ In digital audio equipment it takes time for the signal at input to be processed
 An oscillogram showing audio latency of 2.092 ms. pisound and Raspberry Pi 2 working at sample rate of 192 kHz
 
 ![spectrum of looped white noise](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/48kHz_BW.jpg)
-A spectrum of looped white noise signal showing the bandwidth of the pisound
+Figure 1  Response of the sine signal fed to loop-backed (digital→DAC→ADC→digital) pisound showing the Signal-to-Noise Ratio (SNR) of 110 dB. Calculated Total Harmonic Distortion (THD) is less than 0.05%.
 
 ![spectrum of looped 1 kHz sine signal](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/48kHz_THD.jpg)
-A spectrum of looped 1 kHz sine signal showing the THD of the pisound
+Figure 2 Frequency response of the white noise fed to loop-backed (digital→DAC→ADC→digital) pisound showing the bandwidth (BW) of the device and how it is estimated.

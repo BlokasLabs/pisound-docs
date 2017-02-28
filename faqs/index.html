@@ -15,7 +15,7 @@
     
     
       
-        <title>HowTos - pisound Docs</title>
+        <title>FAQs - pisound Docs</title>
       
     
     
@@ -79,7 +79,7 @@
             
               
             
-            HowTos
+            FAQs
           
         </span>
       </div>
@@ -286,8 +286,8 @@
       
     
     
-    <a href="./" title="HowTos" class="md-nav__link md-nav__link--active">
-      HowTos
+    <a href="./" title="FAQs" class="md-nav__link md-nav__link--active">
+      FAQs
     </a>
     
   </li>
@@ -312,16 +312,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#starting-jack-server-for-pisound" title="Starting Jack Server for pisound" class="md-nav__link">
-    Starting Jack Server for pisound
+  <a href="#how-to-start-jack-server-for-pisound" title="How to start Jack Server for pisound?" class="md-nav__link">
+    How to start Jack Server for pisound?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sonic-pi-workaround-guide" title="Sonic Pi Workaround Guide" class="md-nav__link">
-    Sonic Pi Workaround Guide
+  <a href="#how-to-use-sonic-pi-with-pisound" title="How to use Sonic Pi with pisound?" class="md-nav__link">
+    How to use Sonic Pi with pisound?
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wifi-midi" title="WiFi-MIDI" class="md-nav__link">
+    WiFi-MIDI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -338,9 +351,9 @@
                
               
                 
-                  <h1>HowTos</h1>
+                  <h1>FAQs</h1>
                 
-                <h3 id="starting-jack-server-for-pisound">Starting Jack Server for pisound</h3>
+                <h2 id="how-to-start-jack-server-for-pisound">How to start Jack Server for pisound?</h2>
 <p>In case you don't have qjackctl installed, run:
 <div class="highlight"><pre><span></span>sudo apt-get install qjackctl
 </pre></div>
@@ -359,7 +372,7 @@ To start the server, configured to use pisound, follow these steps:</p>
 </ol>
 <p><strong>Note:</strong> If something goes wrong, try different settings in Setup, and make sure that the sound card is not being exclusively used by some other software.</p>
 <p><img alt="jack-setup" src="https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/jack_setup.png" /></p>
-<h3 id="sonic-pi-workaround-guide">Sonic Pi Workaround Guide</h3>
+<h2 id="how-to-use-sonic-pi-with-pisound">How to use Sonic Pi with pisound?</h2>
 <p>Sonic Pi has a special case for Raspberry Pi during startup. By default it kills the existing jackd server, and starts one configured to use the built in Raspberry Pi audio with hardcoded parameters. That makes Sonic Pi unusable with other audio cards, unless the below workaround is applied, so Sonic Pi would behave in the same way as if it's run on any other linux device.</p>
 <p>Do this once (might need to be done again in case any software updates touch it):</p>
 <ul>
@@ -399,6 +412,17 @@ To start the server, configured to use pisound, follow these steps:</p>
 <li>Start Jack server configured to use pisound.</li>
 <li>Start Sonic Pi, it will connect to the Jack server you had just launched.</li>
 </ul>
+<h3 id="wifi-midi">WiFi-MIDI</h3>
+<p>Making use of your phone or a tablet for controlling your patches on pisound is relatively easy, just follow these steps:</p>
+<ol>
+<li>Triple-click the button to enable the WiFi hotspot mode, it also starts touchosc2midi.</li>
+<li>Connect to "pisound" WiFi access point using a phone or a tablet, using 'blokaslabs' as the password.</li>
+<li>Open TouchOSC, MyOSC or similar app on your external device.</li>
+<li>Host IP address in the app's settings should be 172.24.1.1</li>
+<li>Insert a USB stick with Pd patch into your Raspberry Pi.</li>
+<li>Click the pisound button once to launch the patch and setup the internal MIDI connections.</li>
+<li>That's it. From this point you can send messages from your phone/tablet to your Pure Data patch. The MIDI CC / Note number depends on the configuration of the app, for example, see the TouchOSC documentation here: <a href="https://hexler.net/docs/touchosc-editor-controls-properties">https://hexler.net/docs/touchosc-editor-controls-properties</a></li>
+</ol>
               
               
             </article>

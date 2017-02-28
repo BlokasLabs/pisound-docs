@@ -1,7 +1,7 @@
 # Getting Started
 ![pisound-side](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-side.png)
 
-pisound is an ultra-low latency high-quality soundcard and MIDI interface specially designed for Raspberry Pi pocket computers. Equipped with 192kHz 24-bit Stereo [Input and Output](audio) driven by the legendary Burr-Brown chips, DIN-5 [MIDI Input and Output](midi) ports, [user-customizable button](the-button) and bundled [software tools](software), it has everything you need to bring your audio projects to life in no time.
+pisound is an ultra-low latency high-quality soundcard and MIDI interface specially designed for Raspberry Pi pocket computers. Equipped with 192kHz 24-bit [Stereo Input and Output](audio) driven by the legendary Burr-Brown chips, DIN-5 [MIDI Input and Output](midi) ports, [user-customizable button](the-button) and bundled [software tools](software), it has everything you need to bring your audio projects to life in no time.
 
 ## Hardware Setup
 

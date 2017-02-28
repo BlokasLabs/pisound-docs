@@ -422,7 +422,7 @@
 <p>Triple-clicking will reconfigure the WiFi of RPi3 board or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.</p>
 <p>By default, the AP will appear as '<strong>pisound</strong>', and the default password is '<strong>blokaslabs</strong>' (without quotes). You can change the name and password by modifying <code>/usr/local/etc/pisound/hostapd.conf</code> Keep in mind that this file gets backed up and overwritten after reinstalling or updating the pisound-btn software.</p>
 <p>The default IP address of RPi in WiFi Hotspot mode is 172.24.1.1 which you can use for ssh, VNC or wireless OSC / MIDI data! That means that you can easily interact with your system using just your laptop or phone, no more wires apart from power supply is needed! And it gets better, if the LAN cable is connected to RPi, it will share the Internet with the connected devices over WiFi!</p>
-<p>To send MIDI OSC messages from your other devices to pisound, connect to the pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings.</p>
+<p>To send MIDI OSC messages from your other devices to pisound, connect to the pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings. See [[here|faqs#wifi-midi]] for more information.</p>
 <p>To access RPi using ssh and/or VNC, make sure they're enabled in <code>raspi-config</code>. To enable, run in terminal:
 <div class="highlight"><pre><span></span>sudo raspi-config
 </pre></div>

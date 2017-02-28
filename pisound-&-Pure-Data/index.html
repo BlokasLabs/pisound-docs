@@ -15,7 +15,7 @@
     
     
       
-        <title>The Button - pisound Docs</title>
+        <title>pisound & Pure Data - pisound Docs</title>
       
     
     
@@ -79,7 +79,7 @@
             
               
             
-            The Button
+            pisound & Pure Data
           
         </span>
       </div>
@@ -228,6 +228,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../the-button/" title="The Button" class="md-nav__link">
+      The Button
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -238,68 +250,10 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        The Button
-      </label>
-    
-    <a href="./" title="The Button" class="md-nav__link md-nav__link--active">
-      The Button
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#safely-shutdown-the-os" title="Safely Shutdown The OS" class="md-nav__link">
-    Safely Shutdown The OS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#start-a-pure-data-patch" title="Start a Pure Data Patch" class="md-nav__link">
-    Start a Pure Data Patch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#turn-off-eject-usb" title="Turn Off &amp; Eject USB" class="md-nav__link">
-    Turn Off &amp; Eject USB
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#toggle-wifi-hotspot-mode" title="Toggle WiFi Hotspot Mode" class="md-nav__link">
-    Toggle WiFi Hotspot Mode
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../pisound-%26-Pure-Data/" title="pisound & Pure Data" class="md-nav__link">
+    <a href="./" title="pisound & Pure Data" class="md-nav__link md-nav__link--active">
       pisound & Pure Data
     </a>
+    
   </li>
 
     
@@ -344,39 +298,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#safely-shutdown-the-os" title="Safely Shutdown The OS" class="md-nav__link">
-    Safely Shutdown The OS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#start-a-pure-data-patch" title="Start a Pure Data Patch" class="md-nav__link">
-    Start a Pure Data Patch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#turn-off-eject-usb" title="Turn Off &amp; Eject USB" class="md-nav__link">
-    Turn Off &amp; Eject USB
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#toggle-wifi-hotspot-mode" title="Toggle WiFi Hotspot Mode" class="md-nav__link">
-    Toggle WiFi Hotspot Mode
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -388,35 +309,13 @@
                
               
                 
-                <h1 id="the-button">The Button</h1>
-<p>The Button is a customizable button on the pisound board. There's 4 possible interactions with it:</p>
-<ol>
-<li>Press, hold and release after 1 or more seconds passed. Executes <code>/usr/local/etc/pisound/hold.sh</code></li>
-<li>Click once. Executes <code>/usr/local/etc/pisound/single_click.sh</code></li>
-<li>Double click. Executes <code>/usr/local/etc/pisound/double_click.sh</code></li>
-<li>Triple click. Executes <code>/usr/local/etc/pisound/triple_click.sh</code></li>
-</ol>
-<p>Every <strong>down</strong> and <strong>up</strong> movement will also execute <code>/usr/local/etc/pisound/down.sh</code> and <code>/usr/local/etc/pisound/up.sh</code> respectively.</p>
-<p>You may modify these scripts to do whatever you wish. Keep in mind that whenever you install / update the pisound-btn, if there were existing scripts in above locations, they are first backed up to <code>/usr/local/etc/pisound/backups/&lt;current date&gt;</code>, so if you had overridden the default scripts, you will have to restore your scripts manually.</p>
-<p><strong>Note:</strong> The pisound-btn daemon process must be running in order for the button to work. The 'make install' automatically adds it to the Desktop autostart.</p>
-<h2 id="safely-shutdown-the-os">Safely Shutdown The OS</h2>
-<p>By default, holding the button down for more than 1 second and releasing will cause the system to shutdown cleanly by executing <code>sudo shutdown now</code>. The MIDI activity LEDs will blink ten times quickly to confirm that the hold action was triggered. It is safe to unplug the power supply once RPi's activity LEDs stop flashing on and off. To restart, unplug and plug the power in again.</p>
-<h2 id="start-a-pure-data-patch">Start a Pure Data Patch</h2>
-<p>By default, clicking the button once runs a script that scans the attached media storage devices for '<strong>main.pd</strong>', or, if not found in external media, scans <code>/usr/local/etc/pisound-patches/</code>, kills all existing instances of Pure Data, then starts a new instance opening the file, enables audio and connects all the detected MIDI inputs and outputs to the Pure Data's virtual MIDI ports. ALSA engine of Pure Data is used.</p>
-<p>The script will blink the MIDI Activity LEDs once just after it reacted to the click, and again 2 times after it succeeded launching the patch, or one long duration blink if an error occurred or no patch was found.</p>
-<h2 id="turn-off-eject-usb">Turn Off &amp; Eject USB</h2>
-<p>Double clicking will stop all Pure Data instances and unmount all attached external media, so it can be safely removed.</p>
-<h2 id="toggle-wifi-hotspot-mode">Toggle WiFi Hotspot Mode</h2>
-<p>Triple-clicking will reconfigure the WiFi of RPi3 board or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.</p>
-<p>By default, the AP will appear as '<strong>pisound</strong>', and the default password is '<strong>blokaslabs</strong>' (without quotes). You can change the name and password by modifying <code>/usr/local/etc/pisound/hostapd.conf</code> Keep in mind that this file gets backed up and overwritten after reinstalling or updating the pisound-btn software.</p>
-<p>The default IP address of RPi in WiFi Hotspot mode is 172.24.1.1 which you can use for ssh, VNC or wireless OSC / MIDI data! That means that you can easily interact with your system using just your laptop or phone, no more wires apart from power supply is needed! And it gets better, if the LAN cable is connected to RPi, it will share the Internet with the connected devices over WiFi!</p>
-<p>To send MIDI OSC messages from your other devices to pisound, connect to the pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings.</p>
-<p>To access RPi using ssh and/or VNC, make sure they're enabled in <code>raspi-config</code>. To enable, run in terminal:
-<div class="highlight"><pre><span></span>sudo raspi-config
+                <h1 id="pisound-pure-data">pisound &amp; Pure Data</h1>
+<p>Using pisound you can run your Pure Data patches straight from a USB thumb drive with a press of a button with no need to connect an external monitor, keyboard or mouse.</p>
+<p>Plug in a USB drive containing your Pure Data patch, main patch file called <strong>main.pd</strong>, plug in any additional MIDI controller/keyboard, press The Button and Voilà!</p>
+<p>You can read more about The Button functionality <a href="#the-button">here</a>.</p>
+<p>If you haven't already, you can install Pure Data by running the following command in a Terminal window:</p>
+<div class="highlight"><pre><span></span>sudo apt-get install puredata
 </pre></div>
-
-Go to <strong>Interfacing Options</strong> and make sure <strong>ssh</strong> and <strong>VNC</strong> are enabled. If you don't see these options, go to <strong>Advanced Options</strong> and do <strong>Update</strong>.</p>
-<p>Triple-clicking again will revert to regular WiFi behavior.</p>
               
               
             </article>
@@ -430,7 +329,7 @@ Go to <strong>Interfacing Options</strong> and make sure <strong>ssh</strong> an
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../software/" title="Software" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../the-button/" title="The Button" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -439,19 +338,19 @@ Go to <strong>Interfacing Options</strong> and make sure <strong>ssh</strong> an
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Software
+                The Button
               </span>
             </div>
           </a>
         
         
-          <a href="../pisound-%26-Pure-Data/" title="pisound & Pure Data" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../specs/" title="Specs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                pisound & Pure Data
+                Specs
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

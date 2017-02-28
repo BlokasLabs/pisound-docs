@@ -73,4 +73,4 @@ Making use of your phone or a tablet for controlling your patches on pisound is 
 1. Host IP address in the app's settings should be 172.24.1.1
 1. Insert a USB stick with Pd patch into your Raspberry Pi.
 1. Click the pisound button once to launch the patch and setup the internal MIDI connections.
-1. That's it. From this point you can send messages from your phone/tablet to your Pure Data patch. The MIDI CC / Note number depends on the configuration of the app, for example, see the TouchOSC documentation here: https://hexler.net/docs/touchosc-editor-controls-properties
+1. That's it. From this point you can send messages from your phone/tablet to software running on your Raspberry Pi. The MIDI CC / Note number depends on the configuration of the app, for more information, see the TouchOSC documentation here: https://hexler.net/docs/touchosc-editor-controls-properties

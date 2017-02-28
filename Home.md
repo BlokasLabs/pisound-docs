@@ -5,13 +5,13 @@ pisound is an ultra-low latency high-quality soundcard and MIDI interface specia
 
 ## Hardware Setup
 
-Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. See compatible Raspberry Pi models [[here|Specs#supported-raspberry-pi-models]].
+Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. See compatible Raspberry Pi models [here](specs#supported-raspberry-pi-models).
 
 ## Driver Setup
 
 If you don't have any Linux OS running on your Raspberry Pi, we suggest starting with [Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/README.md).
 
-[[Power your Raspberry Pi up|Specs#power-supply]] and install the driver by running the below commands in a terminal window:
+[Power your Raspberry Pi up](specs#power-supply) and install the driver by running the below commands in a terminal window:
 
 ```bash
 wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
@@ -23,13 +23,13 @@ A couple of simple [Y/n] questions will be presented about whether to install so
 
 After driver installation process is complete, reboot your Raspberry Pi (if the script asked for it at the end) and that's it. Now you can choose pisound as your main sound card through native Volume widget and use it with any Linux Audio/MIDI software. Done! Thank You!
 
-If you hit any issues during driver setup, please see [[Verifying It Works|Software#verifying-it-works]] and provide us [[feedback|Software#feedback]].
+If you hit any issues during driver setup, please see [Verifying It Works](software#verifying-it-works) and provide us [feedback](software#feedback).
 
 ## Connect Things
 
 ![pisound-connections](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/connections.png)
 
-Raspberry Pi in combination with pisound allows you to connect a huge variety of different types of audio-related gear. Thanks to pisound's Stereo Input with wide-range gain control design, you can connect audio sources ranging from your bass guitar to a CD player or your modular synth. Using Stereo Output you can hook pisound to any mixer, speakers or just plug in your headphones. Volume and Gain levels can be controlled using on-board knobs. For MIDI connectivity you also have a lot of options - MIDI In/Out through on-board DIN-5 sockets, USB-MIDI via RPi's USB ports or even [[WiFi-MIDI|The Button#toggle-wifi-hotspot-mode]]!
+Raspberry Pi in combination with pisound allows you to connect a huge variety of different types of audio-related gear. Thanks to pisound's Stereo Input with wide-range gain control design, you can connect audio sources ranging from your bass guitar to a CD player or your modular synth. Using Stereo Output you can hook pisound to any mixer, speakers or just plug in your headphones. Volume and Gain levels can be controlled using on-board knobs. For MIDI connectivity you also have a lot of options - MIDI In/Out through on-board DIN-5 sockets, USB-MIDI via RPi's USB ports or even [WiFi-MIDI](the-button#toggle-wifi-hotspot-mode)!
 
 ## Print Your Own Case
 

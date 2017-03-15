@@ -11,3 +11,15 @@ If you haven't already, you can install Pure Data by running the following comma
 ```
 sudo apt-get install puredata
 ```
+
+## Configuring Pure Data
+
+By default, Pure Data is launched when [single-clicking](https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/single_click.sh#L88) the button as so:
+
+```
+nohup puredata -alsa -audioadddev pisound -alsamidi -channels 2 -r 48000 -mididev 1 -send ";pd dsp 1" "$PURE_DATA_PATCH" > /dev/null 2>&1 &
+```
+
+You may want to customize the command line arguments for Pure Data according to your own needs. To do that, check the [Pure Data's Command Line](https://puredata.info/docs/faq/commandline) documentation and edit /usr/local/etc/pisound/single-click.sh.
+
+Keep in mind that updating pisound's software will backup and overwrite your scripts, so in that case, you may want to re-apply your changes. See [here](software/#installing-the-driver) for more details.

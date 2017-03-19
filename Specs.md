@@ -6,7 +6,6 @@ The shield itself conforms to Raspberry Pi’s Hardware Attached on Top (HAT) sp
 
 **Parameter**|**Conditions**|**Value**
 :-----|:-----|:-----
-
 Input/Output Coupling|-|AC and DC respectively
 Input/Output Channels|-|2 / 2 (Left and Right)
 Input/Output Type|-|¼" (6.35mm) Stereo

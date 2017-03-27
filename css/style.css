@@ -14,8 +14,22 @@ html [data-md-color-primary=blue] .md-nav--primary .md-nav__title--site {
     background-color: #ffeb68 !important;
 }}
 
+body, input {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.md-typeset blockquote, .md-typeset ol, .md-typeset p, .md-typeset ul, .md-typeset {
+	font-size: 18px !important;
+	line-height: 26px !important;
+}
+
 .md-typeset table:not([class]) {
 	box-shadow: none !important;
+}
+
+.md-nav__item--active>.md-nav__link, .md-nav__link:active {
+    color: #000;
+    font-weight: bold;
 }
 
 .md-nav__source {
@@ -23,7 +37,7 @@ html [data-md-color-primary=blue] .md-nav--primary .md-nav__title--site {
 }
 
 a:hover {
-	color: #f1693c !important;
+	color: #85e0bd !important;
 }
 
 .md-header {

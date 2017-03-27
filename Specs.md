@@ -6,19 +6,21 @@ The shield itself conforms to Raspberry Pi’s Hardware Attached on Top (HAT) sp
 
 **Parameter**|**Conditions**|**Value**
 :-----|:-----|:-----
-Input/Output connectors|-|1/4" (6.35mm) stereo jacks
-Sampling frequency (Fs)|-|48kHz, 96kHz, 192kHz
-Input/Output resolution|-|24bit
+Input/Output Coupling|-|AC and DC respectively
+Input/Output Channels|-|2 / 2 (Left and Right)
+Input/Output Type|-|¼" (6.35mm) Stereo
+Input/Output Resolution|-|24bit
+Sampling Frequency (Fs)|-|48kHz, 96kHz, 192kHz
 Input/Output SNR@1kHz|G = 0 dB|110dB
-Input impedance|-|100kOhm &#124;&#124; 2pF
-Input gain (G)|-|0dB to +40dB
-Input clip LED|-|Yes
-Input clip voltage|G = 0 dB|5V (peak to peak)
-Full scale output|Load impedance > 1 kOhm|0V to 2.1V (RMS)
-Loopback bandwidth (-3 dB)|G = 0 dB, Fs = 48 kHz|7.5Hz - 23kHz
+Input Impedance|-|100kOhm &#124;&#124; 2pF
+Input Gain (G)|-|0dB to +40dB
+Input Clip LED|-|Yes
+Input Clip Voltage|G = 0 dB|5V (peak to peak)
+Full Scale Output|Load impedance > 1 kOhm|0V to 2.1V (RMS)
+Loopback Bandwidth (-3 dB)|G = 0 dB, Fs = 48 kHz|7.5Hz - 23kHz
 Loopback THD@1kHz|G = 0 dB, Fs = 48 kHz|< 0.045%
-Loopback latency|Fs = 192 kHz, RPi2, buffer size = 128 frames|2.092ms
-Phantom power|-|None
+Loopback Latency|Fs = 192 kHz, RPi2, buffer size = 128 frames|2.092ms
+Phantom Power|-|None
 
 ## MIDI
 

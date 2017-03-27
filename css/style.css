@@ -18,6 +18,10 @@ body, input {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
+.md-source__facts {
+	display: none;
+}
+
 .md-typeset blockquote, .md-typeset ol, .md-typeset p, .md-typeset ul, .md-typeset {
 	font-size: 18px !important;
 	line-height: 26px !important;

@@ -1,6 +1,6 @@
-# Projects using pisound
+# Projects Using pisound
 
-## pisound and LV2 plugins
+## pisound and LV2 Plugins
 On http://rpi.autostatic.com/ repository you can find some cool software packages for audio. One of those is **Carla** - a host for LV2 plugins.
 
 ![Carla](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/carla.png)
@@ -91,14 +91,14 @@ Then from other devices you can connect to `http://raspberrypi_ip:8000/` to see 
 
 For your station to be reachable outside of your local network, you need to have an externally accessible IP address provided by your ISP and you need to configure port forwarding on your router to forward requests on some port to port 8000 on Raspberry Pi. However, this is out of scope for this guide, there should be plenty of info around on how to set that up.
 
-## Network enabled Hi-Fi player
+## Network Enabled Hi-Fi Player
 You can use pisound with Volumio! Since version 2.129 (25-03-2017), pisound's module is integrated into Volumio, so installing the latest version or updating should be enough to get 'pisound' listed in Playback Options. Just enable I2S DAcs, pick pisound and save the configuration! We recommend switching the mixer to 'Software', if you want to control the volume within Volumio. You can use 'Hardware' mixer if using the physical volume control on pisound.
 
 Now you can enjoy using pisound as a network media player!
 
 ![Volumio](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/volumio.png)
 
-## pisound with DIY MIDI controller
+## pisound with DIY MIDI Controller
 
 If you want to add more controls to your pisound audio projects, you can make your own MIDI controller using a couple of potentiometers, push buttons and any Arduino compatible board that uses ATmega32U4 microcontroller. Alternatively, it should be straightforward to adapt the example code to use DIN-5 MIDI ports, as the usbmidi API interface is compatible with Serial API.
 

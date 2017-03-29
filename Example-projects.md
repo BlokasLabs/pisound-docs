@@ -92,41 +92,11 @@ Then from other devices you can connect to `http://raspberrypi_ip:8000/` to see 
 For your station to be reachable outside of your local network, you need to have an externally accessible IP address provided by your ISP and you need to configure port forwarding on your router to forward requests on some port to port 8000 on Raspberry Pi. However, this is out of scope for this guide, there should be plenty of info around on how to set that up.
 
 ## Network enabled Hi-Fi player
-You can use pisound with Volumio! Though they're still running on an older kernel which was before the pisound driver was integrated, so some manual tweaks are still necessary. Our changes to integrate pisound are still pending on them updating their kernel, you can express your interest here: https://github.com/volumio/Volumio2/pull/955
+You can use pisound with Volumio! Since version 2.129 (25-03-2017), pisound's module is integrated into Volumio, so installing the latest version or updating should be enough to get 'pisound' listed in Playback Options. Just enable I2S DAcs, pick pisound and save the configuration! We recommend switching the mixer to 'Software', if you want to control the volume within Volumio. You can use 'Hardware' mixer if using the physical volume control on pisound.
 
-**Eventually none of this manual setup is going to be necessary, as soon as Volumio makes a release with an updated kernel.**
+Now you can enjoy using pisound as a network media player!
 
 ![Volumio](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/volumio.png)
-
-Steps to get started:
-
-1. Download latest Volumio for Raspberry Pi: https://volumio.org/get-started.
-1. Flash the image to an SD card, as usual.
-1. Boot it.
-1. SSH to volumio@volumio.local (or use the IP directly after @), password is volumio.
-  - It may take a while after booting until SSH is ready to receive connections.
-1. Download kernel source code using:
-  - `volumio kernelsource`
-1. The current volumio kernelsource seems to fail before adjusting the kernel version in the sources, but we can fix it up ourselves:
-  - `sudo nano /usr/src/rpi-linux/include/config/kernel.release`
-  - Make sure there's a '+' at the end of the version, so it looks like so: `4.4.9-v7+`
-  - Press ctrl+x, y and enter to save and exit.
-1. Download the pisound driver code:
-  - `git clone https://github.com/BlokasLabs/pisound`
-1. Build and install it:
-  - `cd pisound/pisound-module`
-  - `sudo make install`
-1. Add pisound to Volumio's DAC selection:
-  - `sudo nano /volumio/app/plugins/system_controller/i2s_dacs/dacs.json`
-  - Add a line somewhere in the middle like so: `{"id":"pisound","name":"pisound","overlay":"pisound","alsanum":"1","mixer":"","modules":"","script":"","needsreboot":"no"},`
-  - Note that a comma after this line is necessary, unless it's the last entry in the scope (before }), if there's a syntax error in this file, Volumio won't be able to show playback option in its web interface.
-  - Save and exit using ctrl+x, y and enter.
-1. Open http://volumio.local on your PC, go to Settings -> Playback Options.
-1. Enable I2S DAC.
-1. Select 'pisound'
-1. Click save. As it saves the configuration and starts the card, the MIDI activity LEDs should flash briefly.
-1. Change Mixer Type to 'Software'.
-1. Done! Thank you! Now you can enjoy using pisound as a network media player!
 
 ## pisound with DIY MIDI controller
 

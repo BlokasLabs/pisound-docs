@@ -35,8 +35,8 @@ For manual setup visit [this page](https://github.com/BlokasLabs/modep).
 
 Here is the list of functions you can achieve using Pisound’s button.
 
-**Interaction**|**Action**|
-:-----|:-----|
+|**Interaction**|**Action**|
+|:-----|:-----|
 | Click 1 to 8 times | to load the pedalboard from the first bank on your list at index corresponding to the number of clicks (see the image below).|
 | Hold for 1 second  | to turn Wi-Fi hotspot mode on/off.|                                   
 | Hold for 5 seconds | to turn your Raspberry Pi off.|                                                                           

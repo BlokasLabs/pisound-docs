@@ -1,4 +1,5 @@
 * [Getting Started](home)
+* [[Specs]]
 * [[Audio]]
 * [[MIDI]]
 * [[Software]]

@@ -16,6 +16,7 @@ By the way, MOD is not only software, it’s also a nice piece of hardware and t
 
 The fastest way to start messing around with MOD system is to download already prepared MODEP image file based on Rasbian Lite OS [here](http://www.mediafire.com/file/oya6bq5sct658ba/modep.zip) (follow [these instructions](https://www.raspberrypi.org/documentation/installation/installing-images/) to install the image on your SD card).
 
+For manual setup visit [this page](https://github.com/BlokasLabs/modep). 
 
 ## Running MODEP
 - Mount your freshly baked SD card to your Pi

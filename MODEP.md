@@ -5,7 +5,7 @@
 
 MOD or Musician Operated Device is “a multi-effects pedal that pushes the limit of your guitar, bass, keyboard or any other instrument to craft the sounds you want and reproduce them instantly at home, studio or on stage.”
 
-MOD is based on Linux SBC and LV2 plugins ecosystem. It has an intuitive drag-and-drop web-based interface so you can assemble your pedalboards as you do in real life. You can find more information about MOD workflow here.
+MOD is based on Linux SBC and LV2 plugins ecosystem. It has an intuitive drag-and-drop web-based interface so you can assemble your pedalboards as you do in real life. You can find more information about MOD workflow [here](https://moddevices.com/pages/mod-duo).
 
 As it should be clear for you by now, MODEP is an emulator that will allow you to play around with MOD system using your Raspberry Pi and Pisound board.
 
@@ -14,7 +14,7 @@ By the way, MOD is not only software, it’s also a nice piece of hardware and t
 ## Setup Instructions
 ![modep-setup](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/modep-setup.png)
 
-The fastest way to start messing around with MOD system is to download already prepared MODEP image file based on Rasbian Lite OS here (follow these instructions to install the image on your SD card).
+The fastest way to start messing around with MOD system is to download already prepared MODEP image file based on Rasbian Lite OS [here](http://www.mediafire.com/file/oya6bq5sct658ba/modep.zip) (follow [these instructions](https://www.raspberrypi.org/documentation/installation/installing-images/) to install the image on your SD card).
 
 
 ## Running MODEP
@@ -36,9 +36,9 @@ Here is the list of functions you can achieve using Pisound’s button.
 
 **Interaction**|**Action**
 :-----|:-----
-| Click 1 to 8 times | to load the pedalboard from the first bank on your list at index corresponding to the number of clicks (see the image below). |
-| Hold for 1 second  | to turn Wi-Fi hotspot mode on/off.                                                                                            |
-| Hold for 5 seconds | to turn your Raspberry Pi off.                                                                                                |
+| Click 1 to 8 times | to load the pedalboard from the first bank on your list at index corresponding to the number of clicks (see the image below).
+| Hold for 1 second  | to turn Wi-Fi hotspot mode on/off.                                                                                            
+| Hold for 5 seconds | to turn your Raspberry Pi off.                                                                                                
 
 ![modep-banks](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/modep-banks.PNG)
 

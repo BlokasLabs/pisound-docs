@@ -17,7 +17,7 @@ After that's done, let's install **Carla** as well as **jackd** server and **qja
 ```
 sudo apt-get install carla jackd qjackctl
 ```
-Then start **qjackctl**, you can do that by hitting Ctrl+F2 and typing in **qjackctl** and pressing enter.
+Then start **qjackctl**, you can do that by hitting Alt+F2 and typing in **qjackctl** and pressing enter.
 
 Configure it in Setup... like so:
 

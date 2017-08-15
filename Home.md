@@ -6,7 +6,13 @@ pisound is an ultra-low latency high-quality soundcard and MIDI interface specia
 
 ## Hardware Setup
 
+### Pisound
+You should find 1 Pisound and a plastic bag containing 2 knobs, 8 screws and 4 spacers in the Pisound box.
+
 Mount pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. See compatible Raspberry Pi models [here](specs#supported-raspberry-pi-models).
+
+### Pisound Acrylic Case
+The Pisound Acrylic Case consists of 2 cutout sheets of the enclosure sides and a plastic bag containing 4 short spacers, 4 longer ones and a button cap.
 
 ## Driver Setup
 

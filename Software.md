@@ -1,14 +1,14 @@
 # Software
 
-pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated in mainline Raspbian Linux kernel (ver. 4.4.27+). The support driver for pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon.
+Pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated into mainline Raspbian Linux kernel (ver. 4.4.27+). The support driver for Pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon.
 
-The pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button](the-button) functionality below.
+The Pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button](the-button) functionality below.
 
 You can find the source code for The Button [here](https://github.com/BlokasLabs/pisound/) and kernel module [here](https://github.com/raspberrypi/linux/blob/rpi-4.9.y/sound/soc/bcm/pisound.c).
 
 ## Installing The Driver
 
-To install the user-space button daemon and enable pisound, run the below commands in a terminal.
+To install the user-space button daemon and enable Pisound, run the below commands in a terminal.
 
 ```bash
 wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
@@ -56,17 +56,17 @@ You should see output similar to:
    Subdevice #0: subdevice #0
 ```
 
-In case you're having difficulties with getting pisound's driver to run, contact us and the community here: http://community.blokas.io/, provide the exact error and the last command you've executed.
+In case you're having difficulties with getting Pisound's driver to run, contact us and the community here: http://community.blokas.io/, provide the exact error and the last command you've executed.
 
 ## Compatible Software
 
-Please add or let us know if you have pisound working on a distribution that is not in the list yet!
+Please add or let us know if you have Pisound working on a distribution that is not on the list yet!
 
 * [Raspbian](https://www.raspbian.org/)
 * [arch linux](https://www.archlinux.org/)
 * [Ubuntu Mate](https://ubuntu-mate.org/raspberry-pi/)
 
-Software we tested which required no special changes, in alphabetic order:
+The software we tested which required no special changes, in alphabetic order:
 
 * Audacity
 * Carla / LV2

@@ -66,3 +66,6 @@ Raspberry Pi Zero version 1.3|
 * Red - Pins used by pisound.
 * Green - Pins available for your use.
 * Blue - Pins reserved for Raspberry Pi hats use.
+
+## Pinout of Pisound Header
+![pisound-header](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-header.png)

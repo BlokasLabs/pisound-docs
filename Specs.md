@@ -68,8 +68,7 @@ Raspberry Pi Zero version 1.3|
 * Blue - Pins reserved for Raspberry Pi hats use.
 
 ## Pinout of Pisound Header
-
-Pisound comes with a dedicated place to solder a 7x2 header near The Button for further expanding Pisound capabilities. 
+ 
 ![pisound-header](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-header.png)
 
 **Number**|**Corresponding Raspberry Pi Pin**

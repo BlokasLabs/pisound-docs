@@ -1,6 +1,6 @@
-# pisound & Pure Data
+# Pisound & Pure Data
 
-Using pisound you can run your Pure Data patches straight from a USB thumb drive with a press of a button with no need to connect an external monitor, keyboard or mouse.
+Using Pisound you can run your Pure Data patches straight from a USB thumb drive with a press of a button with no need to connect an external monitor, keyboard or mouse.
 
 Plug in a USB drive containing your Pure Data patch, main patch file called **main.pd**, plug in any additional MIDI controller/keyboard, press The Button and Voilà!
 
@@ -22,4 +22,4 @@ nohup puredata -alsa -audioadddev pisound -alsamidi -channels 2 -r 48000 -midide
 
 You may want to customize the command line arguments for Pure Data according to your own needs. To do that, check the [Pure Data's Command Line](https://puredata.info/docs/faq/commandline) documentation and edit /usr/local/etc/pisound/single-click.sh.
 
-Keep in mind that updating pisound's software will backup and overwrite your scripts, so in that case, you may want to re-apply your changes. See [here](software/#installing-the-driver) for more details.
+Keep in mind that updating Pisound's software will backup and overwrite your scripts, so in that case, you may want to re-apply your changes. See [here](software/#installing-the-driver) for more details.

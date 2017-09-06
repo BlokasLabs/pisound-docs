@@ -1,6 +1,6 @@
-# Projects Using pisound
+# Projects Using Pisound
 
-## pisound and LV2 Plugins
+## Pisound and LV2 Plugins
 On http://rpi.autostatic.com/ repository you can find some cool software packages for audio. One of those is **Carla** - a host for LV2 plugins.
 
 ![Carla](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/carla.png)
@@ -33,13 +33,13 @@ Click Configure Carla and make sure that Audio Driver is set to JACK. It will co
 
 Then you can add plugins in Plugins section, and patch them up in Patch Bay section.
 
-The top screenshot shows **ZSynAddSubFX** connected to pisound's Input and Output, as well as MIDI data routed to the synth plugin.
+The top screenshot shows **ZSynAddSubFX** connected to Pisound's Input and Output, as well as MIDI data routed to the synth plugin.
 
 There's a couple of plugins readily available to play around within Carla, and you should be able to find more LV2 plugins built for Raspberry Pi to experiment with on the Internet.
 
 ## Internet Radio Station
 
-Using **icecast** and **darkice** you can easily setup your own radio station and broadcast whatever is connected to the pisound input!
+Using **icecast** and **darkice** you can easily setup your own radio station and broadcast whatever is connected to the Pisound input!
 
 First let's get the required software installed:
 ```
@@ -61,7 +61,7 @@ device        = hw:1,0           # Alsa soundcard device for the audio input
 sampleRate    = 48000            # sample rate in Hz. try 48000, 96000 or 192000
 bitsPerSample = 16               # bits per sample. try 16
 channel       = 2                # channels. 1 = mono, 2 = stereo.
-                                 # Only stereo mode is supported by pisound.
+                                 # Only stereo mode is supported by Pisound.
 
 # this section describes a streaming connection to an IceCast2 server
 # there may be up to 8 of these sections, named [icecast2-0] ... [icecast2-7]
@@ -76,7 +76,7 @@ port          = 8000             # port of the IceCast2 server, usually 8000
 password      = hackme           # source password to the IceCast2 server
 mountPoint    = pisound          # mount point of this stream on the IceCast2 server
 name          = pisound          # name of the stream
-description   = DarkIce on pisound # description of the stream
+description   = DarkIce on Pisound # description of the stream
 url           = http://localhost # URL related to the stream
 genre         = my genre         # genre of the stream
 public        = no               # advertise this stream?
@@ -92,15 +92,15 @@ Then from other devices you can connect to `http://raspberrypi_ip:8000/` to see 
 For your station to be reachable outside of your local network, you need to have an externally accessible IP address provided by your ISP and you need to configure port forwarding on your router to forward requests on some port to port 8000 on Raspberry Pi. However, this is out of scope for this guide, there should be plenty of info around on how to set that up.
 
 ## Network Enabled Hi-Fi Player
-You can use pisound with Volumio! Since version 2.129 (25-03-2017), pisound's module is integrated into Volumio, so installing the latest version or updating should be enough to get 'pisound' listed in Playback Options. Just enable I2S DAcs, pick pisound and save the configuration! We recommend switching the mixer to 'Software', if you want to control the volume within Volumio. You can use 'Hardware' mixer if using the physical volume control on pisound.
+You can use Pisound with Volumio! Since version 2.129 (25-03-2017), Pisound's module is integrated into Volumio, so installing the latest version or updating should be enough to get 'pisound' listed in Playback Options. Just enable I2S DACs, pick Pisound and save the configuration! We recommend switching the mixer to 'Software', if you want to control the volume within Volumio. You can use 'Hardware' mixer if using the physical volume control on Pisound.
 
-Now you can enjoy using pisound as a network media player!
+Now you can enjoy using Pisound as a network media player!
 
 ![Volumio](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/volumio.png)
 
-## pisound with DIY MIDI Controller
+## Pisound with DIY MIDI Controller
 
-If you want to add more controls to your pisound audio projects, you can make your own MIDI controller using a couple of potentiometers, push buttons and any Arduino compatible board that uses ATmega32U4 microcontroller. Alternatively, it should be straightforward to adapt the example code to use DIN-5 MIDI ports, as the usbmidi API interface is compatible with Serial API.
+If you want to add more controls to your Pisound audio projects, you can make your own MIDI controller using a couple of potentiometers, push buttons and any Arduino compatible board that uses ATmega32U4 microcontroller. Alternatively, it should be straightforward to adapt the example code to use DIN-5 MIDI ports, as the usbmidi API interface is compatible with Serial API.
 
 ![DIY MIDI controller](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/diy-midi-ctrl.png)
 

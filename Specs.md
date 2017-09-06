@@ -59,7 +59,7 @@ Raspberry Pi Zero version 1.2|
 Raspberry Pi Zero version 1.3|
 
 
-## Raspberry Pi pins used by Pisound
+## Raspberry Pi Pins Used by Pisound
 ![pinout map rev3](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-pins.png)
 
 * Black - Power supply pins.
@@ -69,3 +69,20 @@ Raspberry Pi Zero version 1.3|
 
 ## Pinout of Pisound Header
 ![pisound-header](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-header.png)
+
+**Number**|**Corresponding Raspberry Pi Pin**
+:-----|:-----
+1|Ground
+2|5v Power
+3|BCM 7 (CE1)
+4|3v3 Power
+5|BCM 5
+6|BCM 6
+7|BCM 22
+8|BCM 23
+9|BCM 27
+10|BCM 4 (GPCLK0)
+11|BCM 15 (RXD)
+12|BCM 14 (TXD)
+13|BCM 2 (SDA)
+14|BCM 3 (SLC)

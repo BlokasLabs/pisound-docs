@@ -57,7 +57,7 @@ By default, the AP will appear as '**pisound**', and the default password is '**
 
 The default IP address of RPi in WiFi Hotspot mode is 172.24.1.1 which you can use for ssh, VNC or wireless OSC / MIDI data! That means that you can easily interact with your system using just your laptop or phone, no more wires apart from power supply is needed! And it gets better, if the LAN cable is connected to RPi, it will share the Internet with the connected devices over WiFi!
 
-To send MIDI OSC messages from your other devices to Pisound, connect to the Pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings. See [[here|faqs#how-to-send-wifi-midi-messages-to-your-raspberry-pi]] for more information.
+To send MIDI OSC messages from your other devices to Pisound, connect to the Pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings. See [here](faqs#how-to-send-wifi-midi-messages-to-your-raspberry-pi) for more information.
 
 To access RPi using ssh and/or VNC, make sure they're enabled in `raspi-config`. To enable, run in terminal:
 ```bash
@@ -69,7 +69,7 @@ Triple-clicking again will revert to regular WiFi behavior.
 
 ### [`toggle_bt_discoverable.sh`](https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/scripts/toggle_bt_discoverable.sh) - Toggle Bluetooth Discoverability on and Off
 
-Holding The Button between 3 and 5 seconds will toggle the Bluetooth Discoverability. See [[Pisound App]] for controlling Pisound & RPi remotely.
+Holding The Button between 3 and 5 seconds will toggle the Bluetooth Discoverability. See [Pisound App](pisound-app) for controlling Pisound & RPi remotely.
 
 ## Miscellaneous Scripts
 

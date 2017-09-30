@@ -78,4 +78,3 @@ The software we tested which required no special changes, in alphabetic order:
 Software which required tweaks or workarounds, in alphabetic order:
 
 * Sonic Pi
-* [Volumio](http://community.blokas.io/t/setting-up-volumio/81)

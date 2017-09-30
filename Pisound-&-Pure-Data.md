@@ -6,7 +6,7 @@ Plug in a USB drive containing your Pure Data patch, main patch file called **ma
 
 You can read more about The Button functionality [here](the-button).
 
-Also you may be interested in the [[Pisound App]]
+Also you may be interested in the [[Pisound App]].
 
 If you haven't already, you can install Pure Data by running the following command in a Terminal window:
 

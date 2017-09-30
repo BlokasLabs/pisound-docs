@@ -1,6 +1,6 @@
 # Pisound App
 
-The mobile app communicates with a dedicated server running on Raspberry Pi & Pisound via Bluetooth. It is called Pisound Control Server (`pisound-ctl`) and it allows listing all supported patches in a predefined location and to selectively launch the patches in the appropriate software, making headless browsing and switching between patches easy.
+The mobile app communicates with a dedicated server running on Raspberry Pi & Pisound via Bluetooth. It is called Pisound Control Server (`pisound-ctl`) and it allows listing all supported patches in predefined locations (`/usr/local/etc/...-patches`) and to selectively launch the patches in the appropriate software, making headless browsing and switching between patches easy.
 
 The stdout and stderr outputs of the launched application are displayed in real time, informing the user on what is going on with the patch application.
 

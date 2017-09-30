@@ -25,11 +25,11 @@ After installing, `pisound-ctl` will get launched automatically and will be adde
 
 ### Android
 
-Accept beta testing invitation [here](https://play.google.com/apps/testing/com.blokas.patchbox). (Make sure you’re doing this logged in with the account you’re using on Play Store)
+Accept beta testing invitation [here](https://play.google.com/apps/testing/com.blokas.pisoundctl). (Make sure you’re doing this logged in with the account you’re using on Play Store)
 
 The beta acceptance propagation in Google servers seems to take a while, the Play Store link below **will take up to 20 minutes** before it starts working for you. Until then, it will show you “_We’re sorry, the requested URL was not found on this server._” We know what you’re thinking, but no - the link is fine, just be patient and hit F5. 🙂 It may take even longer for the app to appear when searching for ‘Pisound’ on mobile version of the Play Store, however, you may request for the app to be installed remotely to your device using the link below.
 
-Install the Pisound app on your device [here](https://play.google.com/store/apps/details?id=com.blokas.patchbox).
+Install the Pisound app on your device [here](https://play.google.com/store/apps/details?id=com.blokas.pisoundctl).
 
 #### Why is the Location Permission Required?
 As much as we hate excess permission requests ourselves, there’s no way we can avoid requesting this one. We don’t need or store your location information. It’s required for an application to declare [ACCESS_COARSE_LOCATION](https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION) permission in its Manifest for the application to be able to initiate discovery of nearby Bluetooth devices.
@@ -57,7 +57,13 @@ Feel free to modify the scripts, add support for other software, etc… Contribu
 
 After the patch is launched, the app immediately switches to the Output view page.
 
+You may pull the list down to refresh it.
+
 Pressing the ‘back’ button would go back to the main menu.
+
+#### Pure Data
+
+The Pure Data patches may consist of multiple .pd files. The convention is to have a subfolder for the entire patch, and the entry point to it should be called 'main.pd', and only files named like that are being searched for. An example location would be `/usr/local/etc/puredata-patches/testtone/main.pd`
 
 ### Looking at Output
 
@@ -87,7 +93,7 @@ The main customizable parts are the scripts in `/usr/local/etc/pisound-ctl/`.
 
 ### [`patch_list.sh`](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/patch_list.sh)
 
-This script is responsible for producing the list of items do show in ‘Start a Patch’ menu. Every line produced to stdout will appear as an item in the patch list.
+This script is responsible for producing the list of items to show in ‘Start a Patch’ menu. Every line produced to stdout will appear as an item in the patch list.
 
 You may extend this file to support more kinds of files by getting their filenames to be echoed.
 

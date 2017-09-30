@@ -4,7 +4,7 @@ The mobile app communicates with a dedicated server running on Raspberry Pi & Pi
 
 The stdout and stderr outputs of the launched application are displayed in real time, informing the user on what is going on with the patch application.
 
-The design is extensible - new scripts could be added to support launching patches on other audio applications, based on the file extension, see the Customization section for more details.
+The design is extensible - new scripts could be added to support launching patches on other audio applications, based on the file extension, see the [Customization](#customization) section for more details.
 
 ## Software Setup
 ### Raspberry Pi

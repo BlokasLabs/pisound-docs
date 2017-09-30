@@ -65,6 +65,7 @@ Please add or let us know if you have Pisound working on a distribution that is 
 * [Raspbian](https://www.raspbian.org/)
 * [arch linux](https://www.archlinux.org/)
 * [Ubuntu Mate](https://ubuntu-mate.org/raspberry-pi/)
+* [Volumio](https://volumio.org/)
 
 The software we tested which required no special changes, in alphabetic order:
 

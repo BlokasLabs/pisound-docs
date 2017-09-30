@@ -21,7 +21,7 @@ If you don't have any Linux OS running on your Raspberry Pi, we suggest starting
 [Power your Raspberry Pi up](specs#power-supply) and install the driver by running the below commands in a terminal window:
 
 ```bash
-wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
+wget https://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
 chmod +x install-pisound.sh
 ./install-pisound.sh
 ```

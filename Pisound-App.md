@@ -9,7 +9,7 @@ The design is extensible - new scripts could be added to support launching patch
 ## Software Setup
 ### Raspberry Pi
 
-First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.04 or higher. If it is not, follow the install instructions on [Driver Setup](home#driver-setup). The `install-pisound.sh` will update `pisound-btn` if it is already installed.
+First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.04 or higher. If it is not, follow the install instructions on [Installing the Driver](software#installing-the-driver). The `install-pisound.sh` will update `pisound-btn` if it is already installed.
 
 If using Raspberry Pi without built-in Bluetooth support, connect a USB Bluetooth dongle to it.
 

@@ -4,6 +4,7 @@
 * [[MIDI]]
 * [[Software]]
 * [The Button](the-button)
+* [Pisound Config](Pisound-Config)
 * [Pisound & Pure Data](pisound-&-Pure-Data)
 * [Pisound App](Pisound-App)
 * [MOD Emulator for Pisound](MODEP)

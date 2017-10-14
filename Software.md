@@ -4,19 +4,21 @@ Pisound is compatible with virtually all Linux distributions and software as it 
 
 The Pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button](the-button) functionality below.
 
-You can find the source code for The Button [here](https://github.com/BlokasLabs/pisound/) and kernel module [here](https://github.com/raspberrypi/linux/blob/rpi-4.9.y/sound/soc/bcm/pisound.c).
+You can find the source code for The Button [here](https://github.com/BlokasLabs/pisound/tree/master/pisound-btn) and kernel module [here](https://github.com/raspberrypi/linux/blob/rpi-4.9.y/sound/soc/bcm/pisound.c).
 
-## Installing The Driver
+## Installing/Updating The Pisound Software
 
-To install the user-space button daemon and enable Pisound, run the below commands in a terminal.
+To install the Pisound software, run the below commands in a terminal.
 
 ```bash
-wget http://blokas.io/pisound/install-pisound.sh -O install-pisound.sh
-chmod +x install-pisound.sh
-./install-pisound.sh
+curl https://blokas.io/pisound/install-pisound.sh | sh
 ```
 
-The above installs a button daemon named 'pisound-btn' and its scripts for button actions. If there were existing scripts, they are first backed up to `/usr/local/etc/pisound/backups/<current date>`, so if you had overridden the default functions, you will have to restore your scripts manually.
+This will set up the Blokas APT server and install all the software packages for Pisound. Then you may run [`pisound-config`](pisound-config) to further customize your installation:
+
+```bash
+sudo pisound-config
+```
 
 ## Verifying It Works
 
@@ -56,7 +58,8 @@ You should see output similar to:
    Subdevice #0: subdevice #0
 ```
 
-In case you're having difficulties with getting Pisound's driver to run, contact us and the community here: http://community.blokas.io/, provide the exact error and the last command you've executed.
+### Feedback
+In case you're having difficulties with getting Pisound to run, contact us and the community [here](https://community.blokas.io/), provide the exact error and the last command you've executed.
 
 ## Compatible Software
 

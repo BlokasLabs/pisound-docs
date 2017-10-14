@@ -87,7 +87,7 @@ And finally, execute 'darkice' in a terminal or using Alt+F2:
 
 `darkice`
 
-Then from other devices you can connect to `http://raspberrypi_ip:8000/` to see generic information about the station and `http://raspberry_pi:8000/pisound` to listen. (Replace raspberrypi_ip in the URLs using the IP of the Raspberry Pi)
+Then from other devices you can connect to `http://raspberrypi_ip:8000/` to see generic information about the station and `http://raspberry_ip:8000/pisound` to listen. (Replace raspberrypi_ip in the URLs using the IP of the Raspberry Pi)
 
 For your station to be reachable outside of your local network, you need to have an externally accessible IP address provided by your ISP and you need to configure port forwarding on your router to forward requests on some port to port 8000 on Raspberry Pi. However, this is out of scope for this guide, there should be plenty of info around on how to set that up.
 

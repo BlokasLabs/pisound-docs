@@ -15,7 +15,7 @@ The `/etc/pisound.conf` file allows mapping these actions:
 | HOLD_1S | Button was held down between 0.4s and 3s. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
 | HOLD_3S | Button was held down between 3s and 5s. | [toggle_bt_discoverable.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) |
 | HOLD_5S | Button was held down between 5s and 7s. | [shutdown.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/shutdown.sh) |
-| HOLD_OTHER | Button was held down for more than 7s. | [shutdown.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/shutdown.sh) |
+| HOLD_OTHER | Button was held down for more than 7s. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
 
 \* All default scripts are stored at `/usr/local/pisound/scripts/pisound-btn`
 

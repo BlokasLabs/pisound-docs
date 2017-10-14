@@ -1,4 +1,4 @@
-#Pisound Config
+# Pisound Config
 
 `pisound-config` allows reconfiguring the most important aspects of the system for use with Pisound, as well as setting up additional software and displaying some useful information. It is available since version 1.05 of `pisound-btn`.
 

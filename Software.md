@@ -78,7 +78,4 @@ The software we tested which required no special changes, in alphabetic order:
 * Jack
 * Supercollider
 * Pure Data
-
-Software which required tweaks or workarounds, in alphabetic order:
-
 * Sonic Pi

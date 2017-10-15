@@ -1,4 +1,5 @@
 # Pisound Config
+![pisound-config](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-config.png)
 
 `pisound-config` allows reconfiguring the most important aspects of the system for use with Pisound, as well as setting up additional software and displaying some useful information. It is available since version 1.05 of `pisound-btn`.
 

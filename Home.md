@@ -15,6 +15,7 @@ Mount Pisound on top of your Raspberry Pi via the 40-pin header and fasten it wi
 The Pisound Acrylic Case consists of 2 cutout sheets of the enclosure sides and a plastic bag containing 4 short spacers, 4 longer ones and a button cap.
 
 ## Driver Setup
+![pisound-config](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-config.png)
 
 If you don't have any Linux OS running on your Raspberry Pi, we suggest starting with [Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/README.md).
 

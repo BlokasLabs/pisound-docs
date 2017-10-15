@@ -8,10 +8,10 @@ The `/etc/pisound.conf` file allows mapping these actions:
 | --- | --- | --- |
 | DOWN | Button gets pushed down. | [down.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/system/down.sh) |
 | UP | Button gets released up. | [up.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/system/up.sh) |
-| SINGLE_CLICK | Button was clicked once. | [start_puredata.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/start_puredata.sh) |
-| DOUBLE_CLICK | Button was double-clicked. | [stop_puredata.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/stop_puredata.sh) |
-| TRIPLE_CLICK | Button was triple-clicked. | [toggle_wifi_hotspot.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) |
-| OTHER_CLICKS | Button was clicked between 4 and 8 times. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
+| CLICK_1 | Button was clicked once. | [start_puredata.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/start_puredata.sh) |
+| CLICK_2 | Button was double-clicked. | [stop_puredata.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/stop_puredata.sh) |
+| CLICK_3 | Button was triple-clicked. | [toggle_wifi_hotspot.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) |
+| CLICK_OTHER | Button was clicked between 4 and 8 times. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
 | HOLD_1S | Button was held down between 0.4s and 3s. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
 | HOLD_3S | Button was held down between 3s and 5s. | [toggle_bt_discoverable.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) |
 | HOLD_5S | Button was held down between 5s and 7s. | [shutdown.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/shutdown.sh) |
@@ -69,7 +69,7 @@ The sky is definitely not the limit on what The Button can do, the shell scripts
 
 		sudo pisound-config
 
-	Enter **Change Pisound Button Settings** submenu, select **SINGLE_CLICK**, and pick the new **Hello World** in the list.
+	Enter **Change Pisound Button Settings** submenu, select **CLICK_1**, and pick the new **Hello World** in the list.
 
 	Now effective immediately, pressing The Button once will do a long-flash of the MIDI LEDs, as well as log a timestamped *Hello World!* to The Buttons' log (`sudo journalctl -f -u pisound-btn`)
 

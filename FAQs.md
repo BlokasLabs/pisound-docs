@@ -22,46 +22,8 @@ To start the server, configured to use pisound, follow these steps:
 
 
 ## How to use Sonic Pi with pisound?
-Sonic Pi has a special case for Raspberry Pi during startup. By default it kills the existing jackd server, and starts one configured to use the built in Raspberry Pi audio with hardcoded parameters. That makes Sonic Pi unusable with other audio cards, unless the below workaround is applied, so Sonic Pi would behave in the same way as if it's run on any other linux device.
 
-Do this once (might need to be done again in case any software updates touch it):
-
-- Edit `/opt/sonic-pi/app/server/sonicpi/scsynthexternal.rb` as root user using your favorite editor (such as vim, nano, geany, or ...).
-- Locate the following code snippet:
-```
-     case os
-     when :raspberry
-       boot_server_raspberry_pi
-     when :linux
-       boot_server_linux
-     when :osx
-       boot_server_osx
-     when :windows
-       boot_server_windows
-     end
-     true
-```
-- Change it to:
-```
-     case os
-     when :raspberry
-       #boot_server_raspberry_pi
-       boot_server_linux
-     when :linux
-       boot_server_linux
-     when :osx
-       boot_server_osx
-     when :windows
-       boot_server_windows
-     end
-     true
-```
-
-Do this every time you want to start Sonic Pi:
-
-- Start Jack server configured to use pisound.
-- Start Sonic Pi, it will connect to the Jack server you had just launched.
-
+The latest version of Sonic Pi works out of the box without any manual changes! Just start it from the menu -> Programming -> Sonic Pi!
 
 ## How to send WiFi-MIDI messages to your Raspberry Pi?
 

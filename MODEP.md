@@ -21,7 +21,7 @@ For manual setup visit [this page](https://github.com/BlokasLabs/modep).
 ## Running MODEP
 - Mount your freshly baked SD card to your Pi
 - Power up your Raspberry Pi
-- Connect to it via ‘pisound' Wi-Fi hotspot using your computer or tablet (psw:blokaslabs)
+- Connect to it via ‘Pisound' Wi-Fi hotspot using your computer or tablet (psw:blokaslabs)
 - Open your browser and go to this address `172.24.1.1` (you should see something like in the image below)
 - That’s it. Now you can start building your pedalboards
  

@@ -92,7 +92,7 @@ Then from other devices you can connect to `http://raspberrypi_ip:8000/` to see 
 For your station to be reachable outside of your local network, you need to have an externally accessible IP address provided by your ISP and you need to configure port forwarding on your router to forward requests on some port to port 8000 on Raspberry Pi. However, this is out of scope for this guide, there should be plenty of info around on how to set that up.
 
 ## Network Enabled Hi-Fi Player
-You can use Pisound with Volumio! Since version 2.129 (25-03-2017), Pisound's module is integrated into Volumio, so installing the latest version or updating should be enough to get 'pisound' listed in Playback Options. Just enable I2S DACs, pick Pisound and save the configuration! We recommend switching the mixer to 'Software', if you want to control the volume within Volumio. You can use 'Hardware' mixer if using the physical volume control on Pisound.
+You can use Pisound with Volumio! Since version 2.129 (25-03-2017), Pisound's module is integrated into Volumio, so installing the latest version or updating should be enough to get 'Pisound' listed in Playback Options. Just enable I2S DACs, pick Pisound and save the configuration! We recommend switching the mixer to 'Software', if you want to control the volume within Volumio. You can use 'Hardware' mixer if using the physical volume control on Pisound.
 
 Now you can enjoy using Pisound as a network media player!
 

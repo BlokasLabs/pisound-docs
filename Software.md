@@ -76,6 +76,6 @@ The software we tested which required no special changes, in alphabetic order:
 * Carla / LV2
 * darkice and icecast
 * Jack
-* Supercollider
 * Pure Data
+* Supercollider
 * Sonic Pi

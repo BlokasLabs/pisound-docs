@@ -16,7 +16,7 @@ By the way, MOD is not only software, it’s also a nice piece of hardware and t
 
 The fastest way to start messing around with MOD system is to download already prepared MODEP image file based on Rasbian Lite OS [here](http://www.mediafire.com/file/oya6bq5sct658ba/modep.zip) (follow [these instructions](https://www.raspberrypi.org/documentation/installation/installing-images/) to install the image on your SD card).
 
-For manual setup visit [this page](https://github.com/BlokasLabs/modep). 
+For manual setup visit [this page](https://github.com/BlokasLabs/modep).
 
 ## Running MODEP
 - Mount your freshly baked SD card to your Pi
@@ -24,7 +24,9 @@ For manual setup visit [this page](https://github.com/BlokasLabs/modep).
 - Connect to it via ‘Pisound' Wi-Fi hotspot using your computer or tablet (psw:blokaslabs)
 - Open your browser and go to this address `172.24.1.1` (you should see something like in the image below)
 - That’s it. Now you can start building your pedalboards
- 
+
+Note that Jack is running as 'root' user, in case you'd like to manually run jack_capture or other jack utils, it should be done as 'root' too.
+
 ![modep-default](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/modep-default.png)
 
 ## Configuration

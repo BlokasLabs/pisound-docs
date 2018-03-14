@@ -1,4 +1,4 @@
-* [Getting Started](home)
+* [Getting Started](index)
 * [[Specs]]
 * [[Audio]]
 * [[MIDI]]

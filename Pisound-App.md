@@ -57,7 +57,7 @@ The launched patch then can be reached in the 'Active' tab, and its console outp
 
 #### Pure Data
 
-The Pure Data patches are expected to be found in `/usr/local/puredata-patches/`. Each patch should be in its own subfolder. The legacy patches require the entry point into the patch to be named 'main.pd'. The new way of including patches is to create a **[#######linka cia]**'blokas.yml' file in the patch folder which stores various pieces of information about the patch, including the name of its entry point.
+The Pure Data patches are expected to be found in `/usr/local/puredata-patches/`. Each patch should be in its own subfolder. The legacy patches require the entry point into the patch to be named 'main.pd'. The new way of including patches is to create a '[blokas.yml](#blokasyml)' file in the patch folder which stores various pieces of information about the patch, including the name of its entry point.
 
 ### Deleting a Patch
 

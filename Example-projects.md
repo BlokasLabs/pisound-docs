@@ -87,9 +87,25 @@ And finally, execute 'darkice' in a terminal or using Alt+F2:
 
 `darkice`
 
+_In case you're getting `DarkIce: TcpSocket.cpp:251: connect error [111]` error, [see below](#connect-error-111-workaround) for a workaround._
+
 Then from other devices you can connect to `http://raspberrypi_ip:8000/` to see generic information about the station and `http://raspberry_ip:8000/pisound` to listen. (Replace raspberrypi_ip in the URLs using the IP of the Raspberry Pi)
 
 For your station to be reachable outside of your local network, you need to have an externally accessible IP address provided by your ISP and you need to configure port forwarding on your router to forward requests on some port to port 8000 on Raspberry Pi. However, this is out of scope for this guide, there should be plenty of info around on how to set that up.
+
+### connect error [111] Workaround
+
+Edit /etc/default/icecast2:
+
+`sudo nano /etc/default/icecast2`
+
+Change 'ENABLE=false' to 'ENABLE=true' at the bottom, note the comment above, it suggests to change the password in another config file to be different from 'hackme', remember to change it in /etc/darkice.cfg too.
+
+Then run:
+
+`sudo systemctl restart icecast2`
+
+After this, darkice should launch successfully.
 
 ## Network Enabled Hi-Fi Player
 You can use Pisound with Volumio! Since version 2.129 (25-03-2017), Pisound's module is integrated into Volumio, so installing the latest version or updating should be enough to get 'Pisound' listed in Playback Options. Just enable I2S DACs, pick Pisound and save the configuration! We recommend switching the mixer to 'Software', if you want to control the volume within Volumio. You can use 'Hardware' mixer if using the physical volume control on Pisound.

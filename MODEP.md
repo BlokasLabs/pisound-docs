@@ -30,7 +30,9 @@ Note that Jack is running as 'root' user, in case you'd like to manually run jac
 ![modep-default](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/modep-default.png)
 
 ## Configuration
-- ssh pi@RASPBERRY_IP (psw:blokaslabs)
+- ssh pi@<Your Raspberry´s IP>          # for builds before 1/1/18
+- ssh modep@<Your Raspberry´s IP>       # for builds after 1/1/18
+- Password: blokaslabs
 - run `modep`
 
 ## The Button

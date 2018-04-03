@@ -12,18 +12,19 @@ As it should be clear for you by now, MODEP is an emulator that will allow you t
 By the way, MOD is not only software, it’s also a nice piece of hardware and the MOD team has done a remarkable job for the whole Linux audio open-source community, so if you like this emulator you should get the real thing @ https://moddevices.com.
 
 ## Setup Instructions
-![modep-setup](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/modep-setup.png)
+Download a prebuilt OS image from [here](https://community.blokas.io/t/release-modep-2018-04-03/496) and follow [these instructions](https://www.raspberrypi.org/documentation/installation/installing-images/) to install the image on your SD card.
 
-The fastest way to start messing around with MOD system is to download already prepared MODEP image file based on Rasbian Lite OS [here](http://www.mediafire.com/file/oya6bq5sct658ba/modep.zip) (follow [these instructions](https://www.raspberrypi.org/documentation/installation/installing-images/) to install the image on your SD card).
+Default user details:
 
-For manual setup visit [this page](https://github.com/BlokasLabs/modep).
+**Login: modep**  
+**Password: blokaslabs**
 
 ## Running MODEP
-- Mount your freshly baked SD card to your Pi
-- Power up your Raspberry Pi
-- Connect to it via ‘Pisound' Wi-Fi hotspot using your computer or tablet (psw:blokaslabs)
-- Open your browser and go to this address `172.24.1.1` (you should see something like in the image below)
-- That’s it. Now you can start building your pedalboards
+- Mount your freshly baked SD card to your Pi.
+- Power up your Raspberry Pi.
+- Connect to it via ‘Pisound' Wi-Fi hotspot using your computer or tablet (psw:blokaslabs).
+- Open your browser and go to this address http://172.24.1.1 (you should see a similar view to the image below).
+- That’s it. Now you can start building your pedalboards.
 
 Note that Jack is running as 'root' user, in case you'd like to manually run jack_capture or other jack utils, it should be done as 'root' too.
 
@@ -31,23 +32,58 @@ Note that Jack is running as 'root' user, in case you'd like to manually run jac
 
 ## Configuration
 
-- ssh pi@<Your Raspberry´s IP>          # for builds before 1/1/18 
-- ssh modep@<Your Raspberry´s IP>       # for builds after 1/1/18
-- Password: blokaslabs
-- type `modep` press enter.
+### Connecting to the Device via ssh
 
-## Enhanced Configuration of jackd (jack2 1.9.12) for less xrun-errors
-- Find the File: `jack.service` at `/usr/local/modep/services`
-- Edit the file `sudo vi /usr/local/modep/services/jack.service`
-- Find the Line `ExecStart=/usr/local/bin/jackd -v -t 2000 -s -d alsa -d hw:pisound -r 48000 -p 256 -n 2 -X seq`
-- Comment it out: i (for insert) # (to make it a comment), press ESC
-- Copy the line: mark the line, press i (for insert), press right click.
-- Press ESC to terminate insert mode.
-- Change the line (by pressing x to delete a char, or r to replace a char)
-- `ExecStart=/usr/local/bin/jackd -v -t 2000 -s -d alsa -d hw:pisound -r 96000 -p 256 -n 3 -X seq`
-- press ESC, write `wq` for `write quit`, this will save the changes and close vi.
-- now restart services by starting modep selecting 3 tools, stopping and starting all services.
-- Remark: This settings might not be perfect, further tweaks are welcome.
+- `ssh modep@172.24.1.1` (if connected to Pisound WiFi, otherwise see [below](#quick-and-dirty-debug) to find the RPi's IP to use in place of 172.24.1.1)
+- Enter the password: blokaslabs
+
+### Editing Configuration Files
+
+Here's a quick guide on how to modify system configuration files, such as `jack.service`. Once connected via `ssh`, use a text editor to edit the file, the most popular ones are covered here:
+
+- **nano**: A simple text editor with familiar user interface to GUI based notepads.
+    1. `sudo nano /usr/lib/systemd/system/jack.service`
+    1. Make your changes using cursor keys to navigate.
+    1. Hit Ctrl+X to close, press 'Y' to confirm saving your changes.  
+        <br/>
+- **vi**: A modal commands based text editor with rich features.
+    1. `sudo vi /usr/lib/systemd/system/jack.service`
+    1. Navigate to the place you want to change using h, j, k, l keys.
+    1. Enter 'insert mode' by pressing i key.
+    1. Make your changes.
+    1. Hit Esc key to go back to command mode.
+    1. Type :wq to write the changes and quit the editor.
+
+### Alternative jack Settings
+
+There's many different possible layouts of effects possible with very different processing requirements from one another, so tradeoffs between stability and latency have to be made when defining the default audio settings.
+If you'd like to try and achieve a lower latency or more stability (less XRUNs) for your use case, you may try one of alternative configurations out, see [here](#editing-configuration-files) for editing instructions.
+
+In a nutshell, the lower the audio buffer (based on -n and -p arguments), the lower is the latency, but also the lower is the stability. Same goes with the higher is the sampling rate (-r, acceptable values are 48000, 96000, 192000).
+So you have to balance these values to best accommodate your use case.
+
+For more details on the arguments, see Jack's [documentation](https://github.com/jackaudio/jackaudio.github.com/wiki/jackd(1)).
+
+The line to edit in `jack.service` is [this one](https://github.com/BlokasLabs/modep-gen/blob/modep/stage3/03-install-mod/files/jack.service#L9):
+
+```
+ExecStart=/usr/bin/jackd -v -t 2000 -P 75 -d alsa -d hw:pisound -r 48000 -p 128 -n 2 -X seq -s -S
+```
+
+Try replacing with one of the below:
+
+```
+ExecStart=/usr/local/bin/jackd -v -t 2000 -s -d alsa -d hw:pisound -r 96000 -p 256 -n 3 -X seq
+```
+If you happen to find a good command line to use, let us know via e-mail, support chat or in our community!
+
+Once the config is changed, you must either restart the system or at least the MODEP's services:
+
+```
+sudo systemctl stop mod-ui mod-host jack
+sudo systemctl daemon-reload
+sudo systemctl start jack mod-host mod-ui
+```
 
 ## The Button
 
@@ -55,55 +91,76 @@ Here is the list of functions you can achieve using Pisound’s button.
 
 |**Interaction**|**Action**|
 |:-----|:-----|
-| Click 1 to 8 times | to load the pedalboard from the first bank on your list at index corresponding to the number of clicks (see the image below).|
-| Hold for 1 second  | to turn Wi-Fi hotspot mode on/off.|                                   
-| Hold for 5 seconds | to turn your Raspberry Pi off.|                                                                           
+| Click betwen 1 and 8 times | Load the pedalboard from the first bank on your list at index corresponding to the number of clicks (see the image below).|
+| Hold between 3 and 5 seconds  | Turn Wi-Fi hotspot mode on/off.|
+| Hold between 5 and 7 seconds | Turn your Raspberry Pi off.|
 
 ![modep-banks](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/modep-banks.PNG)
 
-## Quick and Dirty Debug
-### Option 1 - How to find your IPv4-Address
-- If your pi is connected to your local network via cable:
-- Login into your local router via its webgui
-- Go to network or network overview.
-- Look up a device called pisound
-- the IP should be listed somewhere there.
-
-### Option 2 - How to find your IPv4 Address
-- Connect Screen and Keyboard to your PI
-- You should see a text-based terminal (the linux cli)
-- Login in with user "pi" or "modep" user-account
-- type ifconfig -a to show all network interface configurations
-- if connected by wlan-hotspot look up the entry for "wlan0" field "inet"
-- if connected via ethernet (cable) look up the entry for "eth0" field "inet"
-- this is the IP-Address of your device
-
-### Test connectivity
-- test connectivity to the raspberry from your pc/laptop (e.g. windows) by
-- running "cmd" and enter "ping <IP-Address>" 
-- if connectivity is good, no error should return.
-
-### Web-GUI is reachable, but no sound or "add device error"
-- Check input, output cabling, volume and gain level. If this fails:
-- login via ssh (e.g. by using putty for windows)
-- start configuration script "modep".
-- select "3 Tools" (Arrow-Keys and TAB)
-- select "4 Disable MODEP systemd services"
-- press "enter", wait til finished and pressed "enter" again.
-- select "3 Enable MODEP systemd services"
-- press "enter", wait til finished and press "enter" again.
-- select "1 Check system status" - All services should state "active"
-- browser should reload automatically, try again.
-
-### Disturbed Sound
-- PISOUND´s input is hard and harsh clipping
-- First check if "clipping" lamp is flashing on the PISOUND while audio input is provided to the PI.
-- Check "GAIN"-Level (turn it down to minimum, not middle position)
-- Reduce audio input-level by turning down the volume of the connected input device.
-- Still disturbed sound? Check XRUNS-Status lower right corner of your browser windows.
-- See "Enhanced Configuration of jackd" Section.
-
 ## Plugins
 
-At the moment MODEP image comes with 287 LV2 plugins ranging from synths to heavy guitar distortion plugins.
+At the moment MODEP image comes with 294 LV2 plugins ranging from synths to heavy guitar distortion plugins.
 
+## Quick and Dirty Debug Tricks
+### Determining the IP Address of Raspberry Pi
+1. Method 1
+    1. If your Pi is connected to your local network via a network cable:
+    1. Login into your local router via its webgui (usually something like http://192.168.1.254)
+    1. Go to network map or network overview.
+    1. Look up a device called raspberrypi or modep.
+    1. The IP should be listed somewhere there.
+
+1. Method 2
+    - Connect a screen and a keyboard to your Pi.
+    - You should see a text-based terminal (the linux cli).
+    - Login in with user 'modep', password 'blokaslabs'.
+    - Type `ifconfig -a` to show all network interface configurations.
+    - If connected via WiFi look up the entry for "wlan0" field "inet".
+    - If connected via ethernet cable look up the entry for "eth0" field "inet".
+    - This is the IP-Address of your device.
+
+### Test Connectivity Between Pi and PC/Laptop
+1. In a terminal window (`cmd` on Windows), run `ping <IP-Address>`
+1. If connectivity is good, you should see response times getting logged.
+    1. On Windows, by default 4 ping requests are made and the utility exits.
+    1. On other OSes, by default you have to manually quit by hitting Ctrl+C.
+
+### Web-GUI Is Reachable, but No Sound Or "Add Device Error" happens
+
+First of all, check input and output cables, volume and gain level.
+
+If this fails, then try restarting the MODEP software:
+
+1. Login via `ssh`.
+1. Run:
+    
+    ```
+    sudo systemctl stop mod-ui mod-host jack
+    sudo systemctl start jack mod-host mod-ui
+    ```
+    
+    After the services are restarted, the browser should reload automatically.
+
+1. Check status of the services:
+
+    ```
+    sudo systemctl status jack
+    sudo systemctl status mod-host
+    sudo systemctl status mod-ui
+    ```
+
+    The status should be **active (running)**. If it's not, try checking the service logs for any errors:
+
+    ```
+    sudo journalctl -u jack
+    sudo journalctl -u mod-host
+    sudo journalctl -u mod-ui
+    ```
+
+### Distorted Sound
+1. First check if Clip LED is lit up while audio input signal is playing.
+1. If it is:
+    1. Turn down 'GAIN' knob until the Clip LED no longer gets turned on. If the 'GAIN' is at minimum, turn down the output volume of the device connected to Pisound's Audio Input.
+1. If you still get distorted sound after above is resolved:
+    1. Check XRUNS-Status at the lower right corner of your browser window.
+1. Try experimenting with [jack](#alternative-jack-settings) settings defined in `jack.service`, in particular the -n, -p, -r values. See [here](#editing-configuration-files) for instructions on how to edit it.

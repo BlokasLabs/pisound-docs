@@ -90,5 +90,5 @@ Here is the list of functions you can achieve using Pisound’s button.
 
 ## Plugins
 
-At the moment MODEP image comes with 144 LV2 plugins ranging from synths to heavy guitar distortion plugins.
+At the moment MODEP image comes with 287 LV2 plugins ranging from synths to heavy guitar distortion plugins.
 

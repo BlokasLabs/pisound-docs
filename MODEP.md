@@ -82,6 +82,11 @@ Here is the list of functions you can achieve using Pisound’s button.
 - select "1 Check system status" - All services should state "active"
 - browser should reload automatically, try again.
 
+### Disturbed Sound
+- PISOUND´s input is hard and harsh clipping
+- First check if "clipping" lamp is flashing on the PISOUND while audio input is provided to the PI.
+- Check "GAIN"-Level (turn it down to minimum, not middle position)
+- Reduce audio input-level by turning down the volume of the connected input device.
 
 ## Plugins
 

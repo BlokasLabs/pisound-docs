@@ -30,10 +30,11 @@ Note that Jack is running as 'root' user, in case you'd like to manually run jac
 ![modep-default](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/modep-default.png)
 
 ## Configuration
-- ssh pi@<Your Raspberry´s IP>          # for builds before 1/1/18
+
+- ssh pi@<Your Raspberry´s IP>          # for builds before 1/1/18 
 - ssh modep@<Your Raspberry´s IP>       # for builds after 1/1/18
 - Password: blokaslabs
-- run `modep`
+- type `modep` press enter.
 
 ## The Button
 
@@ -46,6 +47,41 @@ Here is the list of functions you can achieve using Pisound’s button.
 | Hold for 5 seconds | to turn your Raspberry Pi off.|                                                                           
 
 ![modep-banks](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/modep-banks.PNG)
+
+## Quick and Dirty Debug
+### Option 1 - How to find your IPv4-Address
+- If your pi is connected to your local network via cable:
+- Login into your local router via its webgui
+- Go to network or network overview.
+- Look up a device called pisound
+- the IP should be listed somewhere there.
+
+### Option 2 - How to find your IPv4 Address
+- Connect Screen and Keyboard to your PI
+- You should see a text-based terminal (the linux cli)
+- Login in with user "pi" or "modep" user-account
+- type ifconfig -a to show all network interface configurations
+- if connected by wlan-hotspot look up the entry for "wlan0" field "inet"
+- if connected via ethernet (cable) look up the entry for "eth0" field "inet"
+- this is the IP-Address of your device
+
+### Test connectivity
+- test connectivity to the raspberry from your pc/laptop (e.g. windows) by
+- running "cmd" and enter "ping <IP-Address>" 
+- if connectivity is good, no error should return.
+
+### Web-GUI is reachable, but no sound or "add device error"
+- Check input, output cabling, volume and gain level. If this fails:
+- login via ssh (e.g. by using putty for windows)
+- start configuration script "modep".
+- select "3 Tools" (Arrow-Keys and TAB)
+- select "4 Disable MODEP systemd services"
+- press "enter", wait til finished and pressed "enter" again.
+- select "3 Enable MODEP systemd services"
+- press "enter", wait til finished and press "enter" again.
+- select "1 Check system status" - All services should state "active"
+- browser should reload automatically, try again.
+
 
 ## Plugins
 

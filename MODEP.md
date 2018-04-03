@@ -40,7 +40,7 @@ Note that Jack is running as 'root' user, in case you'd like to manually run jac
 - Find the File: `jack.service` at `/usr/local/modep/services`
 - Edit the file `sudo vi /usr/local/modep/services/jack.service`
 - Find the Line `ExecStart=/usr/local/bin/jackd -v -t 2000 -s -d alsa -d hw:pisound -r 48000 -p 256 -n 2 -X seq`
-- Comment it out: i (for insert) # (to make it a comment)
+- Comment it out: i (for insert) # (to make it a comment), press ESC
 - Copy the line: mark the line, press i (for insert), press right click.
 - Press ESC to terminate insert mode.
 - Change the line (by pressing x to delete a char, or r to replace a char)
@@ -100,6 +100,8 @@ Here is the list of functions you can achieve using Pisound’s button.
 - First check if "clipping" lamp is flashing on the PISOUND while audio input is provided to the PI.
 - Check "GAIN"-Level (turn it down to minimum, not middle position)
 - Reduce audio input-level by turning down the volume of the connected input device.
+- Still disturbed sound? Check XRUNS-Status lower right corner of your browser windows.
+- See "Enhanced Configuration of jackd" Section.
 
 ## Plugins
 

@@ -36,6 +36,19 @@ Note that Jack is running as 'root' user, in case you'd like to manually run jac
 - Password: blokaslabs
 - type `modep` press enter.
 
+## Enhanced Configuration of jackd (jack2 1.9.12) for less xrun-errors
+- Find the File: `jack.service` at `/usr/local/modep/services`
+- Edit the file `sudo vi /usr/local/modep/services/jack.service`
+- Find the Line `ExecStart=/usr/local/bin/jackd -v -t 2000 -s -d alsa -d hw:pisound -r 48000 -p 256 -n 2 -X seq`
+- Comment it out: i (for insert) # (to make it a comment)
+- Copy the line: mark the line, press i (for insert), press right click.
+- Press ESC to terminate insert mode.
+- Change the line (by pressing x to delete a char, or r to replace a char)
+- `ExecStart=/usr/local/bin/jackd -v -t 2000 -s -d alsa -d hw:pisound -r 96000 -p 256 -n 3 -X seq`
+- press ESC, write `wq` for `write quit`, this will save the changes and close vi.
+- now restart services by starting modep selecting 3 tools, stopping and starting all services.
+- Remark: This settings might not be perfect, further tweaks are welcome.
+
 ## The Button
 
 Here is the list of functions you can achieve using Pisound’s button.

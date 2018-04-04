@@ -55,6 +55,7 @@ Raspberry Pi 1 Model B+|
 Raspberry Pi 2|
 Raspberry Pi 2 version 1.2|
 Raspberry Pi 3|
+Raspberry Pi 3B+|
 Raspberry Pi Zero version 1.2|
 Raspberry Pi Zero version 1.3|
 

@@ -18,7 +18,7 @@ After everything is set up, `pisound-ctl` will get launched automatically and wi
 
 ### Android
 
-Install the Pisound app on your device [here](https://play.google.com/store/apps/details?id=com.blokas.pisoundctl).
+Install the Pisound app on your device [here](https://play.google.com/store/apps/details?id=com.blokas.pisoundctl), or download the apk directly [here](https://blokas.io/pisound/app/com.blokas.pisoundctl.v1.02.apk).
 
 #### Why is the Location Permission Required?
 As much as we hate excess permission requests ourselves, there’s no way we can avoid requesting this one. We don’t need or store your location information. It’s required for an application to declare [ACCESS_COARSE_LOCATION](https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION) permission in its Manifest for the application to be able to initiate discovery of nearby Bluetooth devices.

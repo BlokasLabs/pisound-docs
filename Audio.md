@@ -8,9 +8,9 @@ There is one unbalanced stereo input accessible via 1/4" (6.35mm) jack slot on P
 ![pisound-side](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/gain_vs_pot.jpg)
 Gain and input sensitivity versus position of **GAIN** pot
 
-### 5V Bias Solder Jumpers
+### 6V Bias Solder Jumpers
 
-There are two solder jumpers near the input port, one for each input channel. By default, the jumpers are unsoldered. If the solder jumper is soldered&ast;, it enables the 5V bias voltage with a 2.2kOhm resistor for the input channel, and that allows connecting electret microphones.
+There are two solder jumpers near the input port, one for each input channel. By default, the jumpers are unsoldered. If the solder jumper is soldered&ast;, it enables the 6V bias voltage with a 2.2kOhm resistor for the input channel, and that allows connecting electret microphones.
 
 | Solder Jumper State | Description |
 |---|---|

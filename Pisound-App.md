@@ -1,7 +1,12 @@
 # Pisound App
 ![pisound-app](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-app.jpg)
 
-The mobile app communicates with a dedicated server running on Raspberry Pi & Pisound via Bluetooth. It is called Pisound Control Server (`pisound-ctl`) and it allows listing all supported patches in predefined locations (usually `/usr/local/...-patches`) and to selectively launch the patches in the appropriate software, making headless browsing and switching between patches easy, as well as executing custom scripts.
+The mobile app communicates with a dedicated server running on Raspberry Pi & Pisound via Bluetooth. It is called Pisound Control Server (`pisound-ctl`)
+and it allows listing all supported patches in predefined locations (usually `/usr/local/...-patches`) and to selectively launch the patches in the appropriate
+software, making headless browsing and switching between patches easy, as well as executing custom scripts.
+
+Furthermore, since version 1.03, the app has an integration with TheTechnobear's [MEC software](https://github.com/TheTechnobear/MEC), that means the patches
+may have parameter controls whose values can be modified within the app, they can be used for display feedback from the patch to the app, and are MIDI mappable to external MIDI controllers!
 
 The stdout and stderr outputs of the launched application are displayed in real time, informing the user on what is going on with the patch application.
 
@@ -10,7 +15,7 @@ The design is extensible - new scripts may be added to support launching patches
 ## Software Setup
 ### Raspberry Pi
 
-First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.05 or higher and `pisound-ctl --version` says it's 1.02 or higher. If it is not, follow the install instructions on [Installing/Updating The Pisound Software](software#installingupdating-the-pisound-software). The `install-pisound.sh` will update the software even if some previous version was already installed.
+First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.05 or higher and `pisound-ctl --version` says it's 1.03 or higher. If it is not, follow the install instructions on [Installing/Updating The Pisound Software](software#installingupdating-the-pisound-software). The `install-pisound.sh` will update the software even if some previous version was already installed.
 
 If using Raspberry Pi without built-in Bluetooth support, connect a USB Bluetooth dongle to it.
 
@@ -18,7 +23,7 @@ After everything is set up, `pisound-ctl` will get launched automatically and wi
 
 ### Android
 
-Install the Pisound app on your device [here](https://play.google.com/store/apps/details?id=com.blokas.pisoundctl), or download the apk directly [here](https://blokas.io/pisound/app/com.blokas.pisoundctl.v1.02.apk).
+Install the Pisound app on your device [here](https://play.google.com/store/apps/details?id=com.blokas.pisoundctl), or download the apk directly [here](https://blokas.io/pisound/app/com.blokas.pisoundctl.v1.03.apk).
 
 #### Why is the Location Permission Required?
 As much as we hate excess permission requests ourselves, there’s no way we can avoid requesting this one. We don’t need or store your location information. It’s required for an application to declare [ACCESS_COARSE_LOCATION](https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION) permission in its Manifest for the application to be able to initiate discovery of nearby Bluetooth devices.
@@ -36,17 +41,23 @@ Hold The Button on Pisound for 3 LED blinks (but less than 5 or the shutdown wil
 
 To connect to a new device, click 'Scan' in the initial screen and wait for nearby devices to be discovered. Once you see your Raspberry Pi in the list (usually `raspberrypi` unless you changed its hostname), tap it to connect to it. In case it didn’t appear in the list, make sure that it is in discoverable mode and you may pull the list down or click the button that appears at the bottom in order to manually initiate a new scan of nearby devices.
 
-If when starting the app it was already successfully connected to some device before, it would attempt to automatically connect to that device once.
+If when starting the app it was previously successfully connected to some device, you may hit the Connect button to connect to that device.
 
-### MIDI Controllers
+### Parameters and MIDI
 
-At the moment a patch gets launched, the app connects all of the connected MIDI devices to the patch host, so you may immediately interact with the system.
+When a patch gets launched, the app connects all of the connected MIDI devices to the patch host, so you may immediately interact with the system, in case it reacts to MIDI messages.
 
-The built-in patches are organized in 8 MIDI CC's per page of controls. The numbering of CCs starts from 2 and CC 33 is skipped. That is because CC 0 is not usable  on some MIDI controllers and CC 1 and CC 33 messages are dedicated for the Modulation Wheel.
+To have the parameters displayed in the app, the patch must contain the parameter definitions and load the appropriate plugin.
 
-The patches that have a MIDI parameter listing have a 'MIDI' button at the top right of the patch view which opens the full list of the controllable patch parameters.
+#### Pure Data
 
-We suggest programming your MIDI controller's controls in the same way as described above, but you may map it according to the MIDI parameter list to your convenience.
+The Pure Data patches must contain a `[monorack patch_name]` object as well as the [parameter definitions](#parameter-definitions), named `patch_name-module.json` and `patch_name-rack.json`, described below in the same folder as the blokas.yml file.
+The patch_name part must be a single word without spaces and must match between the monorack object and .json files.
+
+Also, for convenience, the `[monorack]` object has a 'refresh' button visible in PD GUI to force reload of parameter definitions without restarting the patch. If after refreshing
+you don't see the expected changes, check for syntax errors in the definition files.
+
+For the virtual MIDI keyboard to appear in the app when the patch is launched, it must contain `[notein]` and/or `[r notes]` object in some .pd file in the patch folder.
 
 ### Starting a Patch
 
@@ -75,16 +86,88 @@ While import is ongoing, the app will display a console. Lines that say 'Importi
 To stop the server from automatically starting on boot:
 
     sudo systemctl disable pisound-ctl
- 
 
 To re-enable automatic start:
 
     sudo systemctl enable pisound-ctl
 
-
 ## Customization
 
-The main customizable parts are the scripts and .yml files in `/usr/local/pisound-ctl/`.
+The main customizable parts are the scripts, .yml files in `/usr/local/pisound-ctl/` and parameter definition json files.
+
+### Parameter Definitions
+
+The syntax of parameter definitions is JSON, so keep an eye on the ',' symbols - make sure the last entry of the group has no trailing comma, and all else do. It's best to write it using an editor with automatic syntax error checking.
+
+#### ...-module.json
+
+This file holds the definitions for the parameters in the module.
+
+Example file:
+
+```
+{
+	"name" : "example",
+	"display" : "Example",
+	"parameters" : [
+		["float","tempo","BPM",30,300,120],
+		["bool","on","On",0]
+	],
+	"pages" : [
+		["pg_main","Main",["on","tempo"]]
+	]
+}
+```
+
+| Field | Description |
+| ----- | ----------- |
+| name | Module name, used internally |
+| display | Display name, for human consumption |
+| parameters | Array of parameter value arrays, see below |
+| pages | Array of page arrays, see below |
+
+Each parameter array entry consists of a subarray, containing the following fields in given order:
+
+1. Type, see below table for possible values
+1. Internal name, it is the symbol name that will be used to send and receive values in Pure Data, usable in PD via `[s name]` and `[r name]` objects.
+1. Display name
+1. Minimum value
+1. Maximum value
+1. Default value
+
+The types fundamentally are float, integer and boolean. Some particular types imply a units suffix for display, but they are not used in the app.
+
+| Type  | Description |
+| ----- | ----------- |
+| float | Real numbers |
+| int   | Integer numbers |
+| pct   | Same as float, with % suffix, use 0 and 100 for min and max |
+| freq  | Same as float, with Hz suffix |
+| time  | Same as float, with mSec suffix |
+| pitch | Same as integer, with st suffix |
+| bool  | Boolean value, 1 means true, 0 means false. **Minimum value and maximum value must be omitted in the parameter entry array!** |
+
+The parameter in the UI will have different appearance based on the type, in case the fundamental type is:
+
+* 'float', the parameter in the UI will appear as a vertical slider.
+* 'int', the parameter in the UI will have arrows up and down so changes by exactly 1 are easy to do.
+* 'bool', the parameter in the UI will appear as an integer, with min and max values being 0 and 1 respectively.
+    * if the parameter internal name has a '_btn' suffix and is of bool type, then it will appear as a button.
+
+The page entry consists of:
+
+1. Internal name
+2. Display name
+3. An array of internal names of parameters, that appear in the page.
+
+Same parameter may appear in more than one page, also can appear more than once in one page.
+
+We'd recommend using up to 8 parameters per page, but if you use more, the page will automatically be split into sub pages. Keep in mind that there's a character length limit for a page entry, so don't put everything into a single page.
+
+#### ...-rack.json
+
+Holds preset and MIDI mapping information. Initially this file may be empty. As of 1.03, only the 'default' preset name is used. The 'default' preset gets saved when a MIDI control is mapped to some parameter.
+Saving and loading different presets will come in a later release.
 
 ### [category_list.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/category_list.sh)
 
@@ -96,6 +179,20 @@ You may add more kinds of collections by modifying this file and creating approp
 
 The category yml file describes the category of items as well as provides a couple of scripts which are used to implement particular functions.
 
+The fields in category.yml files are:
+
+| Field | Type | Required | Description |
+| ----- | ---- | -------- | ----------- |
+| name | string | Y | The display name of the category |
+| description | markdown | Y | Description of the category |
+| listing_script | path | Y | Path to _list.sh script |
+| launcher_script | path | Y | Path to _launch.sh script |
+| stopper_script | path | N | Path to _stop.sh script |
+| detail_script | path | N | Path to _detail.sh script |
+| delete_script | path | N | Path to _delete.sh script |
+| opaque_item_mode | bool | N | If this is true, the entries printed by listing_script are not treated as files, so not double-checked for existence. Default false. This is useful when the items in category are not represented in a systematic way by distinct files (like pedalboards in MODEP) |
+
+
 ### [list.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/puredata_list.sh)
 
 This script should print the paths to the patch entry points or metadata files (usually the path to blokas.yml), so they appear in the collection view.
@@ -104,11 +201,26 @@ This script should print the paths to the patch entry points or metadata files (
 
 The patch yml file describes the patch itself and contains info that gets displayed in the 'Patch View' of the app.
 
+| Field | Type | Required | Description |
+| ----- | ---- | -------- | ----------- |
+| name | string | Y | The display name of the patch |
+| author | string | N | The author(s) |
+| entry | path / string | Y | The path to entry point of the patch. Can be relative to blokas.yml. In case opaque mode is enabled for the category, this is treated as a string |
+| args | string | N | Arguments to append to launcher script invocation |
+| image | path | N | Path to the image to use with the patch. Can be relative to blokas.yml |
+| description | markdown | N | Description of the patch |
+| tags | string list | N | Tags of the patch |
+| mec_controls | bool | N | Whether the patch supports MEC controls (puredata_detail.sh automatically guesses the value, this can be specified to manually override) |
+| midi_keyboard | bool | N | Whether the patch should show virtual MIDI keyboard (puredata_detail.sh automatically guesses the value, this can be specified to manually override) |
+
 ### [detail.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/puredata_detail.sh)
 
 A script that outputs the metadata on the patch - usually it's enough to print the blokas.yml file for the patch, however, some more advanced uses may generate the data on the fly. YAML or equivalent JSON output is acceptable.
 
 At the very least, 'entry' and 'name' must be produced.
+
+`--summary` argument is provided when querying for information to be displayed in the Collections and Patch views, and it's omitted when retrieving the information for the patch just before starting it. This is useful
+in case time consuming dynamic scanning of the patch for features it supports is being done prior to being launched, so that can be skipped while simply browsing the patches list.
 
 ### [launch.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/puredata_launch.sh)
 

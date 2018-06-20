@@ -157,7 +157,7 @@ The Pure Data patches are expected to be found in `/usr/local/puredata-patches/`
 
 ### Patch Parameters and MIDI
 
-Thanks to integration with TheTechnobear's [MEC software](https://github.com/TheTechnobear/MEC), MIDI mappable parameters in PD are possible.
+Thanks to integration with TheTechnobear's [MEC software](https://github.com/TheTechnobear/MEC), real time controls and MIDI mapping in PD are possible.
 
 When a patch gets launched, the app connects all of the connected MIDI devices to the patch host, so you may immediately interact with the system, in case it reacts to MIDI messages.
 

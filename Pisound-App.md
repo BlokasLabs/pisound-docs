@@ -157,6 +157,8 @@ The Pure Data patches are expected to be found in `/usr/local/puredata-patches/`
 
 ### Patch Parameters and MIDI
 
+Thanks to integration with TheTechnobear's [MEC software](https://github.com/TheTechnobear/MEC), MIDI mappable parameters in PD are possible.
+
 When a patch gets launched, the app connects all of the connected MIDI devices to the patch host, so you may immediately interact with the system, in case it reacts to MIDI messages.
 
 To have the parameters displayed in the app, the patch must contain the [parameter definitions](#parameter-definitions) and load the appropriate plugin.
@@ -171,7 +173,9 @@ For the virtual MIDI keyboard to appear in the app when the patch is launched, i
 
 ### Parameter Definitions
 
-The syntax of parameter definitions is JSON, so keep an eye on the ',' symbols - make sure the last entry of the group has no trailing comma, and all else do. It's best to write it using an editor with automatic syntax error checking.
+The parameter definitions format is defined by the [MEC Software](https://github.com/TheTechnobear/MEC).
+
+The syntax is JSON, so keep an eye on the ',' symbols - make sure the last entry of the group has no trailing comma, and all else do. It's best to write it using an editor with automatic syntax error checking.
 
 #### ...-module.json
 

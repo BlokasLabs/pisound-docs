@@ -120,4 +120,4 @@ If you want to add more controls to your Pisound audio projects, you can make yo
 
 ![DIY MIDI controller](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/diy-midi-ctrl.png)
 
-Go [here](https://github.com/BlokasLabs/usbmidi/tree/master/arduino/libraries/usbmidi/examples/midictrl) for full instructions.
+Go [here](https://github.com/BlokasLabs/USBMIDI/tree/master/examples/midictrl) for full instructions.

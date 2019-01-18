@@ -15,7 +15,7 @@ Input/Output SNR@1kHz|G = 0 dB|110dB
 Input Impedance|-|100kOhm &#124;&#124; 2pF
 Input Gain (G)|-|0dB to +40dB
 Input Clip LED|-|Yes
-Input Clip Voltage|G = 0 dB|5V (peak to peak)
+Input Clip Voltage|G = 0 dB|2.5V (peak to peak)
 Full Scale Output|Load impedance > 1 kOhm|0V to 2.1V (RMS)
 Loopback Bandwidth (-3 dB)|G = 0 dB, Fs = 48 kHz|7.5Hz - 23kHz
 Loopback THD@1kHz|G = 0 dB, Fs = 48 kHz|< 0.045%

@@ -12,9 +12,13 @@ You should find 1 Pisound and a plastic bag containing 2 knobs, 8 screws and 4 s
 Mount Pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws provided while the RPi is unpowered, so it appears as in the image at the top. See compatible Raspberry Pi models [here](specs#supported-raspberry-pi-models).
 
 ### Pisound Acrylic Case
+![pisound-case](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-case.jpg)
+
+A simple but really sturdy and beautiful case for your Pisound and Raspberry Pi. The enclosure is cut from semi-transparent 3mm thick acrylic sheet. Round engravings indicate the Output ports and the Volume potentiometer. 
+
 The Pisound Acrylic Case consists of 2 cutout sheets of the enclosure sides and a plastic bag containing 4 short spacers, 4 longer ones and a button cap.
 
-You can find the assembly instructions [here](Pisound-Acrylic-Case#assembly-instructions).
+[@mzero](https://community.blokas.io/u/mzero/summary), a member of [Electric Kitchen](https://electric.kitchen) project has made a great detailed Pisound Case assembly video. You can watch it [here](https://youtu.be/vt8rdc14wNY), or you can find the assembly instructions [here](Pisound-Acrylic-Case#assembly-instructions).
 
 ## Driver Setup
 ![pisound-config](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-config.png)

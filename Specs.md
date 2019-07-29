@@ -44,7 +44,7 @@ There are two versions of Pisound regarding power supply:
 
 * **9V version (beta):** 7.2V - 12.6V, 18W minimum. 5.5x2.1 mm coaxial power jack connector. The inner connector is connected to the positive terminal, and the sleeve is connected to the ground. The power adapter connected to Pisound supplies the RPi board too, so RPi does not need to have its USB supply port connected. The Pisound itself has a power consumption of about 1.8W. A 9VDC power supply capable of delivering at least 2 Amps of current is recommended for this version.
 
-* **5.1V version (latest):** Pisound has no power connection and requires no additional power supply. It powers up from RPi power supply via pins on RPi header. Pisound consumes no more than 300mA at 5.1VDC. When using this version of Pisound, we recommend to use the official [5.1VDC RPi power supply](https://www.raspberrypi.org/products/universal-power-supply/).
+* **5.1V version (latest):** Pisound has no power connection and requires no additional power supply. It powers up from RPi power supply via pins on RPi header. Pisound consumes no more than 300mA at 5.1VDC. When using this version of Pisound, we recommend to use the official [5.1VDC RPi power supply](https://www.raspberrypi.org/products/raspberry-pi-universal-power-supply/).
 
 ## Supported Raspberry Pi Models
 

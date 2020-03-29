@@ -1,42 +1,5 @@
 # Projects Using Pisound
 
-## Pisound and LV2 Plugins
-On http://rpi.autostatic.com/ repository you can find some cool software packages for audio. One of those is **Carla** - a host for LV2 plugins.
-
-![Carla](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/carla.png)
-
-So let's give it a go.
-
-First we have to add the repository to apt-get:
-```
-wget -q -O - http://rpi.autostatic.com/autostatic.gpg.key | sudo apt-key add -
-sudo wget -q -O /etc/apt/sources.list.d/autostatic-audio-raspbian.list http://rpi.autostatic.com/autostatic-audio-raspbian.list
-sudo apt-get update
-```
-After that's done, let's install **Carla** as well as **jackd** server and **qjackctl** for configuring it:
-```
-sudo apt-get install carla jackd qjackctl
-```
-Then start **qjackctl**, you can do that by hitting Alt+F2 and typing in **qjackctl** and pressing enter.
-
-Configure it in Setup... like so:
-
-![Jack Settings](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/jack_settings.png)
-
-And start the jack server by pressing Start:
-
-![Jack Start](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/start_jack.png)
-
-Now run Carla (Alt+F2, carla, enter)
-
-Click Configure Carla and make sure that Audio Driver is set to JACK. It will connect to the already started Jack server. For process mode I've used Single Client, but you can use any option you like.
-
-Then you can add plugins in Plugins section, and patch them up in Patch Bay section.
-
-The top screenshot shows **ZSynAddSubFX** connected to Pisound's Input and Output, as well as MIDI data routed to the synth plugin.
-
-There's a couple of plugins readily available to play around within Carla, and you should be able to find more LV2 plugins built for Raspberry Pi to experiment with on the Internet.
-
 ## Internet Radio Station
 
 Using **icecast** and **darkice** you can easily setup your own radio station and broadcast whatever is connected to the Pisound input!
@@ -121,3 +84,43 @@ If you want to add more controls to your Pisound audio projects, you can make yo
 ![DIY MIDI controller](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/diy-midi-ctrl.png)
 
 Go [here](https://github.com/BlokasLabs/USBMIDI/tree/master/examples/midictrl) for full instructions.
+
+## Pisound and LV2 Plugins
+
+**Unfortunately the rpi.autostatic.com repository used in this guide seems to be no longer available.**
+
+On http://rpi.autostatic.com/ repository you can find some cool software packages for audio. One of those is **Carla** - a host for LV2 plugins.
+
+![Carla](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/carla.png)
+
+So let's give it a go.
+
+First we have to add the repository to apt-get:
+```
+wget -q -O - http://rpi.autostatic.com/autostatic.gpg.key | sudo apt-key add -
+sudo wget -q -O /etc/apt/sources.list.d/autostatic-audio-raspbian.list http://rpi.autostatic.com/autostatic-audio-raspbian.list
+sudo apt-get update
+```
+After that's done, let's install **Carla** as well as **jackd** server and **qjackctl** for configuring it:
+```
+sudo apt-get install carla jackd qjackctl
+```
+Then start **qjackctl**, you can do that by hitting Alt+F2 and typing in **qjackctl** and pressing enter.
+
+Configure it in Setup... like so:
+
+![Jack Settings](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/jack_settings.png)
+
+And start the jack server by pressing Start:
+
+![Jack Start](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/start_jack.png)
+
+Now run Carla (Alt+F2, carla, enter)
+
+Click Configure Carla and make sure that Audio Driver is set to JACK. It will connect to the already started Jack server. For process mode I've used Single Client, but you can use any option you like.
+
+Then you can add plugins in Plugins section, and patch them up in Patch Bay section.
+
+The top screenshot shows **ZSynAddSubFX** connected to Pisound's Input and Output, as well as MIDI data routed to the synth plugin.
+
+There's a couple of plugins readily available to play around within Carla, and you should be able to find more LV2 plugins built for Raspberry Pi to experiment with on the Internet.

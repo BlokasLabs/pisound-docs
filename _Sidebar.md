@@ -3,7 +3,7 @@
 * [[Audio]]
 * [[MIDI]]
 * [[Software]]
-* [The Button](the-button)
+* [The Button](The-Button)
 * [Pisound Acrylic Case](Pisound-Acrylic-Case)
 * [Pisound Config](Pisound-Config)
 * [Pisound & Pure Data](pisound-&-Pure-Data)

@@ -1,6 +1,6 @@
 # The Button
 
-The Button is a customizable button on the Pisound board. There's a lot of mappable actions for it. The mappings are expressed in [`/etc/pisound.conf`](https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/pisound.conf). You may use [`pisound-config`](pisound-config) to easily re-map the actions.
+The Button is a customizable button on the Pisound board. There's a lot of mappable actions for it. The mappings are expressed in [`/etc/pisound.conf`](https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/pisound.conf). You may use [`pisound-config`](Pisound-Config.md) to easily re-map the actions.
 
 The `/etc/pisound.conf` file allows mapping these actions:
 
@@ -31,7 +31,7 @@ You may modify these scripts to do whatever you wish or re-map any of the action
 
 You may re-map the default actions or point them to your own custom scripts to be executed by modifying the [`/etc/pisound.conf`](https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/pisound.conf).
 
-Use [`pisound-config`](pisound-config) for effortless remapping.
+Use [`pisound-config`](Pisound-Config.md) for effortless remapping.
 
 The config file format allows placing comments by prefixing the line with # character. Comments must begin at the first word of the line.
 
@@ -44,7 +44,7 @@ VARIABLE value_without_spaces
 
 ## Adding More Button Actions
 
-For a new button action to appear in the [`pisound-config`](pisound-config) button action list, a new .sh script should be added to `/usr/local/pisound/scripts/pisound-btn/`. Make sure the 'execute' (`chmod +x ...`) permission is set for the new script. The file name will appear in `pisound-config`'s Pisound Button Settings which can be used for mapping as an action for The Button interaction.
+For a new button action to appear in the [`pisound-config`](Pisound-Config.md) button action list, a new .sh script should be added to `/usr/local/pisound/scripts/pisound-btn/`. Make sure the 'execute' (`chmod +x ...`) permission is set for the new script. The file name will appear in `pisound-config`'s Pisound Button Settings which can be used for mapping as an action for The Button interaction.
 
 The sky is definitely not the limit on what The Button can do, the shell scripts can be used to bootstrap things written in any other language.
 
@@ -77,7 +77,7 @@ The sky is definitely not the limit on what The Button can do, the shell scripts
 
 In the first step, we have created a new script file with the execute permission set, and launched the `nano` editor.
 
-In the second step, the script got coded. The `#!/bin/sh` indicates that this is a shell script. The `. /usr/.../common.sh` line imports the common functions defined in [`common.sh`](https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/scripts/common.sh). The `log` line prepends the timestamp to the given text to print and prints it to the system log. The `flash_leds` line interacts with the Pisound driver and causes the LEDs to flash. Try playing with the number argument to see the difference in flash duration. (Maximum value is 255)
+In the second step, the script got coded. The `#!/bin/sh` indicates that this is a shell script. The `. /usr/.../common.sh` line imports the common functions defined in [`common.sh`Qhttps://github.com/BlokasLabs/pisound/blob/master/pisound-btn/scripts/common.sh). The `log` line prepends the timestamp to the given text to print and prints it to the system log. The `flash_leds` line interacts with the Pisound driver and causes the LEDs to flash. Try playing with the number argument to see the difference in flash duration. (Maximum value is 255)
 
 In the third step we have remapped the single click action. This caused `/etc/pisound.conf` to get automatically updated accordingly.
 
@@ -98,13 +98,13 @@ Double clicking will stop all Pure Data instances and unmount all attached exter
 
 ### [`toggle_wifi_hotspot.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) - Toggle WiFi Hotspot Mode
 
-Triple-clicking will reconfigure the WiFi of RPi3 board or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
+Triple-clicking will reconfigure the WiFi of Raspberry Pi board (version >=3) or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
 
-By default, the AP will appear as '**Pisound**', and the default password is '**blokaslabs**' (without quotes). You can change the name and password by using [`pisound-config`](pisound-config).
+By default, the AP will appear as '**Pisound**', and the default password is '**blokaslabs**' (without quotes). You can change the name and password by using [`pisound-config`](Pisound-Config.md).
 
 The default IP address of RPi in WiFi Hotspot mode is 172.24.1.1 which you can use for ssh, VNC or wireless OSC / MIDI data! That means that you can easily interact with your system using just your laptop or phone, no more wires apart from power supply is needed! And it gets better, if the LAN cable is connected to RPi, it will share the Internet with the connected devices over WiFi!
 
-To send MIDI OSC messages from your other devices to Pisound, connect to the Pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings. See [here](faqs#how-to-send-wifi-midi-messages-to-your-raspberry-pi) for more information.
+To send MIDI OSC messages from your other devices to Pisound, connect to the Pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings. See [here](FAQs.md#how-to-send-wifi-midi-messages-to-your-raspberry-pi) for more information.
 
 To access RPi using ssh and/or VNC, make sure they're enabled in `raspi-config`. To enable, run in terminal:
 ```bash
@@ -114,9 +114,9 @@ Go to **Interfacing Options** and make sure **ssh** and **VNC** are enabled. If 
 
 Triple-clicking again will revert to regular WiFi behavior.
 
-### [`toggle_bt_discoverable.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) - Toggle Bluetooth Discoverability on and Off
+### [`toggle_bt_discoverable.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) - Toggle Bluetooth Discoverability On and Off
 
-Holding The Button between 3 and 5 seconds will toggle the Bluetooth Discoverability. See [Pisound App](pisound-app) for controlling Pisound & RPi remotely.
+Holding The Button between 3 and 5 seconds will toggle the Bluetooth Discoverability. See [Pisound App](Pisound-App.md) for controlling Pisound & RPi remotely.
 
 ## Miscellaneous Scripts
 

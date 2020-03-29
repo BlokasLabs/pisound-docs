@@ -42,23 +42,25 @@ Weight|67g
 ## Power Supply 
 There are two versions of Pisound regarding power supply:
 
-* **9V version (beta):** 7.2V - 12.6V, 18W minimum. 5.5x2.1 mm coaxial power jack connector. The inner connector is connected to the positive terminal, and the sleeve is connected to the ground. The power adapter connected to Pisound supplies the RPi board too, so RPi does not need to have its USB supply port connected. The Pisound itself has a power consumption of about 1.8W. A 9VDC power supply capable of delivering at least 2 Amps of current is recommended for this version.
+* **5.1V version (latest):** Pisound powers up from Raspberry Pi's power supply via pins on the GPIO header.
+Pisound consumes no more than 300mA at 5.1VDC. For use with this version of Pisound, we recommend to use the official [5.1VDC RPi power supply for RPi version 1, 2 and 3](https://www.raspberrypi.org/products/raspberry-pi-universal-power-supply/)
+or [USB-C Power Supply for RPi version 4](https://www.raspberrypi.org/products/type-c-power-supply/).
 
-* **5.1V version (latest):** Pisound has no power connection and requires no additional power supply. It powers up from RPi power supply via pins on RPi header. Pisound consumes no more than 300mA at 5.1VDC. When using this version of Pisound, we recommend to use the official [5.1VDC RPi power supply](https://www.raspberrypi.org/products/raspberry-pi-universal-power-supply/).
+* **9V version (old beta version):** 7.2V - 12.6V, 18W minimum. 5.5x2.1 mm coaxial power jack connector. The inner connector is connected to the positive terminal, and the sleeve is connected to the ground. The power adapter connected to Pisound supplies the RPi board too, so RPi does not need to have its USB supply port connected. The Pisound itself has a power consumption of about 1.8W. A 9VDC power supply capable of delivering at least 2 Amps of current is recommended for this version.
 
 ## Supported Raspberry Pi Models
 
-**Compatible models**|
-:-----|
-Raspberry Pi 1 Model A+|
-Raspberry Pi 1 Model B+|
-Raspberry Pi 2|
-Raspberry Pi 2 version 1.2|
-Raspberry Pi 3|
-Raspberry Pi 3B+|
-Raspberry Pi Zero version 1.2|
-Raspberry Pi Zero version 1.3|
+| **Compatible Models** |  |
+| ----- | ----- |
+| Raspberry Pi 4 [^1] | Raspberry Pi 3 |
+| Raspberry Pi 3B+ | Raspberry Pi 2 version 1.2 |
+| Raspberry Pi 2 | Raspberry Pi 1 Model B+ |
+| Raspberry Pi 1 Model A+ | Raspberry Pi Zero version 1.2|
+| Raspberry Pi Zero version 1.3| |
 
+[^1]: Since Pisound hardware version v1.1.
+
+///Footnotes Go Here///
 
 ## Raspberry Pi Pins Used by Pisound
 ![pinout map rev3](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-pins.png)

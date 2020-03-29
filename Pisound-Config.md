@@ -9,11 +9,11 @@ To get started, simply open a terminal and run:
 sudo pisound-config
 ```
 
-If you get a command not found error, see [Installing/Updating The Pisound Software](software#installingupdating-the-pisound-software) for instructions on how to get the latest version.
+If you get a command not found error, see [Installing The Pisound Software](Software.md#installing-the-pisound-software) for instructions on how to get the latest version.
 
 ## Adding More Button Actions
 
-See [Adding More Button Actions](the-button#adding-more-button-actions) for a quick tutorial on how to make more actions appear in the action selection.
+See [Adding More Button Actions](The-Button.md#adding-more-button-actions) for a quick tutorial on how to make more actions appear in the action selection.
 
 
 ## Contributing

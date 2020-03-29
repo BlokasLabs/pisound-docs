@@ -20,10 +20,16 @@ To start the server, configured to use Pisound, follow these steps:
 
 ![jack-setup](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/jack_setup.png)
 
-
 ## How to use Sonic Pi with Pisound?
 
-The latest version of Sonic Pi works out of the box without any manual changes! Just start it from the menu -> Programming -> Sonic Pi!
+The latest version of Sonic Pi bundled with Raspbian Desktop works out of the box without any manual changes! Just start it from the menu -> Programming -> Sonic Pi!
+
+If you dont' have Sonic Pi installed or want to get it upgraded, then run these commands in a terminal:
+
+```
+sudo apt update
+sudo apt install sonic-pi
+```
 
 ## How to send WiFi-MIDI messages to your Raspberry Pi?
 

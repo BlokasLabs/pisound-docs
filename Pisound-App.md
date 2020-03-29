@@ -23,7 +23,7 @@ New modules may be added to support launching patches/scripts on more software, 
 ## Software Setup
 ### Raspberry Pi
 
-First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.05 or higher and `pisound-ctl --version` says it's 1.03 or higher. If it is not, follow the install instructions on [Installing/Updating The Pisound Software](software#installingupdating-the-pisound-software). The `install-pisound.sh` will update the software even if some previous version was already installed.
+First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.05 or higher and `pisound-ctl --version` says it's 1.03 or higher. If it is not, follow the install instructions on [Installing The Pisound Software](Software.md#installing-the-pisound-software). The `install-pisound.sh` will update the software even if some previous version was already installed.
 
 If using Raspberry Pi without built-in Bluetooth support, connect a USB Bluetooth dongle to it.
 
@@ -49,7 +49,7 @@ Hold The Button on Pisound for 3 LED blinks (but less than 5 or the shutdown wil
 
 To connect to a new device, click 'Scan' in the initial screen and wait for nearby devices to be discovered. Once you see your Raspberry Pi in the list (usually `raspberrypi` unless you changed its hostname), tap it to connect to it. In case it didn’t appear in the list, make sure that it is in discoverable mode and you may pull the list down or click the button that appears at the bottom in order to manually initiate a new scan of nearby devices.
 
-If when starting the app it was previously successfully connected to some device, you may hit the Connect button to connect to that device.
+If when starting the app it had previously been successfully connected to some device, you may hit the Connect button to connect to that device.
 
 ### Displaying Collections
 
@@ -89,13 +89,13 @@ The main customizable files are located in `/usr/local/pisound-ctl/`.
 
 ### Adding New & Customizing Existing Modules
 
-### [category_list.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/category_list.sh)
+### [category_list.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/common/debian/usr/local/pisound-ctl/category_list.sh)
 
 This script is responsible for producing the list of categories supported in the app. The produced output should be paths to .yml files which describe the category.
 
 You may add more kinds of collections by modifying this file and creating appropriate .yml file.
 
-### [category.yml](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/puredata.yml)
+### [category.yml](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata.yml)
 
 The category yml file describes the category of items as well as provides a couple of scripts which are used to implement particular functions.
 
@@ -113,11 +113,11 @@ The fields in category.yml files are:
 | opaque_item_mode | bool | N | If this is true, the entries printed by listing_script are not treated as files, so not double-checked for existence. Default false. This is useful when the items in category are not represented in a systematic way by distinct files (like pedalboards in MODEP) |
 
 
-### [list.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/puredata_list.sh)
+### [list.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_list.sh)
 
 This script should print the paths to the patch entry points or metadata files (usually the path to blokas.yml), so they appear in the collection view.
 
-### [detail.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/puredata_detail.sh)
+### [detail.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_detail.sh)
 
 A script that outputs the metadata on the patch - usually it's enough to print the blokas.yml file for the patch, however, some more advanced uses may generate the data on the fly. YAML or equivalent JSON output is acceptable.
 
@@ -125,17 +125,17 @@ At the very least, 'entry' and 'name' must be produced.
 
 `--summary` argument is provided when querying for information to be displayed in the Collections and Patch views, and it's omitted when retrieving the information for the patch just before starting it. This is useful in case time consuming dynamic scanning of the patch for features it supports is being done prior to being launched, so that can be skipped while simply browsing the patches list.
 
-### [launch.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/puredata_launch.sh)
+### [launch.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_launch.sh)
 
 A launcher script for executing the item. It gets the item path in its first argument, and whatever was in 'args' attribute in the rest of the command line arguments.
 
-### [stop.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/puredata_stop.sh)
+### [stop.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_stop.sh)
 
 A stopper script - executed when the user stops the patch. If possible, it may gracefully cause the patch host to exit or stop the patch. If it doesn't, the patch host gets killed. (which is fine in most cases)
 
 ### Adding New & Customizing Existing Items
 
-### [blokas.yml](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/system/restart/blokas.yml)
+### [blokas.yml](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/system/debian/usr/local/pisound-ctl/system/restart/blokas.yml)
 
 The blokas.yml file describes the patch/script itself and contains info that gets displayed in the 'Patch View' of the app.
 
@@ -154,6 +154,10 @@ The blokas.yml file describes the patch/script itself and contains info that get
 ## Pure Data Module
 
 The Pure Data patches are expected to be found in `/usr/local/puredata-patches/`. Each patch should be in its own subfolder. The legacy patches require the entry point into the patch to be named 'main.pd'. The new way of including patches is to create a '[blokas.yml](#blokasyml)' file in the patch folder which stores various pieces of information about the patch, including the name of its entry point.
+
+### Pure Data Patch with Parameters Tutorial
+
+You may find a step-by-step tutorial on how to create a Pisound App compatible Pure Data patch [here](https://community.blokas.io/t/pure-data-patch-with-parameters-in-the-pisound-app/622).
 
 ### Patch Parameters and MIDI
 
@@ -251,4 +255,4 @@ Saving and loading different presets will come in a later release.
 
 The scripts used by `pisound-ctl` are hosted on GitHub here: https://github.com/BlokasLabs/pisound-ctl-scripts.
 
-You may submit pull requests with your modifications and additions.
+You may submit pull requests with your modifications and additions. Preferred form of new categories would be deb packages, for an example, see [MODEP integration scripts](https://github.com/BlokasLabs/modep-ctl-scripts).

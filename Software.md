@@ -1,20 +1,26 @@
 # Software
 
-Pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated into mainline Raspbian Linux kernel (ver. 4.4.27+). The support driver for Pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon.
+Pisound is compatible with virtually all Linux distributions and software as it comes with an ALSA audio and MIDI driver integrated into mainline Raspbian Linux kernel (ver. 4.4.27+).
+The support driver for Pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon.
 
-The Pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler. Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button](the-button) functionality below.
+The Pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler.
+Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button](The-Button.md) functionality below.
 
-You can find the source code for The Button [here](https://github.com/BlokasLabs/pisound/tree/master/pisound-btn) and kernel module [here](https://github.com/raspberrypi/linux/blob/rpi-4.9.y/sound/soc/bcm/pisound.c).
+You can find the source code for The Button [here](https://github.com/BlokasLabs/pisound/tree/master/pisound-btn) and kernel module [here](https://github.com/raspberrypi/linux/blob/rpi-4.19.y/sound/soc/bcm/pisound.c).
 
-## Installing/Updating The Pisound Software
+## Patchbox OS
 
-To install the Pisound software, run the below commands in a terminal.
+For quickest setup, targeted at audio applications, we recommend using the SD card image of our [Patchbox OS](https://blokas.io/patchbox-os/).
+
+## Installing The Pisound Software
+
+To install the Pisound software on Debian compatible distributions like [Raspbian](https://www.raspberrypi.org/downloads/raspbian/), run the below command in a terminal. It can also be used for updating the software:
 
 ```bash
-curl https://blokas.io/pisound/install-pisound.sh | sh
+curl https://blokas.io/pisound/install.sh | sh
 ```
 
-This will set up the Blokas APT server and install all the software packages for Pisound. Then you may run [`pisound-config`](pisound-config) to further customize your installation:
+This will set up the Blokas APT server and install all the software packages for Pisound. Then you may run [`pisound-config`](Pisound-Config.md) to further customize your installation:
 
 ```bash
 sudo pisound-config
@@ -61,21 +67,12 @@ You should see output similar to:
 ### Feedback
 In case you're having difficulties with getting Pisound to run, contact us and the community [here](https://community.blokas.io/), provide the exact error and the last command you've executed.
 
-## Compatible Software
+## Compatible OSes
 
 Please add or let us know if you have Pisound working on a distribution that is not on the list yet!
 
-* [Raspbian](https://www.raspbian.org/)
 * [arch linux](https://www.archlinux.org/)
+* [Patchbox OS](https://blokas.io/patchbox-os/)
+* [Raspbian](https://www.raspbian.org/)
 * [Ubuntu Mate](https://ubuntu-mate.org/raspberry-pi/)
 * [Volumio](https://volumio.org/)
-
-The software we tested which required no special changes, in alphabetic order:
-
-* Audacity
-* Carla / LV2
-* darkice and icecast
-* Jack
-* Pure Data
-* Sonic Pi
-* Supercollider

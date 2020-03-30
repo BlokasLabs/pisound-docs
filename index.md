@@ -52,7 +52,7 @@ Once your SD card is ready, place it in the SD card slot on the Raspberry Pi. [P
 curl https://blokas.io/pisound/install.sh | sh
 ```
 
-This will set up the Blokas APT server and install all the software packages for Pisound. Then you may run [`sudo pisound-config`](Pisound-Config.md) to further customize your installation.
+This will set up the Blokas APT server and install all the software packages for Pisound. Then you may run [`sudo pisound-config`](Pisound-Config.md) to further customize the system and to install additional software like Pure Data or TouchOSC2MIDI.
 
 Done! Thank You!
 

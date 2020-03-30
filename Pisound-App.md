@@ -153,6 +153,8 @@ The blokas.yml file describes the patch/script itself and contains info that get
 
 ## Pure Data Module
 
+If you haven't already, you can install Pure Data via [`pisound-config`](Pisound-Config.md), in the 'Install Additional Software' menu.
+
 The Pure Data patches are expected to be found in `/usr/local/puredata-patches/`. Each patch should be in its own subfolder. The legacy patches require the entry point into the patch to be named 'main.pd'. The new way of including patches is to create a '[blokas.yml](#blokasyml)' file in the patch folder which stores various pieces of information about the patch, including the name of its entry point.
 
 ### Pure Data Patch with Parameters Tutorial

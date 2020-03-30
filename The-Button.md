@@ -88,6 +88,8 @@ By default, holding the button down for more than 5 seconds and releasing will c
 
 ### [`start_puredata.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/start_puredata.sh) - Start a Pure Data Patch
 
+If you haven't already, you can install Pure Data via [`pisound-config`](Pisound-Config.md), in the 'Install Additional Software' menu
+
 By default, clicking the button once runs a script that scans the attached media storage devices for '**main.pd**', or, if not found in external media, scans `/usr/local/puredata-patches/`, kills all existing instances of Pure Data, then starts a new instance opening the file, enables audio and connects all the detected MIDI inputs and outputs to the Pure Data's virtual MIDI ports. ALSA engine of Pure Data is used.
 
 The script will blink the MIDI Activity LEDs once just after it reacted to the click, and again 2 times after it succeeded launching the patch, or one long duration blink if an error occurred or no patch was found.
@@ -99,6 +101,7 @@ Double clicking will stop all Pure Data instances and unmount all attached exter
 ### [`toggle_wifi_hotspot.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) - Toggle WiFi Hotspot Mode
 
 Triple-clicking will reconfigure the WiFi of Raspberry Pi board (models with WiFi integrated) or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
+TouchOSC2MIDI must be installed for this to work, you may get it installed using 'Install Additional Software' menu in [`pisound-config`](Pisound-Config.md).
 
 By default, the AP will appear as '**Pisound**', and the default password is '**blokaslabs**' (without quotes). You can change the name and password by using [`pisound-config`](Pisound-Config.md).
 

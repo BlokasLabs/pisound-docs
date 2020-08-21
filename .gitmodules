@@ -1,0 +1,3 @@
+[submodule "blokas-docs-theme"]
+	path = blokas-docs-theme
+	url = https://github.com/BlokasLabs/blokas-docs-theme.git

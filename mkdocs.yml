@@ -1,0 +1,73 @@
+docs_dir: 'docs'
+site_dir: '../../static/pisound/docs'
+site_name: Pisound Documentation
+site_author: UAB VILNIAUS BLOKAS
+google_analytics: ['UA-44135535-1', 'auto']
+use_directory_urls: true
+theme:
+  name: 'material'
+  favicon: 'favicon.ico'
+  logo: 'images/logo.svg'
+  palette:
+    primary: 'white'
+    accent: 'white'
+  custom_dir: 'blokas-docs-theme'
+site_url: https://blokas.io/pisound/docs/
+extra:
+  ads:
+    pisound: true
+    patchboxos: false
+    midihub: false
+    modep: false
+  discourse: 'https://community.blokas.io/'
+  disqus: 'fake'
+  social:
+    - type: 'github'
+      link: 'https://github.com/BlokasLabs'
+    - type: 'twitter'
+      link: 'https://twitter.com/blokaslabs'
+    - type: 'facebook'
+      link: 'https://www.facebook.com/blokaslabs/'
+repo_name: 'pisound-docs'
+repo_url: 'https://github.com/BlokasLabs/pisound-docs/'
+markdown_extensions:
+  - toc:
+      permalink: '#'
+  - pymdownx.arithmatex
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+  - footnotes:
+      PLACE_MARKER: '///Footnotes Go Here///'
+
+copyright: '&copy; 2020 VILNIAUS BLOKAS UAB'
+
+nav:
+- Getting Started: index.md
+- Audio: audio.md
+- MIDI: midi.md
+- Software: software.md
+- The Button: the-button.md
+- Pisound Acrylic Case: pisound-acrylic-case.md
+- Pisound Config: pisound-config.md
+- Pisound & Pure Data: pisound-puredata.md
+- Pisound App: pisound-app.md
+- MOD Emulator for Pi: modep.md
+- Detailed Specs: specs.md
+- Example Projects: example-projects.md
+- FAQs: faqs.md
+
+plugins:
+  - search
+  - redirects:
+        redirect_maps:
+            'Pisound-&-Pure-Data.md': 'pisound-puredata.md'

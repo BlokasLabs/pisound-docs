@@ -23,7 +23,7 @@ New modules may be added to support launching patches/scripts on more software, 
 ## Software Setup
 ### Raspberry Pi
 
-First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.05 or higher and `pisound-ctl --version` says it's 1.03 or higher. If it is not, follow the install instructions on [Installing The Pisound Software](Software.md#installing-the-pisound-software). The `install-pisound.sh` will update the software even if some previous version was already installed.
+First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.05 or higher and `pisound-ctl --version` says it's 1.03 or higher. If it is not, follow the install instructions on [Installing The Pisound Software](software.md#installing-the-pisound-software). The `install-pisound.sh` will update the software even if some previous version was already installed.
 
 If using Raspberry Pi without built-in Bluetooth support, connect a USB Bluetooth dongle to it.
 
@@ -153,7 +153,7 @@ The blokas.yml file describes the patch/script itself and contains info that get
 
 ## Pure Data Module
 
-If you haven't already, you can install Pure Data via [`pisound-config`](Pisound-Config.md), in the 'Install Additional Software' menu.
+If you haven't already, you can install Pure Data via [`pisound-config`](pisound-config.md), in the 'Install Additional Software' menu.
 
 The Pure Data patches are expected to be found in `/usr/local/puredata-patches/`. Each patch should be in its own subfolder. The legacy patches require the entry point into the patch to be named 'main.pd'. The new way of including patches is to create a '[blokas.yml](#blokasyml)' file in the patch folder which stores various pieces of information about the patch, including the name of its entry point.
 

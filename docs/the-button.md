@@ -1,6 +1,6 @@
 # The Button
 
-The Button is a customizable button on the Pisound board. There's a lot of mappable actions for it. The mappings are expressed in [`/etc/pisound.conf`](https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/pisound.conf). You may use [`pisound-config`](Pisound-Config.md) to easily re-map the actions.
+The Button is a customizable button on the Pisound board. There's a lot of mappable actions for it. The mappings are expressed in [`/etc/pisound.conf`](https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/pisound.conf). You may use [`pisound-config`](pisound-config.md) to easily re-map the actions.
 
 The `/etc/pisound.conf` file allows mapping these actions:
 
@@ -31,7 +31,7 @@ You may modify these scripts to do whatever you wish or re-map any of the action
 
 You may re-map the default actions or point them to your own custom scripts to be executed by modifying the [`/etc/pisound.conf`](https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/pisound.conf).
 
-Use [`pisound-config`](Pisound-Config.md) for effortless remapping.
+Use [`pisound-config`](pisound-config.md) for effortless remapping.
 
 The config file format allows placing comments by prefixing the line with # character. Comments must begin at the first word of the line.
 
@@ -44,7 +44,7 @@ VARIABLE value_without_spaces
 
 ## Adding More Button Actions
 
-For a new button action to appear in the [`pisound-config`](Pisound-Config.md) button action list, a new .sh script should be added to `/usr/local/pisound/scripts/pisound-btn/`. Make sure the 'execute' (`chmod +x ...`) permission is set for the new script. The file name will appear in `pisound-config`'s Pisound Button Settings which can be used for mapping as an action for The Button interaction.
+For a new button action to appear in the [`pisound-config`](pisound-config.md) button action list, a new .sh script should be added to `/usr/local/pisound/scripts/pisound-btn/`. Make sure the 'execute' (`chmod +x ...`) permission is set for the new script. The file name will appear in `pisound-config`'s Pisound Button Settings which can be used for mapping as an action for The Button interaction.
 
 The sky is definitely not the limit on what The Button can do, the shell scripts can be used to bootstrap things written in any other language.
 
@@ -88,7 +88,7 @@ By default, holding the button down for more than 5 seconds and releasing will c
 
 ### [`start_puredata.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/start_puredata.sh) - Start a Pure Data Patch
 
-If you haven't already, you can install Pure Data via [`pisound-config`](Pisound-Config.md), in the 'Install Additional Software' menu
+If you haven't already, you can install Pure Data via [`pisound-config`](pisound-config.md), in the 'Install Additional Software' menu
 
 By default, clicking the button once runs a script that scans the attached media storage devices for '**main.pd**', or, if not found in external media, scans `/usr/local/puredata-patches/`, kills all existing instances of Pure Data, then starts a new instance opening the file, enables audio and connects all the detected MIDI inputs and outputs to the Pure Data's virtual MIDI ports. ALSA engine of Pure Data is used.
 
@@ -101,13 +101,13 @@ Double clicking will stop all Pure Data instances and unmount all attached exter
 ### [`toggle_wifi_hotspot.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) - Toggle WiFi Hotspot Mode
 
 Triple-clicking will reconfigure the WiFi of Raspberry Pi board (models with WiFi integrated) or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
-TouchOSC2MIDI must be installed for this to work, you may get it installed using 'Install Additional Software' menu in [`pisound-config`](Pisound-Config.md).
+TouchOSC2MIDI must be installed for this to work, you may get it installed using 'Install Additional Software' menu in [`pisound-config`](pisound-config.md).
 
-By default, the AP will appear as '**Pisound**', and the default password is '**blokaslabs**' (without quotes). You can change the name and password by using [`pisound-config`](Pisound-Config.md).
+By default, the AP will appear as '**Pisound**', and the default password is '**blokaslabs**' (without quotes). You can change the name and password by using [`pisound-config`](pisound-config.md).
 
 The default IP address of RPi in WiFi Hotspot mode is 172.24.1.1 which you can use for ssh, VNC or wireless OSC / MIDI data! That means that you can easily interact with your system using just your laptop or phone, no more wires apart from power supply is needed! And it gets better, if the LAN cable is connected to RPi, it will share the Internet with the connected devices over WiFi!
 
-To send MIDI OSC messages from your other devices to Pisound, connect to the Pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings. See [here](FAQs.md#how-to-send-wifi-midi-messages-to-your-raspberry-pi) for more information.
+To send MIDI OSC messages from your other devices to Pisound, connect to the Pisound's WiFi network, and set the 172.24.1.1 IP as the host in the software you're using (such as MyOSC or TouchOSC) settings. See [here](faqs.md#how-to-send-wifi-midi-messages-to-your-raspberry-pi) for more information.
 
 To access RPi using ssh and/or VNC, make sure they're enabled in `raspi-config`. To enable, run in terminal:
 ```bash
@@ -119,7 +119,7 @@ Triple-clicking again will revert to regular WiFi behavior.
 
 ### [`toggle_bt_discoverable.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) - Toggle Bluetooth Discoverability On and Off
 
-Holding The Button between 3 and 5 seconds will toggle the Bluetooth Discoverability. See [Pisound App](Pisound-App.md) for controlling Pisound & RPi remotely.
+Holding The Button between 3 and 5 seconds will toggle the Bluetooth Discoverability. See [Pisound App](pisound-app.md) for controlling Pisound & RPi remotely.
 
 ## Miscellaneous Scripts
 

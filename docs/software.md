@@ -4,7 +4,7 @@ Pisound is compatible with virtually all Linux distributions and software as it 
 The support driver for Pisound consists of two pieces - the Linux kernel module and user-space pisound-btn daemon.
 
 The Pisound button daemon is a user space program which implements monitoring of The Button on the board by registering a GPIO interrupt handler.
-Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button](The-Button.md) functionality below.
+Therefore it takes minimal CPU resources, but is still able to react to button pushes just at the moment it was interacted with. Read more on [The Button](the-button.md) functionality below.
 
 You can find the source code for The Button [here](https://github.com/BlokasLabs/pisound/tree/master/pisound-btn) and kernel module [here](https://github.com/raspberrypi/linux/blob/rpi-4.19.y/sound/soc/bcm/pisound.c).
 
@@ -20,7 +20,7 @@ To install the Pisound software on Debian compatible distributions like [Raspbia
 curl https://blokas.io/pisound/install.sh | sh
 ```
 
-This will set up the Blokas APT server and install all the software packages for Pisound. Then you may run [`pisound-config`](Pisound-Config.md) to further customize your installation:
+This will set up the Blokas APT server and install all the software packages for Pisound. Then you may run [`pisound-config`](pisound-config.md) to further customize your installation:
 
 ```bash
 sudo pisound-config

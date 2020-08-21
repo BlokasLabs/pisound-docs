@@ -63,7 +63,7 @@ or [USB-C Power Supply for RPi version 4](https://www.raspberrypi.org/products/t
 
     Pisound v1.0 can still be used with the RPi model 4, but there's a known issue caused by a power supply design change in Raspbery Pi 4, see
     [this topic](https://community.blokas.io/t/pisound-with-raspberry-pi-4/1238/12?u=giedrius) in our community for detailed information and
-    software workaround details. [`pisound-config`](Pisound-Config.md) has a menu to help with enabling / disabling it.
+    software workaround details. [`pisound-config`](pisound-config.md) has a menu to help with enabling / disabling it.
 
 ///Footnotes Go Here///
 

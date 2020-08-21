@@ -33,7 +33,7 @@ sudo apt install sonic-pi
 
 ## How to send WiFi-MIDI messages to your Raspberry Pi?
 
-TouchOSC2MIDI must be installed for this to work, you may get it installed using 'Install Additional Software' menu in [`pisound-config`](Pisound-Config.md).
+TouchOSC2MIDI must be installed for this to work, you may get it installed using 'Install Additional Software' menu in [`pisound-config`](pisound-config.md).
 
 Making use of your phone or a tablet for controlling software on Raspberry Pi using Pisound is relatively easy, just follow these steps:
 

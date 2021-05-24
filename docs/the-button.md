@@ -11,7 +11,8 @@ The `/etc/pisound.conf` file allows mapping these actions:
 | CLICK_1 | Button was clicked once. | [start_puredata.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/start_puredata.sh) |
 | CLICK_2 | Button was double-clicked. | [stop_puredata.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/stop_puredata.sh) |
 | CLICK_3 | Button was triple-clicked. | [toggle_wifi_hotspot.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) |
-| CLICK_OTHER | Button was clicked between 4 and 8 times. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
+| CLICK_OTHER | Button was clicked between 4 and 8 times.  The upper limit is altered by the configuration file entry `CLICK_COUNT_LIMIT` or by the command line option [--click-count-limit](#command-line-options).  If the [--no-defaults](#command-line-options) options is specified and `CLICK_OTHER` is set the `CLICK_OTHER` script will run for all clicks that do not have specific entries in the configuration file. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
+| CLICK_COUNT_LIMIT | Sets the click count limit.  Default is 8.  Can be overridden by the command line option [--click-count-limit](#command-line-options).  The absolute limit is 99. | No script action |
 | HOLD_1S | Button was held down between 0.4s and 3s. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
 | HOLD_3S | Button was held down between 3s and 5s. | [toggle_bt_discoverable.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) |
 | HOLD_5S | Button was held down between 5s and 7s. | [shutdown.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/shutdown.sh) |
@@ -19,7 +20,7 @@ The `/etc/pisound.conf` file allows mapping these actions:
 
 \* All default scripts are stored at `/usr/local/pisound/scripts/pisound-btn`
 
-The hold action scripts get two arguments - first one for the count of clicks after which the button was held for a longer time and the second for the hold duration.
+The hold action scripts get two arguments - first one for the count of clicks after which the button was held for a longer time and the second for the hold duration.  The hold duration is **always** an odd number.  It is calculated from the actual number of seconds as follows:  1  = zero to anything less than two,  3 = two to anything less than four, 5 = four to anything less than six,  and so on.  The absolute maximum number of seconds is 99.
 
 The click action scripts get one argument - the number of clicks.
 
@@ -131,3 +132,21 @@ A script that gets triggered every time The Button is pushed down. By default it
 The counter part of `down.sh` - it gets triggered every time The Button is released and by default it is stopping the LED flashing initiated in the down event.
 ### [`common.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/common/common.sh)
 Defines APIs shared between scripts for Pisound, such as flash_leds and periodic_led_blink which are used by other scripts for feedback.
+
+## Command Line Options
+
+Current command line options are always available using the `--help` argument.  The options are:
+
+| Option | Description |
+| --- | --- |
+|`--help`| Display the usage information.|
+|`--version`| Show the version information. |
+|`--gpio <n>`| The pin GPIO number to use for the button. Default is 17. |
+|`--active-low`| Reverse the sense of the active state.  Normally active is when GPIO goes high. |
+|`--conf <path>`| Specify the path to configuration file to use. Default is /etc/pisound.conf. |
+| `--click-count-limit <n>` | Set the click count limit to n. Use 0 for no limit. Default is 8.  This option will override the `CLICK_COUNT_LIMIT` configuration file entry.  The absolute limit is 99. |
+|`--no-defaults`| Do not use the default values for click and hold.  Only configuration options will be used. |
+|`--debug <n>`| Enable debugging at level n (higher value = more logging). |
+|`-n <n>`| Short for --click-count-limit. |
+|`-q`| Short for --debug 0 (turns off all but errors). |
+

@@ -101,7 +101,7 @@ Double clicking will stop all Pure Data instances and unmount all attached exter
 
 ### [`toggle_wifi_hotspot.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) - Toggle WiFi Hotspot Mode
 
-Pressing The Button for 3 seconds will reconfigure the WiFi of Raspberry Pi board (models with WiFi integrated) or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
+Holding The Button down for 3 seconds will reconfigure the WiFi of Raspberry Pi board (models with WiFi integrated) or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
 TouchOSC2MIDI must be installed for this to work, you may get it installed using 'Install Additional Software' menu in [`pisound-config`](pisound-config.md).
 
 By default, the AP will appear as '**Pisound**', and the default password is '**blokaslabs**' (without quotes). You can change the name and password by using [`pisound-config`](pisound-config.md).
@@ -120,7 +120,7 @@ Triple-clicking again will revert to regular WiFi behavior.
 
 ### [`toggle_bt_discoverable.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) - Toggle Bluetooth Discoverability On and Off
 
-Holding The Button between 1 and 3 seconds will toggle the Bluetooth Discoverability. See [Pisound App](pisound-app.md) for controlling Pisound & RPi remotely.
+Holding The Button down between 1 and 3 seconds will toggle the Bluetooth Discoverability. See [Pisound App](pisound-app.md) for controlling Pisound & RPi remotely.
 
 ## Miscellaneous Scripts
 

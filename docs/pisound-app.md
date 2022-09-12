@@ -38,10 +38,6 @@ As much as we hate excess permission requests ourselves, there’s no way we can
 
 This is a new requirement since Android OS 6.0 - a nice summary of the issue is available [here](https://stackoverflow.com/questions/33045581/location-needs-to-be-enabled-for-bluetooth-low-energy-scanning-on-android-6-0). And here's some [more info](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-notifications) on the new behavior.
 
-### iOS
-
-Coming soon...
-
 ## Using the App
 ### Connecting to the Raspberry Pi
 

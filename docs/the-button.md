@@ -10,11 +10,11 @@ The `/etc/pisound.conf` file allows mapping these actions:
 | UP | Button gets released up. | [up.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/system/up.sh) |
 | CLICK_1 | Button was clicked once. | [start_puredata.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/start_puredata.sh) |
 | CLICK_2 | Button was double-clicked. | [stop_puredata.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/stop_puredata.sh) |
-| CLICK_3 | Button was triple-clicked. | [toggle_wifi_hotspot.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) |
+| CLICK_3 | Button was triple-clicked. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
 | CLICK_OTHER | Button was clicked between 4 and 8 times.  The upper limit is altered by the configuration file entry `CLICK_COUNT_LIMIT` or by the command line option [--click-count-limit](#command-line-options).  If the [--no-defaults](#command-line-options) options is specified and `CLICK_OTHER` is set the `CLICK_OTHER` script will run for all clicks that do not have specific entries in the configuration file. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
 | CLICK_COUNT_LIMIT | Sets the click count limit.  Default is 8.  Can be overridden by the command line option [--click-count-limit](#command-line-options).  The absolute limit is 99. | No script action |
-| HOLD_1S | Button was held down between 0.4s and 3s. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
-| HOLD_3S | Button was held down between 3s and 5s. | [toggle_bt_discoverable.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) |
+| HOLD_1S | Button was held down between 0.4s and 3s. | [toggle_bt_discoverable.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) |
+| HOLD_3S | Button was held down between 3s and 5s. | [toggle_wifi_hotspot.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) |
 | HOLD_5S | Button was held down between 5s and 7s. | [shutdown.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/shutdown.sh) |
 | HOLD_OTHER | Button was held down for more than 7s. | [do_nothing.sh](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/do_nothing.sh) |
 
@@ -101,7 +101,7 @@ Double clicking will stop all Pure Data instances and unmount all attached exter
 
 ### [`toggle_wifi_hotspot.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_wifi_hotspot.sh) - Toggle WiFi Hotspot Mode
 
-Triple-clicking will reconfigure the WiFi of Raspberry Pi board (models with WiFi integrated) or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
+Pressing The Button for 3 seconds will reconfigure the WiFi of Raspberry Pi board (models with WiFi integrated) or an external SoftAP capable USB WiFi adapter to behave as an Access Point (a.k.a. Wireless Router), as well as start 'touchosc2midi' monitor which will be ready to listen and forward MyOsc data as MIDI to other software such as Pure Data.
 TouchOSC2MIDI must be installed for this to work, you may get it installed using 'Install Additional Software' menu in [`pisound-config`](pisound-config.md).
 
 By default, the AP will appear as '**Pisound**', and the default password is '**blokaslabs**' (without quotes). You can change the name and password by using [`pisound-config`](pisound-config.md).
@@ -120,7 +120,7 @@ Triple-clicking again will revert to regular WiFi behavior.
 
 ### [`toggle_bt_discoverable.sh`](https://github.com/BlokasLabs/pisound/blob/master/scripts/pisound-btn/toggle_bt_discoverable.sh) - Toggle Bluetooth Discoverability On and Off
 
-Holding The Button between 3 and 5 seconds will toggle the Bluetooth Discoverability. See [Pisound App](pisound-app.md) for controlling Pisound & RPi remotely.
+Holding The Button between 1 and 3 seconds will toggle the Bluetooth Discoverability. See [Pisound App](pisound-app.md) for controlling Pisound & RPi remotely.
 
 ## Miscellaneous Scripts
 

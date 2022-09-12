@@ -15,7 +15,7 @@ We love your input! We want to make contributing to this project as easy and tra
 ## Reporting Issues
 We use public GitHub issues to track bugs and requests. Just open [a new issue](https://github.com/BlokasLabs/pisound-docs/issues) - it's that easy!
 
-## Submit Changes
+## Submitting Changes
 [GitHub Pull requests](https://docs.github.com/en/pull-requests) are the best way to propose changes to the docs and the codebase. We actively welcome your pull requests! You can find an extensive contribution guide [here](https://github.com/firstcontributions/first-contributions), but in short:
 
 1. Fork this repo and create your branch from master.

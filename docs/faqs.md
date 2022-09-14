@@ -37,7 +37,7 @@ TouchOSC2MIDI must be installed for this to work, you may get it installed using
 
 Making use of your phone or a tablet for controlling software on Raspberry Pi using Pisound is relatively easy, just follow these steps:
 
-1. Triple-click the button on Pisound to enable the WiFi hotspot mode, touchosc2midi starts also.
+1. Hold the button down for 3 seconds on Pisound to enable the WiFi hotspot mode, touchosc2midi starts also.
 1. Connect to "Pisound" WiFi access point using a phone or a tablet, using 'blokaslabs' as the password.
 1. Open TouchOSC, MyOSC or similar app on your external device.
 1. Host IP address in the app's settings should be 172.24.1.1

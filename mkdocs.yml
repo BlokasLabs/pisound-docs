@@ -52,17 +52,21 @@ markdown_extensions:
 copyright: '&copy; 2020 VILNIAUS BLOKAS UAB'
 
 nav:
-- Getting Started: index.md
-- Audio: audio.md
-- MIDI: midi.md
-- Software: software.md
+- Introduction: index.md
+- Software: 
+      - Raspberry Pi: software-for-raspberry-pi.md
+      - The Pisound: the-pisound-software.md
+      - Pisound Config: pisound-config.md
 - The Button: the-button.md
-- Pisound Acrylic Case: pisound-acrylic-case.md
-- Pisound Config: pisound-config.md
 - Pisound & Pure Data: pisound-puredata.md
-- Pisound App: pisound-app.md
-- MOD Emulator for Pi: modep.md
-- Detailed Specs: specs.md
+- MODEP: modep.md
+- The Pisound App: pisound-app.md
+- Specifications:
+      - Audio: audio.md
+      - MIDI: midi.md
+      - General: general-specifications.md
+- Pisound Acrylic Case: pisound-acrylic-case.md
+- Troubleshooting: troubleshooting.md
 - Example Projects: example-projects.md
 - FAQs: faqs.md
 

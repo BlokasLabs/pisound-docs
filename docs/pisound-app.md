@@ -1,15 +1,17 @@
+---
+description: The Pisound mobile app provides an easy way for you to control your Pisound-based projects with your smartphone or tablet. The app communicates with a dedicated server running on Raspberry Pi & Pisound via Bluetooth.
+---
+
 # Pisound App
 ![pisound-app](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-app.jpg)
 
-The Pisound mobile app provides an easy way for you to control your Pisound-based project with your smartphone or tablet.
+The Pisound mobile app provides an easy way for you to control your Pisound-based projects with your smartphone or tablet.
 The app communicates with a dedicated server running on Raspberry Pi & Pisound via Bluetooth. It is called Pisound Control Server (`pisound-ctl`).
 
 The Control Server uses customizable module approach that allows listing different patches/scripts in predefined locations (usually `/usr/local/...-patches`)
 and to selectively launch the patches/scripts in the appropriate software, making headless browsing and switching between patches ease, as well as executing custom scripts.
 
-Furthermore, since version 1.03, the app's Pure Data module has an integration with TheTechnobear's [MEC software](https://github.com/TheTechnobear/MEC), that means the
-Pure Data patches may have parameter controls whose values can be modified within the app, they can be used for display feedback from the patch to the app, and are MIDI mappable
-to external MIDI controllers! Read more about Pure Data module [here](#pure-data-module).
+Furthermore, since version 1.03, the app's Pure Data module has an integration with TheTechnobear's <a href="https://github.com/TheTechnobear/MEC" target="_blank">MEC software</a>, that means the Pure Data patches may have parameter controls whose values can be modified within the app, they can be used for display feedback from the patch to the app, and are MIDI mappable to external MIDI controllers! Read more about Pure Data module [here](#pure-data-module).
 
 The stdout and stderr outputs of the launched application are displayed in real time, informing the user on what is going on with the running application.
 
@@ -23,7 +25,7 @@ New modules may be added to support launching patches/scripts on more software, 
 ## Software Setup
 ### Raspberry Pi
 
-First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.05 or higher and `pisound-ctl --version` says it's 1.03 or higher. If it is not, follow the install instructions on [Installing The Pisound Software](software.md#installing-the-pisound-software). The `install-pisound.sh` will update the software even if some previous version was already installed.
+First, make sure that Pisound is set up and that `pisound-btn --version` says it’s 1.05 or higher and `pisound-ctl --version` says it's 1.03 or higher. If it is not, follow the install instructions on [Install The Pisound Software](the-pisound-software.md#install-the-pisound-software). The `install-pisound.sh` will update the software even if some previous version was already installed.
 
 If using Raspberry Pi without built-in Bluetooth support, connect a USB Bluetooth dongle to it.
 
@@ -31,12 +33,12 @@ After everything is set up, `pisound-ctl` will get launched automatically and wi
 
 ### Android
 
-Install the Pisound app on your device [here](https://play.google.com/store/apps/details?id=com.blokas.pisoundctl), or download the apk directly [here](https://blokas.io/pisound/app/com.blokas.pisoundctl.v1.03.apk).
+Install the Pisound app on your device <a href="https://play.google.com/store/apps/details?id=com.blokas.pisoundctl" target="_blank">here</a>, or download the apk directly <a href="https://blokas.io/pisound/app/com.blokas.pisoundctl.v1.03.apk" target="_blank">here</a>.
 
 #### Why is the Location Permission Required?
-As much as we hate excess permission requests ourselves, there’s no way we can avoid requesting this one. We don’t need or store your location information. It’s required for an application to declare [ACCESS_COARSE_LOCATION](https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION) permission in its Manifest for the application to be able to initiate discovery of nearby Bluetooth devices.
+As much as we hate excess permission requests ourselves, there’s no way we can avoid requesting this one. We don’t need or store your location information. It’s required for an application to declare <a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION" target="_blank">ACCESS_COARSE_LOCATION</a> permission in its Manifest for the application to be able to initiate discovery of nearby Bluetooth devices.
 
-This is a new requirement since Android OS 6.0 - a nice summary of the issue is available [here](https://stackoverflow.com/questions/33045581/location-needs-to-be-enabled-for-bluetooth-low-energy-scanning-on-android-6-0). And here's some [more info](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-notifications) on the new behavior.
+This is a new requirement since Android OS 6.0 - a nice summary of the issue is available <a href="https://stackoverflow.com/questions/33045581/location-needs-to-be-enabled-for-bluetooth-low-energy-scanning-on-android-6-0" target="_blank">here</a>. And here's some <a href="https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-notifications" target="_blank">more info</a> on the new behavior.
 
 ## Using the App
 ### Connecting to the Raspberry Pi
@@ -85,13 +87,13 @@ The main customizable files are located in `/usr/local/pisound-ctl/`.
 
 ### Adding New & Customizing Existing Modules
 
-### [category_list.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/common/debian/usr/local/pisound-ctl/category_list.sh)
+### <a href="https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/common/debian/usr/local/pisound-ctl/category_list.sh" target="_blank">category_list.sh</a>
 
 This script is responsible for producing the list of categories supported in the app. The produced output should be paths to .yml files which describe the category.
 
 You may add more kinds of collections by modifying this file and creating appropriate .yml file.
 
-### [category.yml](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata.yml)
+### <a href="https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata.yml" target="_blank">category.yml</a>
 
 The category yml file describes the category of items as well as provides a couple of scripts which are used to implement particular functions.
 
@@ -109,11 +111,11 @@ The fields in category.yml files are:
 | opaque_item_mode | bool | N | If this is true, the entries printed by listing_script are not treated as files, so not double-checked for existence. Default false. This is useful when the items in category are not represented in a systematic way by distinct files (like pedalboards in MODEP) |
 
 
-### [list.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_list.sh)
+### <a href="https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_list.sh" target="_blank">list.sh</a>
 
 This script should print the paths to the patch entry points or metadata files (usually the path to blokas.yml), so they appear in the collection view.
 
-### [detail.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_detail.sh)
+### <a href="https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_detail.sh" target="_blank">detail.sh</a>
 
 A script that outputs the metadata on the patch - usually it's enough to print the blokas.yml file for the patch, however, some more advanced uses may generate the data on the fly. YAML or equivalent JSON output is acceptable.
 
@@ -121,17 +123,17 @@ At the very least, 'entry' and 'name' must be produced.
 
 `--summary` argument is provided when querying for information to be displayed in the Collections and Patch views, and it's omitted when retrieving the information for the patch just before starting it. This is useful in case time consuming dynamic scanning of the patch for features it supports is being done prior to being launched, so that can be skipped while simply browsing the patches list.
 
-### [launch.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_launch.sh)
+### <a href="https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_launch.sh" target="_blank">launch.sh</a>
 
 A launcher script for executing the item. It gets the item path in its first argument, and whatever was in 'args' attribute in the rest of the command line arguments.
 
-### [stop.sh](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_stop.sh)
+### <a href="https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/puredata/debian/usr/local/pisound-ctl/puredata/puredata_stop.sh" target="_blank">stop.sh</a>
 
 A stopper script - executed when the user stops the patch. If possible, it may gracefully cause the patch host to exit or stop the patch. If it doesn't, the patch host gets killed. (which is fine in most cases)
 
 ### Adding New & Customizing Existing Items
 
-### [blokas.yml](https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/system/debian/usr/local/pisound-ctl/system/restart/blokas.yml)
+### <a href="https://github.com/BlokasLabs/pisound-ctl-scripts/blob/master/system/debian/usr/local/pisound-ctl/system/restart/blokas.yml" target="_blank">blokas.yml</a>
 
 The blokas.yml file describes the patch/script itself and contains info that gets displayed in the 'Patch View' of the app.
 
@@ -155,11 +157,11 @@ The Pure Data patches are expected to be found in `/usr/local/puredata-patches/`
 
 ### Pure Data Patch with Parameters Tutorial
 
-You may find a step-by-step tutorial on how to create a Pisound App compatible Pure Data patch [here](https://community.blokas.io/t/pure-data-patch-with-parameters-in-the-pisound-app/622).
+You may find a step-by-step tutorial on how to create a Pisound App compatible Pure Data patch <a href="https://community.blokas.io/t/pure-data-patch-with-parameters-in-the-pisound-app/622" target="_blank">here</a>.
 
 ### Patch Parameters and MIDI
 
-Thanks to integration with TheTechnobear's [MEC software](https://github.com/TheTechnobear/MEC), real time controls and MIDI mapping in PD are possible.
+Thanks to integration with TheTechnobear's <a href="https://github.com/TheTechnobear/MEC" target="_blank">MEC software</a>, real time controls and MIDI mapping in PD are possible.
 
 When a patch gets launched, the app connects all of the connected MIDI devices to the patch host, so you may immediately interact with the system, in case it reacts to MIDI messages.
 
@@ -175,7 +177,7 @@ For the virtual MIDI keyboard to appear in the app when the patch is launched, i
 
 ### Parameter Definitions
 
-The parameter definitions format is defined by the [MEC Software](https://github.com/TheTechnobear/MEC).
+The parameter definitions format is defined by the <a href="https://github.com/TheTechnobear/MEC" target="_blank">MEC software</a>.
 
 The syntax is JSON, so keep an eye on the ',' symbols - make sure the last entry of the group has no trailing comma, and all else do. It's best to write it using an editor with automatic syntax error checking.
 
@@ -251,6 +253,6 @@ Saving and loading different presets will come in a later release.
 
 ## Contribution Guide
 
-The scripts used by `pisound-ctl` are hosted on GitHub here: https://github.com/BlokasLabs/pisound-ctl-scripts.
+The scripts used by `pisound-ctl` are available <a href="https://github.com/BlokasLabs/pisound-ctl-scripts" target="_blank">here</a>.
 
-You may submit pull requests with your modifications and additions. Preferred form of new categories would be deb packages, for an example, see [MODEP integration scripts](https://github.com/BlokasLabs/modep-ctl-scripts).
+You may submit pull requests with your modifications and additions. Preferred form of new categories would be deb packages, for an example, see <a href="https://github.com/BlokasLabs/modep-ctl-scripts" target="_blank">MODEP integration scripts</a>.

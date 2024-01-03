@@ -1,3 +1,9 @@
+---
+description: Answers to Frequently Asked Questions. 
+---
+
+# Frequently Asked Questions
+
 ## How to start Jack Server for Pisound?
 
 In case you don't have qjackctl installed, run:
@@ -9,9 +15,9 @@ To start the server, configured to use Pisound, follow these steps:
 1. Run QJackCtl (either from the Applications->Sound & Video menu or executing 'qjackctl' in a terminal.
 1. Click Setup...
 1. Make sure that the following settings are set correctly:
-  1. Sample Rate is one of '48000', '96000' or '192000'. (The higher the sample rate, the more there is data to process for software. However, higher sample rate has slightly less latency, if software is fast enough to keep up!)
-  1. Input Device and Output Device both are set to 'hw:pisound'.
-  1. MIDI Driver is set to 'seq'
+    1. Sample Rate is one of '48000', '96000' or '192000'. (The higher the sample rate, the more there is data to process for software. However, higher sample rate has slightly less latency, if software is fast enough to keep up!)
+    1. Input Device and Output Device both are set to 'hw:pisound'.
+    1. MIDI Driver is set to 'seq'
 1. Close the Setup window.
 1. Click Start.
 1. If everything is fine, you should see 'Started' text written at the top left corner of the status area.
@@ -41,6 +47,6 @@ Making use of your phone or a tablet for controlling software on Raspberry Pi us
 1. Connect to "Pisound" WiFi access point using a phone or a tablet, using 'blokaslabs' as the password.
 1. Open TouchOSC, MyOSC or similar app on your external device.
 1. Host IP address in the app's settings should be 172.24.1.1
-1. That's it. From this point you can send messages from your phone/tablet to software running on your Raspberry Pi. The MIDI CC / Note number depends on the configuration of the app, for more information, see the TouchOSC documentation here: https://hexler.net/docs/touchosc-editor-controls-properties
+1. That's it. From this point you can send messages from your phone/tablet to software running on your Raspberry Pi. The MIDI CC / Note number depends on the configuration of the app, for more information, see the TouchOSC documentation <a href="https://hexler.net/docs/touchosc-editor-controls-properties" target="_blank">here</a>
 
 **Note:** If you want to to control Pd patch with Wifi-MIDI messages, after completing the steps above, insert a USB stick with your patch files into your Raspberry Pi and click the Pisound button once to launch the patch!

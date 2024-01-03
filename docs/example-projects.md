@@ -1,3 +1,7 @@
+---
+description: A couple of example projects projects you could do with your Pisound.
+---
+
 # Projects Using Pisound
 
 ## Internet Radio Station
@@ -83,7 +87,7 @@ If you want to add more controls to your Pisound audio projects, you can make yo
 
 ![DIY MIDI controller](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/diy-midi-ctrl.png)
 
-Go [here](https://github.com/BlokasLabs/USBMIDI/tree/master/examples/midictrl) for full instructions.
+Go <a href="https://github.com/BlokasLabs/USBMIDI/tree/master/examples/midictrl" target="_blank">here</a> for full instructions.
 
 ## Pisound and LV2 Plugins
 

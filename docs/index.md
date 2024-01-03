@@ -1,77 +1,74 @@
-# Getting Started
+---
+description: Pisound is an ultra low latency high-quality soundcard and MIDI interface specially designed for Raspberry Pi pocket computers.
+---
 
-Pisound is an ultra-low latency high-quality soundcard and MIDI interface specially designed for Raspberry Pi pocket computers.
-Equipped with 192kHz 24-bit [Stereo Input and Output](audio/) driven by the legendary Burr-Brown chips, DIN-5 [MIDI Input and Output](midi/) ports,
-[user-customizable button](the-button/) and bundled [software tools](software/), it has everything you need to bring your audio projects to life in no time.
+# Introduction
+
+## Pisound
+
+Pisound is an ultra low latency high-quality soundcard and MIDI interface specially designed for Raspberry Pi pocket computers.
+Equipped with 192kHz 24-bit [Stereo Input and Output](audio) driven by the legendary Burr-Brown chips, DIN-5 [MIDI Input and Output](midi) ports,
+[user-customizable button](the-button) and bundled [software tools](the-pisound-software), it has everything you need to bring your audio projects to life in no time!
+
+See compatible Raspberry Pi models [here](general-specifications.md#supported-raspberry-pi-models).
+
+See compatible OSes [here](software-for-raspberry-pi.md#compatible-oses).
 
 ![pisound-side](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-front.jpg)
 
 ![pisound-side](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-back.jpg)
 
+## The Acrylic Case
+
+The Acrylic Case is a simple but really sturdy and beautiful case for your Pisound and Raspberry Pi. The enclosure is cut from semi-transparent 3 mm thick acrylic sheet with cutouts for the Output ports and the Volume and Gain potentiometers. The case comes with 2 variations of the side with all the connectors - one for use with Raspberry Pi version 4, the other is for the earlier models, so it will definitely fit your Raspberry Pi!
+
+![pisound-case](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-case.jpg)
+
 ## Hardware Setup
 
 ### Pisound
-You should find 1 Pisound and a plastic bag containing 2 knobs, 8 screws and 4 spacers in the Pisound box.
 
-If you intend to use Pisound with the Acrylic Case, refer to the section below on how to assemble it.
-Otherwise, mount Pisound on top of your Raspberry Pi via the 40-pin header and fasten it with the screws
-provided while the RPi is unpowered, so it appears as in the image at the top.
+In the Pisound box you will find 1 Pisound, a leaflet filled with the general info and a plastic bag containing:
 
-See compatible Raspberry Pi models [here](specs.md#supported-raspberry-pi-models).
+- 2 knobs
+- 8 screws 
+- 4 spacers
 
-### Pisound Acrylic Case
-![pisound-case](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-case.jpg)
+**If you intend to use Pisound with the Acrylic Case, refer to the section below.**
 
-A simple but really sturdy and beautiful case for your Pisound and Raspberry Pi. The enclosure is cut from semi-transparent 3mm thick acrylic sheet. Round engravings indicate the Output ports and the Output Volume potentiometer. 
+Otherwise, fasten the spacers to your unpowered Raspberry Pi, mount the Pisound on top of it via the 40-pin header, and secure it with provided screws. Then put the knobs on the potentiometers and *voilá*!
 
-The Pisound Acrylic Case consists of 3 cutout sheets of the enclosure sides and a plastic bag containing 4 short spacers, 4 longer ones and a button cap.
-The case comes with 2 variations of the side with all of the connectors - one for use with Raspberry Pi version 4, the other is for the rest of the models. Make sure to use the correct one for your Raspberry Pi.
+### Pisound and Acrylic Case
 
-[@mzero](https://community.blokas.io/u/mzero/summary), a member of [Electric Kitchen](https://electric.kitchen) project has made a great detailed Pisound Case assembly video. You can watch it [here](https://youtu.be/vt8rdc14wNY), or you can find the full assembly instructions [here](pisound-acrylic-case.md#assembly-instructions).
+The Pisound Acrylic Case consists of 3 cutout sheets of the enclosure sides and a plastic bag containing:
 
-## Driver Setup
+- 4 short spacers
+- 4 longer spacers
+- 1 button cap
 
-### Patchbox OS
+**The case comes with two variations of the side with all the connectors - one for use with Raspberry Pi version 4, the other is for the rest of the models, so make sure to use the correct one for your Raspberry Pi!**
 
-![patchbox-os](https://blokas.io/patchbox-os/images/1.png)
+Full assembly instructions are [here](pisound-acrylic-case.md#assembly-instructions).
 
-If you don't have any Linux OS running on your Raspberry Pi, we suggest starting with [Patchbox](https://blokas.io/patchbox-os/). It has everything preconfigured to get you going. Please refer to its [documentation](https://blokas.io/patchbox-os/docs/)
-for getting started steps.
-
-### Raspbian
-
-![pisound-config](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-config.png)
-
-Alternatively, you may want to go with Raspbian. Follow the steps in its [guide](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to set up the image on your SD card.
-Before ejecting the card from your PC, if you don't have a keyboard and monitor hooked up to your Pi, you may want to create a file named 'ssh' in the SD card so that [remote shell](https://www.raspberrypi.org/documentation/remote-access/ssh/) access to a headless device is enabled.
-See [this tutorial](https://community.blokas.io/t/raspberry-pi-remote-control-raspberry-pi-via-ssh/597) for more information.
-
-Once your SD card is ready, place it in the SD card slot on the Raspberry Pi. [Power your Raspberry Pi up](specs.md#power-supply) and install the Pisound software by running the below command in a terminal window:
-
-```bash
-curl https://blokas.io/pisound/install.sh | sh
-```
-
-This will set up the Blokas APT server and install all the software packages for Pisound. Then you may run [`sudo pisound-config`](pisound-config.md) to further customize the system and to install additional software like Pure Data or TouchOSC2MIDI.
-
-Done! Thank You!
-
-Now you may want to check out the [Pisound Tutorials](https://community.blokas.io/c/pisound/pisound-tutorials/) category in our Community or go through the rest of the documentation.
-
-To make sure everything went fine, please see [Verifying It Works](software.md#verifying-it-works) and [reach out to us](software.md#feedback) in case of any issues.
+<a href="https://community.blokas.io/u/mzero/summary" target="_blank">@mzero</a>, a member of <a href="https://electric.kitchen" target="_blank">Electric Kitchen</a> project has made a great detailed <a href="https://youtu.be/vt8rdc14wNY" target="_blank">Pisound Case assembly video</a>. 
 
 ## Connect Things
 
-![pisound-connections](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/connections.png)
-
 Raspberry Pi in combination with Pisound allows you to connect a huge variety of different types of audio-related gear. Thanks to Pisound's Stereo Input
-with wide-range gain control design, you can connect audio sources ranging from your bass guitar to a CD player or your modular synth.
-Using Stereo Output you can hook Pisound to any mixer, speakers or just plug in your headphones. Volume and Gain levels can be controlled
-using on-board knobs. For MIDI connectivity you also have a lot of options - MIDI In/Out through on-board DIN-5 sockets, USB-MIDI via RPi's
+with a wide-range gain control design, you can connect audio sources ranging from your bass guitar to a CD player or your modular synth.
+Using Stereo Output you can hook Pisound to any mixer, speakers, or just plug in your headphones. Volume and Gain levels can be controlled
+using onboard knobs. For MIDI connectivity you also have a lot of options - MIDI In/Out through on-board DIN-5 sockets, USB-MIDI via RPi's
 USB ports or even [WiFi-MIDI](the-button.md#toggle_wifi_hotspotsh-toggle-wifi-hotspot-mode)!
 
-## Print Your Own Case
+![pisound-connections](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/connections.png)
 
-To take the setup process one step further, you can even 3D-print your own case. All necessary files can be found [here](https://github.com/BlokasLabs/pisound-case).
 
-![pisound-case](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-case.png)
+--------
+
+
+<big> Don't have any software running on your Raspberry Pi? Head straight to [Software for The Raspberry Pi](software-for-raspberry-pi.md) section! </big>
+
+<big> Need to install The Pisound Software? Head straight to [The Pisound Software](the-pisound-software.md) section! </big>
+
+
+

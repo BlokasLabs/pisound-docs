@@ -30,7 +30,7 @@ To start the server, configured to use Pisound, follow these steps:
 
 The latest version of Sonic Pi bundled with Raspbian Desktop works out of the box without any manual changes! Just start it from the menu -> Programming -> Sonic Pi!
 
-If you dont' have Sonic Pi installed or want to get it upgraded, then run these commands in a terminal:
+If you don't have Sonic Pi installed or want to get it upgraded, then run these commands in a terminal:
 
 ```
 sudo apt update
@@ -49,4 +49,4 @@ Making use of your phone or a tablet for controlling software on Raspberry Pi us
 1. Host IP address in the app's settings should be 172.24.1.1
 1. That's it. From this point you can send messages from your phone/tablet to software running on your Raspberry Pi. The MIDI CC / Note number depends on the configuration of the app, for more information, see the TouchOSC documentation <a href="https://hexler.net/docs/touchosc-editor-controls-properties" target="_blank">here</a>
 
-**Note:** If you want to to control Pd patch with Wifi-MIDI messages, after completing the steps above, insert a USB stick with your patch files into your Raspberry Pi and click the Pisound button once to launch the patch!
+**Note:** If you want to to control PD patch with WiFi-MIDI messages, after completing the steps above, insert a USB stick with your patch files into your Raspberry Pi and click the Pisound button once to launch the patch!

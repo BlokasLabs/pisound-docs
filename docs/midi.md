@@ -4,12 +4,12 @@ description: A standard MIDI interface is available via two female DIN-5 connect
 
 # MIDI Specifications
 
-A standard MIDI interface is available via two female DIN-5 connectors. Unlike usual MIDI solutions for Raspberry Pi, MIDI on Pisound is implemented using high speed SPI and a dedicated microcontroller for translating SPI data to serial MIDI byte streams and it's readily recognized by audio software as an ALSA MIDI device. The loopback latency of MIDI was measured to be 2.105 ms. In addition, there are MIDI activity LEDs for both Input and Output indicating the flow of MIDI events.
+A standard MIDI interface is available via two female DIN-5 connectors. Unlike usual MIDI solutions for Raspberry Pi, MIDI on Pisound is implemented using high speed SPI and a dedicated microcontroller for translating SPI data to serial MIDI byte streams and it's readily recognized by audio software as an ALSA MIDI device. The loopback latency of MIDI was measured to be 2.105ms. In addition, there are MIDI activity LEDs for both Input and Output indicating the flow of MIDI events.
 
 **Parameter**|**Value**
 :-----|:-----
 Input/Output connectors|DIN-5 female sockets
-MIDI loopback latency|2.105 ms
+MIDI loopback latency|2.105ms
 Activity LEDs|Input & Output
 
 
@@ -20,4 +20,4 @@ And of course you can use USB-MIDI devices as usual by connecting them to Raspbe
 
 ![signal delay between MIDI](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/midi_latency.png)
 
-An oscillogram showing signal delay between MIDI input (yellow) and MIDI output (cyan) of 2.105 ms when echoing.
+An oscillogram showing signal delay between MIDI input (yellow) and MIDI output (cyan) of 2.105ms when echoing.

@@ -1,5 +1,5 @@
 ---
-description: The Pisound software enables customizable button and the ability to control Pisound-based project vis The Pisound App.
+description: The Pisound software enables customizable button and the ability to control Pisound-based projects via The Pisound App.
 ---
 
 # The Pisound Software
@@ -21,7 +21,7 @@ To install the Pisound software on Debian compatible distributions like <a href=
 ```
 curl https://blokas.io/pisound/install.sh | sh
 ```
-This will set up the Blokas APT server and install all the software packages for Pisound. 
+This will set up the Blokas APT server and install all the software packages for Pisound.
 
 **Note:** It can also be used for updating the software.
 

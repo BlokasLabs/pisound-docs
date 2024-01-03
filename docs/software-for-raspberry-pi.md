@@ -1,5 +1,5 @@
 ---
-description: If you want to use your Raspberry Pi with additional gadgets, such as Pisound, or install some programs to it, you need to install an OS image first.
+description: Raspberry Pi software setup.
 ---
 
 # Software for Raspberry Pi
@@ -26,7 +26,7 @@ Please add or let us know if you have Pisound working on a distribution that is 
 
 For quickest setup, targeted at audio applications, we recommend using the SD card image of our <a href="https://blokas.io/patchbox-os/" target="_blank">Patchbox OS</a>. The Patchbox OS image is based on Raspberry Pi OS Lite and preconfigured with audio software for smooth user experience. On the first boot, a configuration wizard will run and help you to set the system up, including configuring the Jack backend parameters and connecting to a Wi-Fi network. 
 
-**If you are using the Patchbox OS image, you do not need any other instalations to get access to all Pisound features!**
+**If you are using the Patchbox OS image, you do not need any other installations to get access to all Pisound features!**
 
 Find the Patchbox OS setup instructions <a href="https://blokas.io/patchbox-os/docs/" target="_blank">here</a>.
 

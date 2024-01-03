@@ -67,7 +67,7 @@ You may choose to delete the patch/script by clicking the 'Delete' button in the
 
 ### Importing Items from USB
 
-Clicking 'Import patches from USB' in the Home tab will run the `/usr/local/pisound-ctl/usb_import.sh` script. It scans the connected USB media for folders like 'puredata-patches' in the media root, and imports it to the collection on the sd card (`/usr/local/...-patches`).
+Clicking 'Import patches from USB' in the Home tab will run the `/usr/local/pisound-ctl/usb_import.sh` script. It scans the connected USB media for folders like 'puredata-patches' in the media root, and imports it to the collection on the SD card (`/usr/local/...-patches`).
 
 While import is ongoing, the app will display a console. Lines that say 'Importing ...' means a brand new patch was copied over while 'Merging ...' lines mean the patch was already in the collection and that it was overwritten.
 

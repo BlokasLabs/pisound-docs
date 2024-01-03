@@ -83,7 +83,7 @@ Now you can enjoy using Pisound as a network media player!
 
 ## Pisound with DIY MIDI Controller
 
-If you want to add more controls to your Pisound audio projects, you can make your own MIDI controller using a couple of potentiometers, push buttons and any Arduino compatible board that uses ATmega32U4 microcontroller. Alternatively, it should be straightforward to adapt the example code to use DIN-5 MIDI ports, as the usbmidi API interface is compatible with Serial API.
+If you want to add more controls to your Pisound audio projects, you can make your own MIDI controller using a couple of potentiometers, push buttons and any Arduino compatible board that uses ATmega32U4 microcontroller. Alternatively, it should be straightforward to adapt the example code to use DIN-5 MIDI ports, as the USBMIDI API interface is compatible with Serial API.
 
 ![DIY MIDI controller](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/diy-midi-ctrl.png)
 

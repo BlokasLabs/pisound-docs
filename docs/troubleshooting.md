@@ -1,10 +1,10 @@
 ---
-description: Solutions to most common Pisound problems.
+description: Solutions to most common issues.
 ---
 
 # Troubleshooting
 
-## Verify That Pisound Is Detcted
+## Verify That Pisound Is Detected
 
 Once the system boots up, open a terminal (command) window and run:
 ```

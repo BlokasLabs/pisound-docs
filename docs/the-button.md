@@ -1,10 +1,10 @@
 ---
-description: The Button is placed on the Pisound board and can be customized by your needs. There is a lot of mappable actions which are expressed on our Github page. You may use `pisound-config` to easily re-map the actions.
+description: The Button is located at the top of the Pisound board and its functions can be customized according to your needs. There are plenty of mappable button interactions, you may use `pisound-config` to easily re-map the actions.
 ---
 
 # The Button
 
-The Button is a customizable button on the Pisound board. There's a lot of mappable actions for it. The mappings are expressed in <a href="https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/pisound.conf" target="_blank">`/etc/pisound.conf`</a>. You may use [`pisound-config`](pisound-config.md) to easily re-map the actions.
+The Button is a customizable button on the Pisound board. There's a lot of mappable actions for it. The mappings are defined in <a href="https://github.com/BlokasLabs/pisound/blob/master/pisound-btn/pisound.conf" target="_blank">`/etc/pisound.conf`</a>. You may use [`pisound-config`](pisound-config.md) to easily re-map the actions.
 
 The `/etc/pisound.conf` file allows mapping these actions:
 

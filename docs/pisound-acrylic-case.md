@@ -30,8 +30,8 @@ The Pisound Acrylic Case consists of 3 cutout sheets of the enclosure sides and 
 
 ///Footnotes Go Here///
 
-## Print Your Own Case
+## Print Your Own Case (Deprecated)
 
-You can also 3D-print your own case. All necessary files can be found <a href="https://github.com/BlokasLabs/pisound-case" target="_blank">here</a>.
+You can also 3D-print your own case. All necessary files can be found <a href="https://github.com/BlokasLabs/pisound-case" target="_blank">here</a>. Only Raspberry Pi 2B and 3B models supported.
 
 ![pisound-case](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-case.png)

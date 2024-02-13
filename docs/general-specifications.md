@@ -38,7 +38,7 @@ Pisound powers up from Raspberry Pi's power supply via pins on the GPIO header a
 ///Footnotes Go Here///
 
 ## Raspberry Pi Pins Used by Pisound
-![pinout map rev3](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-pins.png)
+![pinout map rev3](https://raw.githubusercontent.com/BlokasLabs/pisound-docs/master/docs/images/pisound-pins.png)
 
 * Black - Power supply pins.
 * Red - Pins used by Pisound.
@@ -47,7 +47,7 @@ Pisound powers up from Raspberry Pi's power supply via pins on the GPIO header a
 
 ## Pinout of Pisound Header
  
-![pisound-header](https://raw.githubusercontent.com/wiki/BlokasLabs/pisound-docs/images/pisound-header.png)
+![pisound-header](https://raw.githubusercontent.com/BlokasLabs/pisound-docs/master/docs/images/pisound-header.png)
 
 **Number**|**Corresponding Raspberry Pi Pin**
 :-----|:-----

@@ -2,7 +2,6 @@ docs_dir: 'docs'
 site_dir: '../../static/pisound/docs'
 site_name: Pisound Documentation
 site_author: UAB VILNIAUS BLOKAS
-google_analytics: ['UA-44135535-1', 'auto']
 use_directory_urls: true
 theme:
   name: 'material'
@@ -14,6 +13,7 @@ theme:
   custom_dir: 'blokas-docs-theme'
 site_url: https://blokas.io/pisound/docs/
 extra:
+  google_tag_manager: "GTM-PML7W8J"
   meta_image: 'https://blokas.io/images/pisound/front.jpg'
   ads:
     pisound: true

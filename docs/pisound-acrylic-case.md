@@ -7,7 +7,7 @@ description: Simple but really sturdy and beautiful case for your Pisound and Ra
 
 A simple but really sturdy and beautiful case for your Pisound and Raspberry Pi. The enclosure is cut from semi-transparent 3 mm thick acrylic sheet with cutouts for the Output ports and the Volume and Gain potentiometers.
 
-The Pisound Acrylic Case consists of 3 cutout sheets of the enclosure sides and a plastic bag containing 4 short spacers, 4 longer ones and a button cap. The case comes with 2 variations of the side with all of the connectors - one for use with Raspberry Pi version 4, the other is for the rest of the models. Make sure to use the correct one for your Raspberry Pi.
+The Pisound Acrylic Case consists of 3 cutout sheets of the enclosure sides and a plastic bag containing 4 short spacers, 4 longer ones and a button cap. The case comes with 2 variations of the side with all of the connectors - one for use with Raspberry Pi versions 4B and 5, the other is for Pi's 2B and 3B. Make sure to use the correct one for your Raspberry Pi.
 
 [@mzero](https://community.blokas.io/u/mzero/summary), a member of <a href="https://electric.kitchen" target="_blank">Electric Kitchen</a> project has made a great detailed <a href="https://youtu.be/vt8rdc14wNY" target="_blank">Pisound Case assembly video</a>. 
 
@@ -24,7 +24,7 @@ The Pisound Acrylic Case consists of 3 cutout sheets of the enclosure sides and 
 1. Screw the remaining 4 screws (B) and push the knobs (A) on.
 
 
-[^1]: Use the correct piece depending on your Raspberry Pi version.
+[^1]: Use the correct piece depending on your Raspberry Pi version. For Pi 4, you will have to punch out the hole for the 3.5mm audio jack on the Raspberry Pi 4 board. Either use the tips of your fingers to budge the pre-cut hole cap out, or use a small object to punch it out, please mind your fingers to avoid any injury.
 
 [^2]: It may have to be flipped horizontally depending on your Raspberry Pi version.
 

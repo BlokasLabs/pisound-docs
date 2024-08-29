@@ -4,7 +4,7 @@ description: Pisound's physical properties, power supply recommendations, suppor
 
 # General Pisound Specifications
 
-Pisound conforms to Raspberry Pi’s Hardware Attached on Top (HAT) specifications and connects to Raspberry Pi via the 40-pin header. The shield is slightly bigger in length (56 mm x 100 mm) than Raspberry Pi itself. It has two female DIN-5 connectors for MIDI in/out and two 1/4" (6.35 mm) stereo jack connectors for stereo audio in/out. There are two pots for gain and volume control, a programmable button and MIDI activity and input clip LEDs.
+Pisound conforms to Raspberry Pi’s Hardware Attached on Top (HAT) specifications and connects to Raspberry Pi via the 40-pin header. The shield is slightly bigger in length (56 mm x 100 mm) than Raspberry Pi itself. It has two female DIN-5 connectors for MIDI in/out and two 1/4" (6.35 mm) stereo jack connectors for stereo audio in/out. There are two pots for gain and volume control, a programmable button and two MIDI activity and input clip LEDs.
 
 **Parameter**|**Value**
 :-----|:-----
@@ -15,25 +15,32 @@ Weight|67 g
 
 ## Power Supply 
 
-Pisound powers up from Raspberry Pi's power supply via pins on the GPIO header and consumes no more than 300 mA at 5.1 VDC, so we recommend to use the official <a href="https://www.raspberrypi.org/products/raspberry-pi-universal-power-supply/" target="_blank">5.1 VDC RPi power supply for RPi version 1, 2 and 3</a> or <a href="https://www.raspberrypi.org/products/type-c-power-supply//" target="_blank">USB-C Power Supply for RPi version 4</a>.
+Pisound powers up from Raspberry Pi's power supply via pins on the GPIO header and consumes no more than 300 mA at 5.1 VDC. We recommend to use one of the official power supplies:
 
+* <a href="https://www.raspberrypi.com/products/27w-power-supply/" target="_blank">USB-C Power Supply for Raspberry Pi version 5</a>
+* <a href="https://www.raspberrypi.org/products/type-c-power-supply/" target="_blank">USB-C Power Supply for Raspberry Pi version 4</a>
+* <a href="https://www.raspberrypi.org/products/raspberry-pi-universal-power-supply/" target="_blank">Micro USB Power Supply for Raspberry Pi version 1, 2 and 3</a>
 
 ## Supported Raspberry Pi Models
 
 | **Compatible Models** |  |
 | ----- | ----- |
-| Raspberry Pi 4[^1] | Raspberry Pi 3 |
-| Raspberry Pi 3B+ | Raspberry Pi 2 version 1.2 |
-| Raspberry Pi 2 | Raspberry Pi 1 Model B+ |
-| Raspberry Pi 1 Model A+ | Raspberry Pi Zero version 1.2|
-| Raspberry Pi Zero version 1.3| |
+| Raspberry Pi 5[^1] | Raspberry Pi 4B[^2] |
+| Raspberry Pi 3B | Raspberry Pi 3B+ |
+| Other Models[^3] | |
 
 [^1]:
+    Raspberry Pi 5 Active Cooler may fit in between the Pisound and Raspberry Pi 5 since Pisound hardware version v1.2.
+
+[^2]:
     Full compatibility since Pisound hardware version v1.1.
 
-    Pisound v1.0 can still be used with the RPi model 4, but there's a known issue caused by a power supply design change in Raspbery Pi 4, see
+    Pisound v1.0 can still be used with the Raspberry Pi 4, but there's a known issue caused by a power supply design change in Raspbery Pi 4, see
     [this topic](https://community.blokas.io/t/pisound-with-raspberry-pi-4/1238/12?u=giedrius) in our community for detailed information and
     software workaround details. [`pisound-config`](pisound-config.md) has a menu to help with enabling / disabling it.
+
+[^3]:
+    Not recommended for new audio based projects due to lesser processing power, but Pisound can also be used with Raspberry Pi's 2, 1, Zero, Zero W and Zero 2 W as well as the A models.
 
 ///Footnotes Go Here///
 

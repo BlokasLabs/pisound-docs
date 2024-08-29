@@ -38,4 +38,4 @@ Alternatively, you may want to go with <a href="https://www.raspberrypi.org/down
 
 If you don't have a keyboard and a monitor hooked up to your Raspberry Pi, you might take a look at <a href="https://blokas.io/patchbox-os/docs/remote-control/" target="_blank">remote control options</a> for your Raspberry Pi. 
 
-**In order to get the most from your Pisound you will need to install [The Pisound Software](the-pisound-software.md) to your Raspberry Pi**
+**In order to get the most from your Pisound you will need to install [The Pisound Software](the-pisound-software.md) to your Raspberry Pi.**

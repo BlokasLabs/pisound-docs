@@ -16,6 +16,9 @@ Therefore it takes minimal CPU resources, but is still able to react to button p
 
 ## Install The Pisound Software
 
+!!! note "Pisound Micro has a separate installer"
+    If you have a **Pisound Micro**, use its dedicated install script instead: `curl https://blokas.io/pisound-micro/install.sh | sh`. See the <a href="https://blokas.io/pisound-micro/docs/getting-started/" target="_blank">Pisound Micro Getting Started</a> guide for full details.
+
 To install the Pisound software on Debian compatible distributions like <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/" target="_blank">Raspberry Pi OS</a>, open a terminal (command) window and run:
 
 ```

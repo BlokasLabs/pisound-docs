@@ -44,6 +44,13 @@ You should see output similar to:
 
 ## Pisound Not Detected
 
+!!! note "Using Pisound Micro?"
+    This page covers the **original Pisound**. If you have a **Pisound Micro**, it requires its own software package and device tree overlay. See the <a href="https://blokas.io/pisound-micro/docs/getting-started/" target="_blank">Pisound Micro Getting Started</a> guide. The correct overlay is `dtoverlay=pisound-micro` (not `pisound`), and you must install the `pisound-micro` package first:
+
+    ```
+    curl https://blokas.io/pisound-micro/install.sh | sh
+    ```
+
 If your Pisound is not detected, try these solutions:
 
 1. **Make sure that the hardware connection is good.** Turn the system off and try to re-attach your Pisound to your Raspberry Pi. Boards should appear completely parallel, so you may have to squeeze the side with the pins a bit. You may try even without the spacers, just to make sure the connection is not the issue. 

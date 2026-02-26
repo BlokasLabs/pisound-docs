@@ -31,6 +31,12 @@ If using Raspberry Pi without built-in Bluetooth support, connect a USB Bluetoot
 
 After everything is set up, `pisound-ctl` will get launched automatically and will be added to system auto start.
 
+**Note:** If you are using Raspberry Pi OS (not Patchbox OS), you may also need to install the Pure Data collection scripts for patches imported from USB to appear in the app's collections:
+
+```
+sudo apt install pisound-ctl-scripts-puredata
+```
+
 ### Android
 
 Install the Pisound app on your device <a href="https://play.google.com/store/apps/details?id=com.blokas.pisoundctl" target="_blank">here</a>, or download the apk directly <a href="https://blokas.io/pisound/app/com.blokas.pisoundctl.v1.03.apk" target="_blank">here</a>.
